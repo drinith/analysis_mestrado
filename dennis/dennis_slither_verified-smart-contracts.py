@@ -13,16 +13,7 @@ dir_path = os.path.dirname(os.path.realpath(sys.argv[0]))
 
 print(dir_path)
 
-class Sol:
 
-    _nome=''
-    _vulnerabilidades=[]
-
-
-    def __init__(self,nome):
-
-        self._nome = nome
-        self._vulnerabilidades=[]
 
 
 def montar_dataframe_todo_erro() -> pd.DataFrame:
@@ -44,7 +35,7 @@ def montar_dataframe_todo_erro() -> pd.DataFrame:
             print(e)
 
         #Instanciando smart contracts com o nome levantado do json
-        sol = Sol(arquivo)
+        
 
         try:
             #vulnerabilidades_lista = sol_json['results']['detectors'][0]['check']
@@ -53,19 +44,19 @@ def montar_dataframe_todo_erro() -> pd.DataFrame:
 
             print('A exceção foi ',e)
 
-
+        lista_nome_vulnerabilidades =[]
         for vulnerabilidade in vulnerabilidades_lista:
-            sol._vulnerabilidades.append(vulnerabilidade['check'])
+            lista_nome_vulnerabilidades.append(vulnerabilidade['check'])
 
     #preenchendo a lista com as informações
-        lista_sol.append(sol)
+        lista_sol.append({'nome':arquivo,'vulnerabilidades':lista_nome_vulnerabilidades})
     
     #print(lista_smart_contracts)
+    
 
     with open('data.json', 'w') as json_file:
-        json.dump(lista_sol, json_file)
-
-    print(lista_sol)
+        json.dump(lista_sol,json_file,indent=4)
+   
     df = pd.DataFrame(columns=lista_sol)
 
     #df = pd.DataFrame(columns=[scs._vulnerabilidades for scs in lista_smart_contracts])
