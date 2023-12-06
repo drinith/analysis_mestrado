@@ -90,15 +90,17 @@ def montar_dataframe_todo_erro() -> pd.DataFrame:
 
 if '__main__'==__name__:
 
-    df = montar_dataframe_json()
-    display(df)
+    resumir_json()
 
-    # Criar um novo DataFrame com a soma total de cada vulnerabilidade
-    soma_total_vulnerabilidades = df.sum(axis=0).reset_index()
-    soma_total_vulnerabilidades.columns = ['Vulnerabilidade', 'Soma_Total']
+    # df = montar_dataframe_json()
+    # display(df)
 
-    # Ordenar o DataFrame pela coluna 'Soma_Total' em ordem decrescente
-    soma_total_vulnerabilidades = soma_total_vulnerabilidades.sort_values(by='Soma_Total', ascending=False)
+    # # Criar um novo DataFrame com a soma total de cada vulnerabilidade
+    # soma_total_vulnerabilidades = df.sum(axis=0).reset_index()
+    # soma_total_vulnerabilidades.columns = ['Vulnerabilidade', 'Soma_Total']
 
-    # Visualizar o DataFrame resultante
-    print(soma_total_vulnerabilidades)
+    # # Ordenar o DataFrame pela coluna 'Soma_Total' em ordem decrescente
+    # soma_total_vulnerabilidades = soma_total_vulnerabilidades.sort_values(by='Soma_Total', ascending=False)
+
+    # # Visualizar o DataFrame resultante
+    # print(soma_total_vulnerabilidades)

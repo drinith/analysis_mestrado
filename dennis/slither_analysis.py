@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-caminho_do_diretorio = r'C:\\Users\\felipe\\Documents\\develop\\analysis_mestrado\\dennis\\verified-smart-contracts-database\\verified-smart-contracts'  # Substitua pelo caminho do diretório desejado
+caminho_do_diretorio = r'.\\verified-smart-contracts-database\\verified-smart-contracts'  # Substitua pelo caminho do diretório desejado
 
 # Listar arquivos no diretório
 arquivos = os.listdir(caminho_do_diretorio)
@@ -10,7 +10,7 @@ arquivos = os.listdir(caminho_do_diretorio)
 for arquivo in arquivos:
     comando_slither = [
         'slither',
-        f'C:/Users/felipe/Documents/develop/analysis_mestrado/dennis/verified-smart-contracts-database/verified-smart-contracts/{arquivo}',
+        f'./verified-smart-contracts-database/verified-smart-contracts/{arquivo}',
         '--json',
         f'{arquivo}.json'
     ]
