@@ -3,87 +3,89 @@ import matplotlib.pyplot as plt
 import os
 import json
 import sys
-
-
+from IPython.display import display
 
 path ='./verified-smart-contracts-json'
-
 
 dir_path = os.path.dirname(os.path.realpath(sys.argv[0]))
 
 print(dir_path)
 
-
-
-
 def montar_dataframe_todo_erro() -> pd.DataFrame:
 
-    #Carregando os nomes da pasta
-    folder_list = os.listdir(path)
-    #print(folder_list)
+    # #Carregando os nomes da pasta
+    # folder_list = os.listdir(path)
+    # print(folder_list)
 
-    #Lista que vai conter os smart contracts levantados
-    lista_sol = []
-    vulnerabilidades_lista=[]
-    for arquivo in  folder_list:
-        json_arquivo = open(path+'/'+arquivo)
-        #print(json_arquivo)
+    # #Lista que vai conter os smart contracts levantados
+    # lista_sol = []
+    # vulnerabilidades_lista=[]
+    # for arquivo in  folder_list:
+    #     json_arquivo = open(path+'/'+arquivo)
+    #     #print(json_arquivo)
         
-        try:
-            sol_json = json.load(json_arquivo)
-        except Exception as e:
-            print(e)
+    #     try:
+    #         sol_json = json.load(json_arquivo)
+    #     except Exception as e:
+    #         print(e)
 
-        #Instanciando smart contracts com o nome levantado do json
+    #     #Instanciando smart contracts com o nome levantado do json
         
 
-        try:
-            #vulnerabilidades_lista = sol_json['results']['detectors'][0]['check']
-            vulnerabilidades_lista = sol_json['results']['detectors']
-        except Exception as e:
+    #     try:
+    #         #vulnerabilidades_lista = sol_json['results']['detectors'][0]['check']
+    #         vulnerabilidades_lista = sol_json['results']['detectors']
+    #     except Exception as e:
 
-            print('A exceção foi ',e)
+    #         print('A exceção foi ',e)
 
-        lista_nome_vulnerabilidades =[]
-        for vulnerabilidade in vulnerabilidades_lista:
-            lista_nome_vulnerabilidades.append(vulnerabilidade['check'])
+    #     lista_nome_vulnerabilidades =[]
+    #     for vulnerabilidade in vulnerabilidades_lista:
+    #         lista_nome_vulnerabilidades.append(vulnerabilidade['check'])
 
-    #preenchendo a lista com as informações
-        lista_sol.append({'nome':arquivo,'vulnerabilidades':lista_nome_vulnerabilidades})
+    # #preenchendo a lista com as informações
+    #     lista_sol.append({'nome':arquivo,'vulnerabilidades':lista_nome_vulnerabilidades})
     
-    #print(lista_smart_contracts)
+    # #print(lista_smart_contracts)
     
 
-    with open('data.json', 'w') as json_file:
-        json.dump(lista_sol,json_file,indent=4)
-   
+    # with open('data.json', 'w') as json_file:
+    #     json.dump(lista_sol,json_file,indent=4)
+    
+    
+    json_file = open('./data.json')
+    lista_sol = json.load(json_file)
+    
     df = pd.DataFrame(columns=lista_sol)
-
+    
     #df = pd.DataFrame(columns=[scs._vulnerabilidades for scs in lista_smart_contracts])
     df = pd.DataFrame()
     df['name']=1
 
     #Tentando criar as colunas com os nomes das vulnerabililidades
-    for scs in lista_sol:
+    for item in lista_sol:
 
-        df[scs._vulnerabilidades]=1
+        df[item['vulnerabilidades']]=1
 
     index=0
     df = pd.DataFrame([[0]* len(df.columns)]*len(lista_sol),columns=df.columns)
+    
+    for item in lista_sol:
 
-    for scs in lista_sol:
 
+        df.loc[index,'name']=item['nome']
+        index+=1
+  
 
-        df.loc[index,'name']=scs._nome
+        for vulnerabilidade in item['vulnerabilidades']:
 
-    for coluna in scs._vulnerabilidades:
-
-      df.loc[index,coluna]+=1
-    index+=1
-
+            df.loc[index,vulnerabilidade]+=1
+        index+=1
+    display(df)
     return df
 
 
 if '__main__'==__name__:
 
     df = montar_dataframe_todo_erro()
+    display(df)
