@@ -55,32 +55,53 @@ def montar_dataframe_todo_erro() -> pd.DataFrame:
     
     json_file = open('./data.json')
     lista_sol = json.load(json_file)
+
+    contagem_vulnerabilidades = {}
+
+    for arquivo in lista_sol:
+        nome_arquivo = arquivo["nome"]
+        vulnerabilidades = arquivo["vulnerabilidades"]
+
+        contagem = {}
+        for vulnerabilidade in vulnerabilidades:
+            if vulnerabilidade not in contagem:
+                contagem[vulnerabilidade] = 1
+            else:
+                contagem[vulnerabilidade] += 1
+
+        contagem_vulnerabilidades[nome_arquivo] = contagem
+
+    # Criar um DataFrame do pandas a partir do dicionário
+    df = pd.DataFrame(contagem_vulnerabilidades).fillna(0).astype(int)
+
+    # Visualizar o DataFrame resultante
+    print(df)
     
-    df = pd.DataFrame(columns=lista_sol)
+    # df = pd.DataFrame(columns=lista_sol)
     
-    #df = pd.DataFrame(columns=[scs._vulnerabilidades for scs in lista_smart_contracts])
-    df = pd.DataFrame()
-    df['name']=1
+    # #df = pd.DataFrame(columns=[scs._vulnerabilidades for scs in lista_smart_contracts])
+    # df = pd.DataFrame()
+    # df['name']=1
 
-    #Tentando criar as colunas com os nomes das vulnerabililidades
-    for item in lista_sol:
+    # #Tentando criar as colunas com os nomes das vulnerabililidades
+    # for item in lista_sol:
 
-        df[item['vulnerabilidades']]=1
+    #     df[item['vulnerabilidades']]=1
 
-    index=0
-    df = pd.DataFrame([[0]* len(df.columns)]*len(lista_sol),columns=df.columns)
+    # index=0
+    # df = pd.DataFrame([[0]* len(df.columns)]*len(lista_sol),columns=df.columns)
     
-    for item in lista_sol:
+    # for item in lista_sol:
 
 
-        df.loc[index,'name']=item['nome']
-        index+=1
+    #     df.loc[index,'name']=item['nome']
+    #     index+=1
   
 
-        for vulnerabilidade in item['vulnerabilidades']:
+    #     for vulnerabilidade in item['vulnerabilidades']:
 
-            df.loc[index,vulnerabilidade]+=1
-        index+=1
+    #         df.loc[index,vulnerabilidade]+=1
+    #     index+=1
     display(df)
     return df
 
