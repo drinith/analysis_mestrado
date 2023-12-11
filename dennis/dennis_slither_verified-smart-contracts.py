@@ -3,6 +3,7 @@ import os
 import json
 import sys
 from IPython.display import display
+import openpyxl
 
 path ='./verified-smart-contracts-json'
 
@@ -19,18 +20,25 @@ def resumir_json():
     #Lista que vai conter os smart contracts levantados
     lista_sol = []
     vulnerabilidades_lista=[]
+    lista_contratos = []
+    solidity_lidos = 0
+    solidity_erro = 0
+    lista_erro =[]
+
+
     for arquivo in  folder_list:
         json_arquivo = open(path+'/'+arquivo)
         #print(json_arquivo)
-        
+        solidity_lidos+=1
+
         try:
             sol_json = json.load(json_arquivo)
         except Exception as e:
-            print(e)
-
-        #Instanciando smart contracts com o nome levantado do json
+            solidity_erro+=1
+            lista_erro.append(e)
+          
         
-
+        #Extraindo os elementos com as vulnerabilidades 
         try:
             #vulnerabilidades_lista = sol_json['results']['detectors'][0]['check']
             vulnerabilidades_lista = sol_json['results']['detectors']
@@ -38,7 +46,9 @@ def resumir_json():
 
             print('A exceção foi ',e)
 
+
         lista_nome_vulnerabilidades =[]
+        #Correndo pelas 
         for vulnerabilidade in vulnerabilidades_lista:
             lista_nome_vulnerabilidades.append(vulnerabilidade['check'])
 
@@ -50,6 +60,9 @@ def resumir_json():
 
     with open('data.json', 'w') as json_file:
         json.dump(lista_sol,json_file,indent=4)
+
+    with open('log.txt', 'w') as log:
+        log.write(f' Soliditys {solidity_lidos} \n Erros {solidity_erro}\n Lista erros {lista_erro}')
 
 def montar_dataframe_json():
     
@@ -75,22 +88,37 @@ def montar_dataframe_json():
     df = pd.DataFrame(contagem_vulnerabilidades).fillna(0).astype(int)
 
     # Visualizar o DataFrame resultante
-    print(df.transpose())
-   
+    dt =df.transpose()
+    dt.to_excel('resultado.xlsx')
     return df.transpose()
 
 
 
 def montar_dataframe_todo_erro() -> pd.DataFrame:
 
+
+
     resumir_json()    
     
-    montar_dataframe_json()
+def soma_dataframe(df):
+
+    # Criar um novo DataFrame com a soma total de cada vulnerabilidade
+    soma_total_vulnerabilidades = df.sum(axis=0).reset_index()
+    soma_total_vulnerabilidades.columns = ['Vulnerabilidade', 'Soma_Total']
+
+    # Ordenar o DataFrame pela coluna 'Soma_Total' em ordem decrescente
+    soma_total_vulnerabilidades = soma_total_vulnerabilidades.sort_values(by='Soma_Total', ascending=False)
+
+    # Visualizar o DataFrame resultante
+    soma_total_vulnerabilidades.to_excel('soma.xlsx')   
 
 
 if '__main__'==__name__:
 
-    resumir_json()
+    
+    df=montar_dataframe_json()
+    soma_dataframe(df)
+  
 
     # df = montar_dataframe_json()
     # display(df)
