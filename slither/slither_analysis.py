@@ -113,9 +113,13 @@ class SlitherAnalysis:
         with open(f'{diretory_out}log.txt', 'w') as log:
             log.write(f' Soliditys {solidity_lidos} \n Erros {solidity_erro}\n Lista erros {lista_erro}')
 
-    def montar_dataframe_json():
+    def montar_dataframe_json(self,diretory_in,diretory_out):
+
+        #Criar os diretórios caso não existam e seja necessário
+        self.create_directory(diretory_in)
+        self.create_directory(diretory_out)
         
-        json_file = open('./data.json')
+        json_file = open(f'{diretory_in}data.json')
         lista_sol = json.load(json_file)
 
         contagem_vulnerabilidades = {}
@@ -138,7 +142,7 @@ class SlitherAnalysis:
 
         # Visualizar o DataFrame resultante
         dt =df.transpose()
-        dt.to_excel('resultado.xlsx')
+        dt.to_excel(f'{diretory_out}resultado.xlsx')
         return df.transpose()
 
         
@@ -160,4 +164,6 @@ if '__main__'==__name__:
 
     # sa.run_diretory(diretory_out='./dennis_analysis/')
 
-    sa.resume_json('./dennis_analysis/json/','./dennis_analysis/json_analysis')
+    # sa.resume_json('./dennis_analysis/json/','./dennis_analysis/json_analysis/')
+
+    sa.montar_dataframe_json('./dennis_analysis/json_analysis/','./dennis_analysis/json_analysis/')
