@@ -1,3 +1,0 @@
- Soliditys 2501 
- Erros 0
-  Lista erros []
