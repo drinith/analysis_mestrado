@@ -11,7 +11,7 @@ dir_path = os.path.dirname(os.path.realpath(sys.argv[0]))
 
 print(dir_path)
 
-def resumir_json():
+def run_slither_solidity():
 
     #Carregando os nomes da pasta
     folder_list = os.listdir(path)
@@ -96,9 +96,7 @@ def montar_dataframe_json():
 
 def montar_dataframe_todo_erro() -> pd.DataFrame:
 
-
-
-    resumir_json()    
+    run_slither_solidity()    
     
 def soma_dataframe(df):
 
@@ -115,7 +113,7 @@ def soma_dataframe(df):
 
 if '__main__'==__name__:
 
-    
+    run_slither_solidity()
     df=montar_dataframe_json()
     soma_dataframe(df)
   
