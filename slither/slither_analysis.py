@@ -22,17 +22,17 @@ class SlitherAnalysis:
             print(f'O diretório "{diretorio}" já existe.')
 
     #Buscar os arquivos e rodar o slither
-    def run_analysis_diretory(self,diretory_in='./verified-smart-contracts-database/verified-smart-contracts/',diretory_out=''):
+    def run_analysis_diretory(self,diretory_in,diretory_out=''):
         
         
         # Listar arquivos no diretório
-        files = os.listdir(self, diretory_in)
+        files = os.listdir( diretory_in)
 
         # criar diretorio principal
         self.create_directory(diretory_out)
         self.create_directory(diretory_out+'json/')
         self.create_directory(diretory_out+'results/')
-
+        
         #Contagem de erro
         error_count = 0
         # Exibir os nomes dos arquivos
@@ -46,7 +46,8 @@ class SlitherAnalysis:
             ]
             #Resultado do comando slither
             result= subprocess.run(command_slither, capture_output=True, text=True)
-        
+            print(result)
+            
             #Verificando se o comando falhou
             if ('warnings/errors' in str(result)):
                 error_count +=1
@@ -55,6 +56,12 @@ class SlitherAnalysis:
                 # Você pode adicionar mais linhas conforme necessário
             with open(f'{diretory_out}results/resultado_slither.txt', 'a') as arquivo:
                 arquivo.write(f'{str(result)}\n')
+        
+        #Quantidade de sols gerados
+        sol_count = os.listdir(diretory_out+'json/')
+
+        with open(f'{diretory_out}results/log.txt', 'a') as arquivo:
+            arquivo.write(f'Quantidade de arquivos{len(files)}\nQuantidade de arquivos que rodaram{sol_count}')
       
     #Resumir as informações dos json em um arquivo intermediário menor
     def resume_json(self,diretory_in='',diretory_out=''):
@@ -144,7 +151,6 @@ class SlitherAnalysis:
         dt =df.transpose()
         dt.to_excel(f'{diretory_out}resultado.xlsx')
         return df.transpose()
-
         
     def soma_dataframe(df):
 
@@ -162,8 +168,8 @@ if '__main__'==__name__:
 
     sa = SlitherAnalysis()
 
-    # sa.run_diretory(diretory_out='./dennis_analysis/')
+    sa.run_analysis_diretory(diretory_in='./repositories/verified-smart-contracts-database/verified-smart-contracts/',diretory_out='./slither/dennis_analysis/')
 
     # sa.resume_json('./dennis_analysis/json/','./dennis_analysis/json_analysis/')
 
-    sa.montar_dataframe_json('./dennis_analysis/json_analysis/','./dennis_analysis/json_analysis/')
+    # sa.montar_dataframe_json('./dennis_analysis/json_analysis/','./dennis_analysis/json_analysis/')
