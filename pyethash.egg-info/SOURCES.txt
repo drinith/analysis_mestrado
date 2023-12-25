@@ -1,5 +1,0 @@
-README.md
-pyethash.egg-info/PKG-INFO
-pyethash.egg-info/SOURCES.txt
-pyethash.egg-info/dependency_links.txt
-pyethash.egg-info/top_level.txt
