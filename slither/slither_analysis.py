@@ -167,9 +167,9 @@ class SlitherAnalysis:
 if '__main__'==__name__:
 
     sa = SlitherAnalysis()
+    print(os.getcwd())
+    #sa.run_analysis_diretory(diretory_in='./repositories/verified-smart-contracts-database/verified-smart-contracts/',diretory_out='./slither/dennis_analysis2/')
 
-    sa.run_analysis_diretory(diretory_in='./repositories/verified-smart-contracts-database/verified-smart-contracts/',diretory_out='./slither/dennis_analysis/')
+    sa.resume_json('./slither/dennis_analysis/json/','./slither/dennis_analysis/json_analysis/')
 
-    # sa.resume_json('./dennis_analysis/json/','./dennis_analysis/json_analysis/')
-
-    # sa.montar_dataframe_json('./dennis_analysis/json_analysis/','./dennis_analysis/json_analysis/')
+    sa.montar_dataframe_json('./slither/dennis_analysis/json_analysis/','./slither/dennis_analysis/json_analysis/')
