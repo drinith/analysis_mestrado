@@ -1,0 +1,13 @@
+Qtd erro 1 arquivo falha AaveSupply.sol
+Qtd erro 2 arquivo falha AaveDirectJob.sol
+Qtd erro 3 arquivo falha AbandonedSociety.sol
+Qtd erro 4 arquivo falha AavePayback.sol
+Qtd erro 5 arquivo falha AccessKeys.sol
+Qtd erro 6 arquivo falha AaveCollateralSwitch.sol
+Qtd erro 7 arquivo falha AavePriceFeed.sol
+Qtd erro 8 arquivo falha AaveClaimStkAave.sol
+Qtd erro 9 arquivo falha AAC.sol
+Qtd erro 10 arquivo falha AccessControlledOffchainAggregator.sol
+Qtd erro 11 arquivo falha AaveAdapter.sol
+Qtd erro 12 arquivo falha AaveBorrow.sol
+Qtd erro 13 arquivo falha AaveWithdraw.sol

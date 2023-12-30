@@ -7,7 +7,7 @@ from IPython.display import display
 import openpyxl
 
 
-class SlitherAnalysis:
+class MythrilAnalysis:
 
     def create_directory(self,_diretorio):
 
@@ -37,24 +37,31 @@ class SlitherAnalysis:
         error_count = 0
         # Exibir os nomes dos arquivos
         for file in files:
-            #Montar comando do slither
-            command_slither = [
-                'slither',
-                f'{diretory_in}{file}',
-                '--json',
-                f'{diretory_out}json/{file}.json'
-            ]
+            #Montar comando do mythril
+            # command_mythril = [
+            #     'myth',
+            #     ' analyze ',
+            #     f'{diretory_in}AAC.sol',
+            #     '--execution-timeout 4'
+            # ]
             #Resultado do comando slither
-            result= subprocess.run(command_slither, capture_output=True, text=True)
-            print(result)
+            #result= subprocess.run(command_mythril, capture_output=True, text=True)
+            #result= subprocess.check_output(f'myth analyze {diretory_in}{file}  --execution-timeout 4', shell=True, stderr=subprocess.STDOUT)
+            result= subprocess.run(f'myth analyze {diretory_in}{file} -o jsonv2 --execution-timeout 10', capture_output=True, text=True,shell=True)
             
+            print(result.stdout)
+            
+            #Salvando o resultado do json
+            with open(f'{diretory_out}json/{file}.json', 'w') as arquivo:
+                    arquivo.write(result.stdout)
+
             #Verificando se o comando falhou
             if ('warnings/errors' in str(result)):
                 error_count +=1
-                with open(f'{diretory_out}results/log_error_slither.txt', 'a') as arquivo:
+                with open(f'{diretory_out}results/log_error_mythril.txt', 'a') as arquivo:
                     arquivo.write(f'Qtd erro {error_count} arquivo falha {file}\n')
                 # Você pode adicionar mais linhas conforme necessário
-            with open(f'{diretory_out}results/resultado_slither.txt', 'a') as arquivo:
+            with open(f'{diretory_out}results/resultado_mythril.txt', 'a') as arquivo:
                 arquivo.write(f'{str(result)}\n')
         
         #Quantidade de sols gerados
@@ -97,21 +104,27 @@ class SlitherAnalysis:
             #Extraindo os elementos com as vulnerabilidades 
             try:
                 #vulnerabilidades_lista = sol_json['results']['detectors'][0]['check']
-                vulnerabilidades_lista = sol_json['results']['detectors']
+                #vulnerabilidades_lista = sol_json['results']['detectors']
+                vulnerabilidades_lista = sol_json[0]['issues']
+                #testar lista se está vazia pra chegar a saber se o valor está sendo encontrado em algum momento
+                
             except Exception as e:
 
                 print('A exceção foi ',e)
 
+            #Fazendo o teste para ver se o json possui uma vulnerabilidade
+            if(vulnerabilidades_lista):
+                print("encontrou falha")
+                print(vulnerabilidades_lista)
+                lista_nome_vulnerabilidades =[]
+                #Correndo pelas vulnerabilidades previamente carregadas em uma lista
+                for vulnerabilidade in vulnerabilidades_lista:
+                    lista_nome_vulnerabilidades.append(vulnerabilidade['swcTitle'])
 
-            lista_nome_vulnerabilidades =[]
-            #Correndo pelas vulnerabilidades previamente carregadas em uma lista
-            for vulnerabilidade in vulnerabilidades_lista:
-                lista_nome_vulnerabilidades.append(vulnerabilidade['check'])
-
-        #preenchendo a lista com as informações
-            lista_sol.append({'nome':arquivo,'vulnerabilidades':lista_nome_vulnerabilidades})
-        
-        #print(lista_smart_contracts)
+            #preenchendo a lista com as informações
+                lista_sol.append({'nome':arquivo,'vulnerabilidades':lista_nome_vulnerabilidades})
+            
+            #print(lista_smart_contracts)
         
 
         with open(f'{diretory_out}data.json', 'w') as json_file:
@@ -166,13 +179,16 @@ class SlitherAnalysis:
 
 if '__main__'==__name__:
 
-    sa = SlitherAnalysis()
+    source_solidity = './repositories/verified-smart-contracts-database/verified-smart-contracts/'
+    destiny_analysis = './mythril/dennis_analysis3/'
+
+    sa = MythrilAnalysis()
     print(os.getcwd())
-    #sa.run_analysis_diretory(diretory_in='./repositories/verified-smart-contracts-database/verified-smart-contracts/',diretory_out='./slither/dennis_analysis2/')
+    #sa.run_analysis_diretory(diretory_in=source_solidity,diretory_out=destiny_analysis)
 
-    sa.resume_json('./slither/dennis_analysis/json/','./slither/dennis_analysis/json_analysis/')
+    sa.resume_json(f'{destiny_analysis}json/',f'{destiny_analysis}json_analysis/')
 
-    sa.montar_dataframe_json('./slither/dennis_analysis/json_analysis/','./slither/dennis_analysis/json_analysis/')
+    #sa.montar_dataframe_json(f'{destiny_analysis}json_analysis/',f'{destiny_analysis}json_analysis/')
 
 
     

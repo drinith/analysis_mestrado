@@ -5,6 +5,8 @@ import json
 import sys
 from IPython.display import display
 import openpyxl
+import time
+
 
 
 class SlitherAnalysis:
@@ -24,7 +26,7 @@ class SlitherAnalysis:
     #Buscar os arquivos e rodar o slither
     def run_analysis_diretory(self,diretory_in,diretory_out=''):
         
-        
+        start_time = time.time()
         # Listar arquivos no diretório
         files = os.listdir( diretory_in)
 
@@ -60,8 +62,11 @@ class SlitherAnalysis:
         #Quantidade de sols gerados
         sol_count = os.listdir(diretory_out+'json/')
 
+        delta_time = time.time() - start_time
+
         with open(f'{diretory_out}results/log.txt', 'a') as arquivo:
-            arquivo.write(f'Quantidade de arquivos{len(files)}\nQuantidade de arquivos que rodaram{sol_count}')
+            arquivo.write(f'Quantidade de arquivos{len(files)}\nQuantidade de arquivos que rodaram{sol_count}\nTempo gasto {delta_time}')
+       
       
     #Resumir as informações dos json em um arquivo intermediário menor
     def resume_json(self,diretory_in='',diretory_out=''):
@@ -168,8 +173,8 @@ if '__main__'==__name__:
 
     sa = SlitherAnalysis()
     print(os.getcwd())
-    #sa.run_analysis_diretory(diretory_in='./repositories/verified-smart-contracts-database/verified-smart-contracts/',diretory_out='./slither/dennis_analysis2/')
+    sa.run_analysis_diretory(diretory_in='./repositories/verified-smart-contracts-database/verified-smart-contracts/',diretory_out='./slither/dennis_analysis3/')
 
-    sa.resume_json('./slither/dennis_analysis/json/','./slither/dennis_analysis/json_analysis/')
+    # sa.resume_json('./slither/dennis_analysis/json/','./slither/dennis_analysis/json_analysis/')
 
-    sa.montar_dataframe_json('./slither/dennis_analysis/json_analysis/','./slither/dennis_analysis/json_analysis/')
+    # sa.montar_dataframe_json('./slither/dennis_analysis/json_analysis/','./slither/dennis_analysis/json_analysis/')

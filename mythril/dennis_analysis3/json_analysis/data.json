@@ -1,0 +1,227 @@
+[
+    {
+        "nome": "McShib.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "SwapV3.sol.json",
+        "vulnerabilidades": [
+            "Assert Violation"
+        ]
+    },
+    {
+        "nome": "nftCryptoGems.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "AKINU2.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "SisuToken.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "MAXIMUSTOKEN.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "NearProver.sol.json",
+        "vulnerabilidades": [
+            "Write to Arbitrary Storage Location",
+            "Write to Arbitrary Storage Location"
+        ]
+    },
+    {
+        "nome": "CryptoQuiz.sol.json",
+        "vulnerabilidades": [
+            "Authorization through tx.origin"
+        ]
+    },
+    {
+        "nome": "Vester.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence",
+            "Timestamp Dependence",
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "Bullwinkle.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "TattooInu.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "MiniXAEAXii.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "Shibooster.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "Dogenobi.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "DeltaPorn.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "COO_OrganRelease.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "FOMC.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "AvsBGame.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "MooneyToonz.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "GatesStaking.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence",
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "GhozaliDAO.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "METAHORNETDAO.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "AKINU.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "MCFTOKEN.sol.json",
+        "vulnerabilidades": [
+            "Reentrancy"
+        ]
+    },
+    {
+        "nome": "tinyShikage.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "ShibasNewYear.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "Bulksender.sol.json",
+        "vulnerabilidades": [
+            "Reentrancy"
+        ]
+    },
+    {
+        "nome": "MyToken.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "Phouns.sol.json",
+        "vulnerabilidades": [
+            "Assert Violation"
+        ]
+    },
+    {
+        "nome": "TheContract.sol.json",
+        "vulnerabilidades": [
+            "Unprotected SELFDESTRUCT Instruction"
+        ]
+    },
+    {
+        "nome": "Kaiba_IVC_sKlee.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow and Underflow",
+            "Integer Overflow and Underflow",
+            "Integer Overflow and Underflow",
+            "Integer Overflow and Underflow",
+            "Integer Overflow and Underflow",
+            "DoS with Failed Call"
+        ]
+    },
+    {
+        "nome": "Random.sol.json",
+        "vulnerabilidades": [
+            "Weak Sources of Randomness from Chain Attributes"
+        ]
+    },
+    {
+        "nome": "Whaletama.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "KokoApe.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "ServiceReceiver.sol.json",
+        "vulnerabilidades": [
+            "Reentrancy"
+        ]
+    },
+    {
+        "nome": "ThunderShibInu.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    }
+]

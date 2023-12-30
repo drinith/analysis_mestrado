@@ -1,0 +1,3 @@
+ Soliditys 0 
+ Erros 0
+ Lista erros []

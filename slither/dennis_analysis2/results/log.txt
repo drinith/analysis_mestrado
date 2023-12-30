@@ -1,0 +1,3 @@
+Quantidade de arquivos16
+Quantidade de arquivos que rodaram['AbandonedSociety.sol.json', 'AbandonedKidKongz.sol.json', 'Accel.sol.json', '_8SIAN_PaymentSpliiter_.sol.json', 'AccessKeys.sol.json', 'AAC.sol.json']
+Tempo gasto 21.44834804534912
