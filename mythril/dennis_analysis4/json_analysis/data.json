@@ -1,0 +1,549 @@
+[
+    {
+        "nome": "YMYToken.sol.json",
+        "vulnerabilidades": [
+            "Assert Violation",
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "NIGHTFLOKI.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "XChainTrade.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence",
+            "Timestamp Dependence",
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "SwapV3.sol.json",
+        "vulnerabilidades": [
+            "Assert Violation"
+        ]
+    },
+    {
+        "nome": "nftCryptoGems.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "AKINU2.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "OpenLuckyCryptoSimple.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "Receive.sol.json",
+        "vulnerabilidades": [
+            "Authorization through tx.origin",
+            "Authorization through tx.origin"
+        ]
+    },
+    {
+        "nome": "AudiusAdminUpgradeabilityProxy.sol.json",
+        "vulnerabilidades": [
+            "Delegatecall to Untrusted Callee"
+        ]
+    },
+    {
+        "nome": "Sloth.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "BigBang.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "TicketCommander.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence",
+            "Timestamp Dependence",
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "RubicTokenLock.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence",
+            "Timestamp Dependence",
+            "Timestamp Dependence",
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "novaTiger.sol.json",
+        "vulnerabilidades": [
+            "Reentrancy"
+        ]
+    },
+    {
+        "nome": "RedistributionsDoge.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "KuroInu.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "Katsumi.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "NearProver.sol.json",
+        "vulnerabilidades": [
+            "Write to Arbitrary Storage Location",
+            "Write to Arbitrary Storage Location",
+            "Write to Arbitrary Storage Location",
+            "Write to Arbitrary Storage Location"
+        ]
+    },
+    {
+        "nome": "TransformedNFT.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "ShibaKitty.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "FlokiNoWords.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "CryptoQuiz.sol.json",
+        "vulnerabilidades": [
+            "Authorization through tx.origin"
+        ]
+    },
+    {
+        "nome": "Vester.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "HappyCow.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "TattooInu.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "BapetaverseNFT.sol.json",
+        "vulnerabilidades": [
+            "Unprotected Ether Withdrawal"
+        ]
+    },
+    {
+        "nome": "GollumTrader.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence",
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "CP.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence",
+            "Timestamp Dependence",
+            "Timestamp Dependence",
+            "Timestamp Dependence",
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "RisingSun.sol.json",
+        "vulnerabilidades": [
+            "Assert Violation"
+        ]
+    },
+    {
+        "nome": "WyvernExchangeWithBulkCancellations.sol.json",
+        "vulnerabilidades": [
+            "Assert Violation",
+            "Assert Violation",
+            "Delegatecall to Untrusted Callee",
+            "Delegatecall to Untrusted Callee"
+        ]
+    },
+    {
+        "nome": "GigaTexas.sol.json",
+        "vulnerabilidades": [
+            "Assert Violation",
+            "Assert Violation",
+            "Delegatecall to Untrusted Callee",
+            "Delegatecall to Untrusted Callee"
+        ]
+    },
+    {
+        "nome": "Airdrop.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "COO_OrganRelease.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence",
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "WolfChain.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "GoldBlockTrading.sol.json",
+        "vulnerabilidades": [
+            "Assert Violation"
+        ]
+    },
+    {
+        "nome": "Multicall2.sol.json",
+        "vulnerabilidades": [
+            "Weak Sources of Randomness from Chain Attributes"
+        ]
+    },
+    {
+        "nome": "SaibaInu.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "MOTGToken.sol.json",
+        "vulnerabilidades": [
+            "Assert Violation",
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "RiperAuction.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "EtherDAO.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "AvsBGame.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence",
+            "Timestamp Dependence",
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "StrategyCvxCrvHelper.sol.json",
+        "vulnerabilidades": [
+            "Assert Violation"
+        ]
+    },
+    {
+        "nome": "GatesStaking.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "RossDrop.sol.json",
+        "vulnerabilidades": [
+            "Reentrancy",
+            "Reentrancy"
+        ]
+    },
+    {
+        "nome": "COO_TeamRelease.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence",
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "AKINU.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "Provide.sol.json",
+        "vulnerabilidades": [
+            "Delegatecall to Untrusted Callee"
+        ]
+    },
+    {
+        "nome": "CouponCommander.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence",
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "AwkndV3.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "Spacegirls.sol.json",
+        "vulnerabilidades": [
+            "Authorization through tx.origin"
+        ]
+    },
+    {
+        "nome": "TokenTimelock.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence",
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "SEALION.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "SerumNFT.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "MetaHomepage.sol.json",
+        "vulnerabilidades": [
+            "Assert Violation",
+            "Assert Violation",
+            "Assert Violation",
+            "Assert Violation"
+        ]
+    },
+    {
+        "nome": "CommunityIssuance.sol.json",
+        "vulnerabilidades": [
+            "Assert Violation"
+        ]
+    },
+    {
+        "nome": "NumberBetweenZeroAndTen.sol.json",
+        "vulnerabilidades": [
+            "DoS with Failed Call"
+        ]
+    },
+    {
+        "nome": "Phouns.sol.json",
+        "vulnerabilidades": [
+            "Assert Violation"
+        ]
+    },
+    {
+        "nome": "TheContract.sol.json",
+        "vulnerabilidades": [
+            "Unprotected SELFDESTRUCT Instruction"
+        ]
+    },
+    {
+        "nome": "BubbleBudzProxyMint.sol.json",
+        "vulnerabilidades": [
+            "Authorization through tx.origin",
+            "Authorization through tx.origin",
+            "Authorization through tx.origin",
+            "Authorization through tx.origin",
+            "Authorization through tx.origin",
+            "Authorization through tx.origin",
+            "Authorization through tx.origin",
+            "Authorization through tx.origin"
+        ]
+    },
+    {
+        "nome": "defi_quiz.sol.json",
+        "vulnerabilidades": [
+            "Authorization through tx.origin"
+        ]
+    },
+    {
+        "nome": "XAEAXii.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "Gov.sol.json",
+        "vulnerabilidades": [
+            "Assert Violation",
+            "Assert Violation"
+        ]
+    },
+    {
+        "nome": "Random.sol.json",
+        "vulnerabilidades": [
+            "Weak Sources of Randomness from Chain Attributes"
+        ]
+    },
+    {
+        "nome": "EtherFairy.sol.json",
+        "vulnerabilidades": [
+            "Assert Violation"
+        ]
+    },
+    {
+        "nome": "JadeProtocol.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "MainToken.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow and Underflow",
+            "Integer Overflow and Underflow",
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "ShibaTitans.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "ShibaLord.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "DeFiant.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "NiftyWallet.sol.json",
+        "vulnerabilidades": [
+            "DoS with Failed Call"
+        ]
+    },
+    {
+        "nome": "reciever.sol.json",
+        "vulnerabilidades": [
+            "Unprotected Ether Withdrawal"
+        ]
+    },
+    {
+        "nome": "SmartTreasuryV4.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "AONTOKEN.sol.json",
+        "vulnerabilidades": [
+            "Reentrancy"
+        ]
+    },
+    {
+        "nome": "Hush.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "NFTXLPStaking.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "ServiceReceiver.sol.json",
+        "vulnerabilidades": [
+            "Reentrancy"
+        ]
+    },
+    {
+        "nome": "TemplateCrowdsale.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow and Underflow",
+            "Integer Overflow and Underflow",
+            "Integer Overflow and Underflow",
+            "Timestamp Dependence",
+            "Timestamp Dependence",
+            "Timestamp Dependence",
+            "Timestamp Dependence",
+            "Timestamp Dependence",
+            "Timestamp Dependence",
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "WhiteCastle.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence",
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "KylithiusToken.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "SingleNFTFactory.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow and Underflow",
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "HostileBank.sol.json",
+        "vulnerabilidades": [
+            "Unprotected Ether Withdrawal"
+        ]
+    },
+    {
+        "nome": "XBXPool.sol.json",
+        "vulnerabilidades": [
+            "Weak Sources of Randomness from Chain Attributes"
+        ]
+    }
+]

@@ -47,7 +47,8 @@ class MythrilAnalysis:
             #Resultado do comando slither
             #result= subprocess.run(command_mythril, capture_output=True, text=True)
             #result= subprocess.check_output(f'myth analyze {diretory_in}{file}  --execution-timeout 4', shell=True, stderr=subprocess.STDOUT)
-            result= subprocess.run(f'myth analyze {diretory_in}{file} -o jsonv2 --execution-timeout 10', capture_output=True, text=True,shell=True)
+            #result= subprocess.run(f'myth analyze {diretory_in}{file} -o jsonv2 --execution-timeout 10', capture_output=True, text=True,shell=True)
+            result= subprocess.run(f'myth analyze {diretory_in}{file} -o jsonv2 --max-depth 10', capture_output=True, text=True,shell=True)
             
             print(result.stdout)
             
@@ -165,7 +166,7 @@ class MythrilAnalysis:
         dt.to_excel(f'{diretory_out}resultado.xlsx')
         return df.transpose()
         
-    def soma_dataframe(df):
+    def soma_dataframe(self,df):
 
         # Criar um novo DataFrame com a soma total de cada vulnerabilidade
         soma_total_vulnerabilidades = df.sum(axis=0).reset_index()
@@ -180,16 +181,17 @@ class MythrilAnalysis:
 if '__main__'==__name__:
 
     source_solidity = './repositories/verified-smart-contracts-database/verified-smart-contracts/'
-    destiny_analysis = './mythril/dennis_analysis3/'
+    destiny_analysis = './mythril/dennis_analysis4/'
 
     sa = MythrilAnalysis()
     print(os.getcwd())
-    #sa.run_analysis_diretory(diretory_in=source_solidity,diretory_out=destiny_analysis)
+    # sa.run_analysis_diretory(diretory_in=source_solidity,diretory_out=destiny_analysis)
 
-    sa.resume_json(f'{destiny_analysis}json/',f'{destiny_analysis}json_analysis/')
+    # sa.resume_json(f'{destiny_analysis}json/',f'{destiny_analysis}json_analysis/')
 
-    #sa.montar_dataframe_json(f'{destiny_analysis}json_analysis/',f'{destiny_analysis}json_analysis/')
+    df = sa.montar_dataframe_json(f'{destiny_analysis}json_analysis/',f'{destiny_analysis}json_analysis/')
 
+    sa.soma_dataframe(df)
 
     
 
