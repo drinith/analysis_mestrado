@@ -40,15 +40,23 @@ class SlitherAnalysis:
         # Exibir os nomes dos arquivos
         for file in files:
             #Montar comando do slither
-            command_slither = [
-                'slither',
-                f'{diretory_in}{file}',
-                '--json',
-                f'{diretory_out}json/{file}.json'
-            ]
+            # command_slither = [
+            #     'slither',
+            #     f'{diretory_in}{file}',
+            #     '--json',
+            #     f'{diretory_out}json/{file}.json'
+            # ]
             #Resultado do comando slither
-            result= subprocess.run(command_slither, capture_output=True, text=True)
-            print(result)
+            # result= subprocess.run(command_slither, capture_output=True, text=True)
+            result= subprocess.run(f'slither  {diretory_in}{file} --json {diretory_out}json/{file}.json', capture_output=True, text=True,shell=True)
+            
+            print(result.args)
+            print(result.stdout)
+
+            #Salvando o resultado do json se result não for vazio
+            if (result.stdout!=''):
+                with open(f'{diretory_out}json/{file}.json', 'w') as arquivo:
+                    arquivo.write(result.stdout)
             
             #Verificando se o comando falhou
             if ('warnings/errors' in str(result)):
@@ -157,7 +165,7 @@ class SlitherAnalysis:
         dt.to_excel(f'{diretory_out}resultado.xlsx')
         return df.transpose()
         
-    def soma_dataframe(df):
+    def soma_dataframe(self,df,arquivo):
 
         # Criar um novo DataFrame com a soma total de cada vulnerabilidade
         soma_total_vulnerabilidades = df.sum(axis=0).reset_index()
@@ -167,14 +175,52 @@ class SlitherAnalysis:
         soma_total_vulnerabilidades = soma_total_vulnerabilidades.sort_values(by='Soma_Total', ascending=False)
 
         # Visualizar o DataFrame resultante
-        soma_total_vulnerabilidades.to_excel('soma.xlsx')  
+        soma_total_vulnerabilidades.to_excel(arquivo)
+
+        
+
+    def dasp (self, df):
+
+        dasp_dic = {'arbitrary-send': 'access_control', 'assembly': 'Ignore', 'calls-loop': 'denial_service', 'constable-states': 'Ignore', 'constant-function': 'Ignore', 'controlled-delegatecall': 'access_control', 'deprecated-standards': 'Ignore', 'erc20-indexed': 'Ignore', 'erc20-interface': 'Ignore', 'external-function': 'Ignore', 'incorrect-equality': 'Other', 'locked-ether': 'Other', 'low-level-calls': 'unchecked_low_calls', 'naming-convention': 'Ignore', 'reentrancy-benign': 'reentrancy', 'reentrancy-eth': 'reentrancy', 'reentrancy-no-eth': 'reentrancy', 'shadowing-abstract': 'Ignore', 'shadowing-builtin': 'Ignore', 'shadowing-local': 'Ignore', 'shadowing-state': 'Ignore', 'solc-version': 'Ignore', 'suicidal': 'access_control', 'timestamp': 'time_manipulation', 'tx-origin': 'access_control', 'uninitialized-local': 'Other', 'uninitialized-state': 'Other', 'uninitialized-storage': 'Other', 'unused-return': 'unchecked_low_calls', 'unused-state': 'Ignore'}
+
+        df_dasp= pd.DataFrame(0, index=range(df.shape[0]),columns=['access_control','arithmetic','denial_service','reentrancy','unchecked_low_calls','bad_randomness','front_running',	'time_manipulation',	'short_addresses',	'Other',	'Ignore'])
+        
+        df_dasp.reset_index(inplace=True)
+        df.reset_index(inplace=True)
+        
+        print(df_dasp)
+        print(df)
+
+
+        #Colocando os encontros das vulnerabilidade de acordo com a tradução para o DASP
+        for column in df.columns:
+
+            try:
+                df_dasp[dasp_dic[column]]= df_dasp[dasp_dic[column]] + df[column]
+            except Exception as e:
+                print(e)    
+        
+
+        print(df_dasp)
+        print('parei')
+        df_dasp.to_excel('dasp_slither.xlsx')
+
+        self.soma_dataframe(df_dasp,'soma_smart_slither_dasp.xlsx')
 
 if '__main__'==__name__:
 
+
+    source_solidity = './smartbugs-curated/'
+    destiny_analysis = './slither/smartbugs-curated/'
+
     sa = SlitherAnalysis()
     print(os.getcwd())
-    sa.run_analysis_diretory(diretory_in='./repositories/verified-smart-contracts-database/verified-smart-contracts/',diretory_out='./slither/dennis_analysis3/')
+    sa.run_analysis_diretory(diretory_in=source_solidity,diretory_out=destiny_analysis)
 
-    # sa.resume_json('./slither/dennis_analysis/json/','./slither/dennis_analysis/json_analysis/')
+    sa.resume_json(f'{destiny_analysis}json/',f'{destiny_analysis}json_analysis/')
 
-    # sa.montar_dataframe_json('./slither/dennis_analysis/json_analysis/','./slither/dennis_analysis/json_analysis/')
+    df = sa.montar_dataframe_json(f'{destiny_analysis}json_analysis/',f'{destiny_analysis}json_analysis/')
+
+    sa.soma_dataframe(df,'soma_slither_smartbugs.xlsx')
+
+    sa.dasp(df)

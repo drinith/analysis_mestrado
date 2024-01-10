@@ -180,14 +180,14 @@ class MythrilAnalysis:
 
 if '__main__'==__name__:
 
-    source_solidity = './repositories/verified-smart-contracts-database/verified-smart-contracts/'
-    destiny_analysis = './mythril/dennis_analysis4/'
+    source_solidity = './smartbugs-curated'
+    destiny_analysis = './mythril/smartbugs-curated/'
 
     sa = MythrilAnalysis()
     print(os.getcwd())
     # sa.run_analysis_diretory(diretory_in=source_solidity,diretory_out=destiny_analysis)
 
-    # sa.resume_json(f'{destiny_analysis}json/',f'{destiny_analysis}json_analysis/')
+    sa.resume_json(f'{destiny_analysis}json/',f'{destiny_analysis}json_analysis/')
 
     df = sa.montar_dataframe_json(f'{destiny_analysis}json_analysis/',f'{destiny_analysis}json_analysis/')
 
