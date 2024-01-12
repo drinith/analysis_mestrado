@@ -27,10 +27,12 @@ def verifica_versao(_path=''):
                versao = 0 
                lista_versao.append(versao)
 
-    data = {'Arquivos':arquivos,'Versão':lista_versao[1]}      
+    data = {'Arquivos':arquivos,'Versão':lista_versao}      
     df=pd.DataFrame(data)
     print(df)  
-    df.to_excel(f'{_path}_versao.xlsx')  
+    nome = path.split("/")[-2]
+    
+    df.to_excel(f'{nome}_versao.xlsx')  
 
 if '__main__'==__name__:
 
