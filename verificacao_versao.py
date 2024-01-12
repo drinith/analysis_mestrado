@@ -1,5 +1,6 @@
 import os
 import re
+import pandas as pd
 
 def verifica_versao(_path=''):
 
@@ -7,7 +8,7 @@ def verifica_versao(_path=''):
 
     #pegar lista de arquivos
     arquivos = os.listdir(path)
-
+    lista_versao = []
     for arquivo in arquivos:
 
         with open(f'{path}{arquivo}', 'r') as arquivo:
@@ -19,12 +20,17 @@ def verifica_versao(_path=''):
             resultado = re.search(expressao_regular, conteudo)
 
             if resultado:
-                ret = resultado.group(1)
-                print(ret)
+                versao = resultado.group(1)
+                lista_versao.append(versao)
+                print(versao)
             else:
-               pass 
+               versao = 0 
+               lista_versao.append(versao)
 
-
+    data = {'Arquivos':arquivos,'Versão':lista_versao[1]}      
+    df=pd.DataFrame(data)
+    print(df)  
+    df.to_excel(f'{_path}_versao.xlsx')  
 
 if '__main__'==__name__:
 
