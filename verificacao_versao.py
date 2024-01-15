@@ -2,6 +2,7 @@ import os
 import re
 import pandas as pd
 
+
 def verifica_versao(_path=''):
 
     path = _path
@@ -36,6 +37,6 @@ def verifica_versao(_path=''):
 
 if '__main__'==__name__:
 
-    verifica_versao('./smartbugs-curated/')
+    verifica_versao('repositories/verified-smart-contracts-database/verified-smart-contracts/')
 
 

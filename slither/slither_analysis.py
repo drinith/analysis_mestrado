@@ -6,11 +6,36 @@ import sys
 from IPython.display import display
 import openpyxl
 import time
-
+import re
 
 
 class SlitherAnalysis:
 
+    solc =''
+
+    def __init__(self,_solc) -> None:
+
+        self.set_solc(_solc)
+        self.solc = _solc
+
+
+    def set_solc(self,_solc):
+
+        result = subprocess.run(f'solc-select use {_solc}', capture_output=True, text=True,shell=True)
+        print(result)
+        
+
+
+    def verificar_pragma(self,file_path):
+
+         with open(file_path, 'r') as arquivo:
+            conteudo = arquivo.read()
+            expressao_regular = r'pragma solidity (.+?);'
+
+            resultado = re.search(expressao_regular, conteudo)
+
+
+    
     def create_directory(self,_diretorio):
 
         diretorio = _diretorio
@@ -39,15 +64,10 @@ class SlitherAnalysis:
         error_count = 0
         # Exibir os nomes dos arquivos
         for file in files:
-            #Montar comando do slither
-            # command_slither = [
-            #     'slither',
-            #     f'{diretory_in}{file}',
-            #     '--json',
-            #     f'{diretory_out}json/{file}.json'
-            # ]
-            #Resultado do comando slither
-            # result= subprocess.run(command_slither, capture_output=True, text=True)
+            
+
+            pragma = self.verificar_pragma (f'{diretory_in}{file}')
+
             result= subprocess.run(f'slither  {diretory_in}{file} --json {diretory_out}json/{file}.json', capture_output=True, text=True,shell=True)
             
             print(result.args)
@@ -213,7 +233,7 @@ if '__main__'==__name__:
     source_solidity = './smartbugs-curated/'
     destiny_analysis = './slither/smartbugs-curated/'
 
-    sa = SlitherAnalysis()
+    sa = SlitherAnalysis('0.8.23')
     print(os.getcwd())
     sa.run_analysis_diretory(diretory_in=source_solidity,diretory_out=destiny_analysis)
 
