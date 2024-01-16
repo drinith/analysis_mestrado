@@ -23,8 +23,6 @@ class SlitherAnalysis:
 
         result = subprocess.run(f'solc-select use {_solc}', capture_output=True, text=True,shell=True)
         print(result)
-        
-
 
     def verificar_pragma(self,file_path):
 
@@ -34,6 +32,7 @@ class SlitherAnalysis:
 
             resultado = re.search(expressao_regular, conteudo)
 
+            print(resultado)
 
     
     def create_directory(self,_diretorio):
