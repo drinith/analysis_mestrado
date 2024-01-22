@@ -12,7 +12,7 @@ import re
 class SlitherAnalysis:
 
     solc =''
-    solc_dic = {'4':'0.4.26','8':'0.8.23'}
+    solc_dic = {'4':'0.4.26','5':'0.5.17','6':'0.6.12','7':'0.7.6','8':'0.8.23'}
     solc_numero ='' 
 
     def __init__(self,_solc='') -> None:
@@ -25,6 +25,7 @@ class SlitherAnalysis:
 
         result = subprocess.run(f'solc-select use {_solc}', capture_output=True, text=True,shell=True)
         print(result)
+        return result
 
     def verificar_pragma(self,file_path):
 
@@ -47,6 +48,8 @@ class SlitherAnalysis:
                     print('Mesma versão de solc')
                 else:
                     self.set_solc(self.solc_dic[numero])
+                    self.solc = self.solc_dic[numero]
+                    self.solc_numero = numero
 
 
 
