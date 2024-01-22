@@ -34,7 +34,7 @@ class SlitherAnalysis:
             
             conteudo = arquivo.read()
             #monta expressão regular
-            expressao_regular = r'.pragma solidity ^ \d\.(\d)'
+            expressao_regular = r'pragma solidity\s*\^\s*\d\.(\d)'
             #a retira o valor
             resultado = re.search(expressao_regular, conteudo)
 
