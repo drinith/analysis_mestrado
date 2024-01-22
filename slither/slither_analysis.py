@@ -251,8 +251,8 @@ class SlitherAnalysis:
 if '__main__'==__name__:
 
 
-    source_solidity = './smartbugs-curated/'
-    destiny_analysis = './slither/smartbugs-curated/'
+    source_solidity = './repositories/verified-smart-contracts/'
+    destiny_analysis = './slither/OLD_verified-smart-contracts/'
 
     sa = SlitherAnalysis('0.8.23')
     print(os.getcwd())
