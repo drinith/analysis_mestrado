@@ -34,7 +34,7 @@ class SlitherAnalysis:
             
             conteudo = arquivo.read()
             #monta expressão regular
-            expressao_regular = r'pragma solidity (.+?);'
+            expressao_regular = r'.pragma solidity ^ \d\.(\d)'
             #a retira o valor
             resultado = re.search(expressao_regular, conteudo)
 
@@ -252,7 +252,7 @@ if '__main__'==__name__:
 
 
     source_solidity = './repositories/verified-smart-contracts/'
-    destiny_analysis = './slither/OLD_verified-smart-contracts/'
+    destiny_analysis = './slither/verified-smart-contracts/'
 
     sa = SlitherAnalysis('0.8.23')
     print(os.getcwd())
