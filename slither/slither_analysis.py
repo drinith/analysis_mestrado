@@ -42,7 +42,7 @@ class SlitherAnalysis:
 
             if resultado:
                 versao = resultado.group(1)
-                numero = versao.split('.')[1]
+                numero = versao
                 
                 if(numero==self.solc_numero):
                     print('Mesma versão de solc')
@@ -216,11 +216,11 @@ class SlitherAnalysis:
         soma_total_vulnerabilidades = soma_total_vulnerabilidades.sort_values(by='Soma_Total', ascending=False)
 
         # Visualizar o DataFrame resultante
-        soma_total_vulnerabilidades.to_excel(arquivo)
+        soma_total_vulnerabilidades.to_excel(f'soma_{arquivo}.xlsx')
 
         
 
-    def dasp (self, df):
+    def dasp (self, df, arquivo):
 
         dasp_dic = {'arbitrary-send': 'access_control', 'assembly': 'Ignore', 'calls-loop': 'denial_service', 'constable-states': 'Ignore', 'constant-function': 'Ignore', 'controlled-delegatecall': 'access_control', 'deprecated-standards': 'Ignore', 'erc20-indexed': 'Ignore', 'erc20-interface': 'Ignore', 'external-function': 'Ignore', 'incorrect-equality': 'Other', 'locked-ether': 'Other', 'low-level-calls': 'unchecked_low_calls', 'naming-convention': 'Ignore', 'reentrancy-benign': 'reentrancy', 'reentrancy-eth': 'reentrancy', 'reentrancy-no-eth': 'reentrancy', 'shadowing-abstract': 'Ignore', 'shadowing-builtin': 'Ignore', 'shadowing-local': 'Ignore', 'shadowing-state': 'Ignore', 'solc-version': 'Ignore', 'suicidal': 'access_control', 'timestamp': 'time_manipulation', 'tx-origin': 'access_control', 'uninitialized-local': 'Other', 'uninitialized-state': 'Other', 'uninitialized-storage': 'Other', 'unused-return': 'unchecked_low_calls', 'unused-state': 'Ignore'}
 
@@ -246,13 +246,13 @@ class SlitherAnalysis:
         print('parei')
         df_dasp.to_excel('dasp_slither.xlsx')
 
-        self.soma_dataframe(df_dasp,'soma_smart_slither_dasp.xlsx')
+        self.soma_dataframe(df_dasp,f'soma_{arquivo}_dasp.xlsx')
 
 if '__main__'==__name__:
 
-
-    source_solidity = './repositories/verified-smart-contracts/'
-    destiny_analysis = './slither/verified-smart-contracts/'
+    name = 'verified-smart-contracts'
+    source_solidity = f'./repositories/{name}/'
+    destiny_analysis = f'./slither/{name}/'
 
     sa = SlitherAnalysis('0.8.23')
     print(os.getcwd())
@@ -262,6 +262,6 @@ if '__main__'==__name__:
 
     df = sa.montar_dataframe_json(f'{destiny_analysis}json_analysis/',f'{destiny_analysis}json_analysis/')
 
-    sa.soma_dataframe(df,'soma_slither_smartbugs.xlsx')
+    sa.soma_dataframe(df,f'slither_{name}')
 
-    sa.dasp(df)
+    sa.dasp(df,f'slither_{name}')
