@@ -216,7 +216,7 @@ class SlitherAnalysis:
         soma_total_vulnerabilidades = soma_total_vulnerabilidades.sort_values(by='Soma_Total', ascending=False)
 
         # Visualizar o DataFrame resultante
-        soma_total_vulnerabilidades.to_excel(f'soma_{arquivo}.xlsx')
+        soma_total_vulnerabilidades.to_excel(f'{arquivo}_soma.xlsx')
 
         
 
@@ -244,13 +244,13 @@ class SlitherAnalysis:
 
         print(df_dasp)
         print('parei')
-        df_dasp.to_excel('dasp_slither.xlsx')
+        df_dasp.to_excel(f'{arquivo}_dasp.xlsx')
 
-        self.soma_dataframe(df_dasp,f'soma_{arquivo}_dasp.xlsx')
+        self.soma_dataframe(df_dasp,f'{arquivo}_dasp')
 
 if '__main__'==__name__:
 
-    version='0.10.0'
+    version='0.8.0'
     name = 'verified-smart-contracts'
     source_solidity = f'./repositories/{name}/'
     destiny_analysis = f'./slither/{version}_{name}/'
@@ -270,9 +270,9 @@ if '__main__'==__name__:
 
     sa.run_analysis_diretory(diretory_in=source_solidity,diretory_out=destiny_analysis)
 
-    sa.resume_json(f'{version}{destiny_analysis}json/',f'{version}{destiny_analysis}json_analysis/')
+    sa.resume_json(f'{destiny_analysis}json/',f'{destiny_analysis}json_analysis/')
 
-    df = sa.montar_dataframe_json(f'{version}{destiny_analysis}json_analysis/',f'{destiny_analysis}results/')
+    df = sa.montar_dataframe_json(f'{destiny_analysis}json_analysis/',f'{destiny_analysis}results/')
 
     sa.soma_dataframe(df,f'{destiny_analysis}{version}_slither_{name}')
 
