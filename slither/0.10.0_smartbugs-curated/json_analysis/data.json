@@ -1,0 +1,1033 @@
+[
+    {
+        "nome": "arbitrary_location_write_simple.sol.json",
+        "vulnerabilidades": [
+            "controlled-array-length",
+            "tautology",
+            "solc-version",
+            "solc-version",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "auction.sol.json",
+        "vulnerabilidades": [
+            "solc-version",
+            "solc-version",
+            "reentrancy-unlimited-gas"
+        ]
+    },
+    {
+        "nome": "BECToken.sol.json",
+        "vulnerabilidades": [
+            "dead-code",
+            "dead-code",
+            "solc-version",
+            "solc-version",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "too-many-digits",
+            "constable-states",
+            "constable-states",
+            "constable-states",
+            "constable-states",
+            "external-function"
+        ]
+    },
+    {
+        "nome": "blackjack.sol.json",
+        "vulnerabilidades": [
+            "controlled-array-length",
+            "controlled-array-length",
+            "weak-prng",
+            "tautology",
+            "tautology",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "solc-version",
+            "solc-version",
+            "naming-convention",
+            "reentrancy-unlimited-gas",
+            "reentrancy-unlimited-gas",
+            "reentrancy-unlimited-gas",
+            "reentrancy-unlimited-gas",
+            "reentrancy-unlimited-gas",
+            "constable-states",
+            "constable-states",
+            "constable-states"
+        ]
+    },
+    {
+        "nome": "crypto_roulette.sol.json",
+        "vulnerabilidades": [
+            "controlled-array-length",
+            "weak-prng",
+            "uninitialized-storage",
+            "incorrect-equality",
+            "timestamp",
+            "timestamp",
+            "deprecated-standards",
+            "deprecated-standards",
+            "solc-version",
+            "solc-version",
+            "reentrancy-unlimited-gas",
+            "constable-states"
+        ]
+    },
+    {
+        "nome": "dos_address.sol.json",
+        "vulnerabilidades": [
+            "controlled-array-length",
+            "solc-version",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "dos_number.sol.json",
+        "vulnerabilidades": [
+            "costly-loop",
+            "solc-version",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "dos_simple.sol.json",
+        "vulnerabilidades": [
+            "solc-version",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "ERC20.sol.json",
+        "vulnerabilidades": [
+            "dead-code",
+            "dead-code",
+            "dead-code",
+            "solc-version",
+            "solc-version",
+            "unused-state",
+            "constable-states"
+        ]
+    },
+    {
+        "nome": "etheraffle.sol.json",
+        "vulnerabilidades": [
+            "calls-loop",
+            "costly-loop",
+            "solc-version",
+            "solc-version",
+            "naming-convention",
+            "reentrancy-unlimited-gas"
+        ]
+    },
+    {
+        "nome": "etherpot_lotto.sol.json",
+        "vulnerabilidades": [
+            "weak-prng",
+            "unchecked-send",
+            "unchecked-send",
+            "deprecated-standards",
+            "solc-version",
+            "solc-version",
+            "reentrancy-unlimited-gas",
+            "reentrancy-unlimited-gas",
+            "too-many-digits",
+            "too-many-digits"
+        ]
+    },
+    {
+        "nome": "etherstore.sol.json",
+        "vulnerabilidades": [
+            "reentrancy-eth",
+            "timestamp",
+            "solc-version",
+            "solc-version",
+            "low-level-calls",
+            "naming-convention",
+            "constable-states"
+        ]
+    },
+    {
+        "nome": "ether_lotto.sol.json",
+        "vulnerabilidades": [
+            "arbitrary-send-eth",
+            "weak-prng",
+            "incorrect-equality",
+            "timestamp",
+            "deprecated-standards",
+            "solc-version",
+            "solc-version",
+            "reentrancy-unlimited-gas"
+        ]
+    },
+    {
+        "nome": "eth_tx_order_dependence_minimal.sol.json",
+        "vulnerabilidades": [
+            "events-maths",
+            "solc-version",
+            "solc-version",
+            "reentrancy-unlimited-gas",
+            "reentrancy-unlimited-gas"
+        ]
+    },
+    {
+        "nome": "FibonacciBalance.sol.json",
+        "vulnerabilidades": [
+            "arbitrary-send-eth",
+            "controlled-delegatecall",
+            "controlled-delegatecall",
+            "uninitialized-state",
+            "missing-zero-check",
+            "deprecated-standards",
+            "deprecated-standards",
+            "solc-version",
+            "solc-version",
+            "low-level-calls",
+            "low-level-calls",
+            "naming-convention",
+            "naming-convention",
+            "constable-states",
+            "constable-states"
+        ]
+    },
+    {
+        "nome": "FindThisHash.sol.json",
+        "vulnerabilidades": [
+            "arbitrary-send-eth",
+            "deprecated-standards",
+            "solc-version",
+            "solc-version",
+            "external-function"
+        ]
+    },
+    {
+        "nome": "governmental_survey.sol.json",
+        "vulnerabilidades": [
+            "arbitrary-send-eth",
+            "tautology",
+            "unchecked-send",
+            "unchecked-send",
+            "timestamp",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "solc-version",
+            "solc-version",
+            "naming-convention",
+            "reentrancy-unlimited-gas",
+            "constable-states"
+        ]
+    },
+    {
+        "nome": "guess_the_random_number.sol.json",
+        "vulnerabilidades": [
+            "arbitrary-send-eth",
+            "incorrect-equality",
+            "incorrect-equality",
+            "timestamp",
+            "deprecated-standards",
+            "solc-version",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "incorrect_constructor_name1.sol.json",
+        "vulnerabilidades": [
+            "solc-version",
+            "solc-version",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "mapping_write.sol.json",
+        "vulnerabilidades": [
+            "controlled-array-length",
+            "uninitialized-state",
+            "solc-version",
+            "solc-version",
+            "constable-states"
+        ]
+    },
+    {
+        "nome": "modifier_reentrancy.sol.json",
+        "vulnerabilidades": [
+            "reentrancy-no-eth",
+            "solc-version",
+            "solc-version",
+            "naming-convention",
+            "unused-state"
+        ]
+    },
+    {
+        "nome": "multiowned_vulnerable.sol.json",
+        "vulnerabilidades": [
+            "solc-version",
+            "solc-version",
+            "naming-convention",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "mycontract.sol.json",
+        "vulnerabilidades": [
+            "arbitrary-send-eth",
+            "tx-origin",
+            "missing-zero-check",
+            "solc-version",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "name_registrar.sol.json",
+        "vulnerabilidades": [
+            "uninitialized-storage",
+            "solc-version",
+            "solc-version",
+            "naming-convention",
+            "naming-convention",
+            "constable-states"
+        ]
+    },
+    {
+        "nome": "odds_and_evens.sol.json",
+        "vulnerabilidades": [
+            "arbitrary-send-eth",
+            "deprecated-standards",
+            "deprecated-standards",
+            "solc-version",
+            "solc-version",
+            "reentrancy-unlimited-gas"
+        ]
+    },
+    {
+        "nome": "old_blockhash.sol.json",
+        "vulnerabilidades": [
+            "solc-version",
+            "solc-version",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "open_address_lottery.sol.json",
+        "vulnerabilidades": [
+            "weak-prng",
+            "uninitialized-storage",
+            "boolean-equal",
+            "deprecated-standards",
+            "solc-version",
+            "solc-version",
+            "naming-convention",
+            "reentrancy-unlimited-gas",
+            "constable-states"
+        ]
+    },
+    {
+        "nome": "overflow_single_tx.sol.json",
+        "vulnerabilidades": [
+            "solc-version",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "parity_wallet_bug_2.sol.json",
+        "vulnerabilidades": [
+            "reentrancy-eth",
+            "suicidal",
+            "uninitialized-local",
+            "uninitialized-local",
+            "incorrect-modifier",
+            "incorrect-modifier",
+            "reentrancy-events",
+            "reentrancy-events",
+            "timestamp",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "solc-version",
+            "solc-version",
+            "low-level-calls",
+            "low-level-calls",
+            "missing-inheritance",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "unused-state",
+            "external-function"
+        ]
+    },
+    {
+        "nome": "phishable.sol.json",
+        "vulnerabilidades": [
+            "arbitrary-send-eth",
+            "tx-origin",
+            "missing-zero-check",
+            "missing-zero-check",
+            "solc-version",
+            "solc-version",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "proxy.sol.json",
+        "vulnerabilidades": [
+            "controlled-delegatecall",
+            "solc-version",
+            "solc-version",
+            "low-level-calls",
+            "naming-convention",
+            "external-function"
+        ]
+    },
+    {
+        "nome": "random_number_generator.sol.json",
+        "vulnerabilidades": [
+            "weak-prng",
+            "dead-code",
+            "solc-version",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "reentrance.sol.json",
+        "vulnerabilidades": [
+            "reentrancy-eth",
+            "solc-version",
+            "solc-version",
+            "low-level-calls",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "redundant-statements"
+        ]
+    },
+    {
+        "nome": "reentrancy_dao.sol.json",
+        "vulnerabilidades": [
+            "reentrancy-eth",
+            "solc-version",
+            "solc-version",
+            "low-level-calls"
+        ]
+    },
+    {
+        "nome": "incorrect_constructor_name3.sol.json",
+        "vulnerabilidades": [
+            "solc-version",
+            "solc-version",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "integer_overflow_1.sol.json",
+        "vulnerabilidades": [
+            "solc-version",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "integer_overflow_add.sol.json",
+        "vulnerabilidades": [
+            "solc-version",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "integer_overflow_benign_1.sol.json",
+        "vulnerabilidades": [
+            "solc-version",
+            "solc-version",
+            "constable-states"
+        ]
+    },
+    {
+        "nome": "integer_overflow_mapping_sym_1.sol.json",
+        "vulnerabilidades": [
+            "solc-version",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "integer_overflow_minimal.sol.json",
+        "vulnerabilidades": [
+            "solc-version",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "integer_overflow_mul.sol.json",
+        "vulnerabilidades": [
+            "solc-version",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "integer_overflow_multitx_multifunc_feasible.sol.json",
+        "vulnerabilidades": [
+            "solc-version",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "integer_overflow_multitx_onefunc_feasible.sol.json",
+        "vulnerabilidades": [
+            "solc-version",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "king_of_the_ether_throne.sol.json",
+        "vulnerabilidades": [
+            "controlled-array-length",
+            "divide-before-multiply",
+            "divide-before-multiply",
+            "divide-before-multiply",
+            "divide-before-multiply",
+            "divide-before-multiply",
+            "divide-before-multiply",
+            "unchecked-send",
+            "unchecked-send",
+            "unchecked-send",
+            "unchecked-send",
+            "events-access",
+            "missing-zero-check",
+            "incorrect-modifier",
+            "timestamp",
+            "solc-version",
+            "solc-version",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "reentrancy-unlimited-gas",
+            "similar-names"
+        ]
+    },
+    {
+        "nome": "list_dos.sol.json",
+        "vulnerabilidades": [
+            "controlled-array-length",
+            "controlled-array-length",
+            "unchecked-send",
+            "unchecked-send",
+            "unchecked-send",
+            "unchecked-send",
+            "unchecked-send",
+            "unchecked-send",
+            "unchecked-send",
+            "missing-zero-check",
+            "timestamp",
+            "solc-version",
+            "solc-version",
+            "reentrancy-unlimited-gas",
+            "reentrancy-unlimited-gas",
+            "reentrancy-unlimited-gas",
+            "reentrancy-unlimited-gas",
+            "cache-array-length"
+        ]
+    },
+    {
+        "nome": "lottery.sol.json",
+        "vulnerabilidades": [
+            "controlled-array-length",
+            "incorrect-equality",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "solc-version",
+            "solc-version",
+            "cache-array-length"
+        ]
+    },
+    {
+        "nome": "lotto.sol.json",
+        "vulnerabilidades": [
+            "arbitrary-send-eth",
+            "uninitialized-state",
+            "uninitialized-state",
+            "unchecked-send",
+            "unchecked-send",
+            "solc-version",
+            "solc-version",
+            "reentrancy-unlimited-gas",
+            "constable-states",
+            "constable-states"
+        ]
+    },
+    {
+        "nome": "roulette.sol.json",
+        "vulnerabilidades": [
+            "arbitrary-send-eth",
+            "weak-prng",
+            "incorrect-equality",
+            "timestamp",
+            "solc-version",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "rubixi.sol.json",
+        "vulnerabilidades": [
+            "controlled-array-length",
+            "divide-before-multiply",
+            "unchecked-send",
+            "unchecked-send",
+            "unchecked-send",
+            "unchecked-send",
+            "events-access",
+            "events-maths",
+            "events-maths",
+            "events-maths",
+            "events-maths",
+            "missing-zero-check",
+            "incorrect-modifier",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "solc-version",
+            "solc-version",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "reentrancy-unlimited-gas",
+            "reentrancy-unlimited-gas",
+            "reentrancy-unlimited-gas",
+            "reentrancy-unlimited-gas"
+        ]
+    },
+    {
+        "nome": "short_address_example.sol.json",
+        "vulnerabilidades": [
+            "solc-version",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "simple_dao.sol.json",
+        "vulnerabilidades": [
+            "reentrancy-eth",
+            "solc-version",
+            "solc-version",
+            "low-level-calls"
+        ]
+    },
+    {
+        "nome": "simple_suicide.sol.json",
+        "vulnerabilidades": [
+            "suicidal",
+            "solc-version",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "smart_billions.sol.json",
+        "vulnerabilidades": [
+            "controlled-array-length",
+            "controlled-array-length",
+            "controlled-array-length",
+            "divide-before-multiply",
+            "divide-before-multiply",
+            "erc20-interface",
+            "erc20-interface",
+            "erc20-interface",
+            "erc20-interface",
+            "erc20-interface",
+            "erc20-interface",
+            "incorrect-equality",
+            "incorrect-equality",
+            "incorrect-equality",
+            "incorrect-equality",
+            "incorrect-equality",
+            "incorrect-equality",
+            "incorrect-equality",
+            "incorrect-equality",
+            "shadowing-local",
+            "events-access",
+            "events-access",
+            "events-maths",
+            "events-maths",
+            "costly-loop",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "solc-version",
+            "solc-version",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "reentrancy-unlimited-gas",
+            "reentrancy-unlimited-gas",
+            "reentrancy-unlimited-gas",
+            "reentrancy-unlimited-gas",
+            "too-many-digits",
+            "too-many-digits",
+            "too-many-digits",
+            "too-many-digits",
+            "too-many-digits",
+            "too-many-digits",
+            "cache-array-length",
+            "constable-states"
+        ]
+    },
+    {
+        "nome": "spank_chain_payment.sol.json",
+        "vulnerabilidades": [
+            "arbitrary-send-eth",
+            "reentrancy-eth",
+            "reentrancy-eth",
+            "constant-function-asm",
+            "constant-function-asm",
+            "constant-function-asm",
+            "incorrect-equality",
+            "incorrect-equality",
+            "incorrect-equality",
+            "incorrect-equality",
+            "incorrect-equality",
+            "incorrect-equality",
+            "incorrect-equality",
+            "incorrect-equality",
+            "reentrancy-no-eth",
+            "reentrancy-no-eth",
+            "reentrancy-no-eth",
+            "reentrancy-no-eth",
+            "tautology",
+            "tautology",
+            "reentrancy-benign",
+            "reentrancy-benign",
+            "reentrancy-benign",
+            "reentrancy-events",
+            "reentrancy-events",
+            "reentrancy-events",
+            "reentrancy-events",
+            "reentrancy-events",
+            "reentrancy-events",
+            "timestamp",
+            "timestamp",
+            "timestamp",
+            "timestamp",
+            "timestamp",
+            "timestamp",
+            "timestamp",
+            "timestamp",
+            "timestamp",
+            "timestamp",
+            "timestamp",
+            "assembly",
+            "assembly",
+            "assembly",
+            "boolean-equal",
+            "boolean-equal",
+            "boolean-equal",
+            "boolean-equal",
+            "boolean-equal",
+            "boolean-equal",
+            "boolean-equal",
+            "solc-version",
+            "solc-version",
+            "low-level-calls",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "reentrancy-unlimited-gas",
+            "reentrancy-unlimited-gas",
+            "reentrancy-unlimited-gas",
+            "similar-names",
+            "similar-names",
+            "constable-states",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function"
+        ]
+    },
+    {
+        "nome": "timed_crowdsale.sol.json",
+        "vulnerabilidades": [
+            "timestamp",
+            "solc-version",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "timelock.sol.json",
+        "vulnerabilidades": [
+            "timestamp",
+            "solc-version",
+            "solc-version",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "token.sol.json",
+        "vulnerabilidades": [
+            "tautology",
+            "solc-version",
+            "solc-version",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "tokensalechallenge.sol.json",
+        "vulnerabilidades": [
+            "solc-version",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "unprotected0.sol.json",
+        "vulnerabilidades": [
+            "missing-zero-check",
+            "solc-version",
+            "solc-version",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "wallet_02_refund_nosub.sol.json",
+        "vulnerabilidades": [
+            "missing-zero-check",
+            "solc-version",
+            "solc-version",
+            "reentrancy-unlimited-gas"
+        ]
+    },
+    {
+        "nome": "wallet_03_wrong_constructor.sol.json",
+        "vulnerabilidades": [
+            "missing-zero-check",
+            "solc-version",
+            "solc-version",
+            "reentrancy-unlimited-gas"
+        ]
+    },
+    {
+        "nome": "wallet_04_confused_sign.sol.json",
+        "vulnerabilidades": [
+            "missing-zero-check",
+            "solc-version",
+            "solc-version",
+            "reentrancy-unlimited-gas"
+        ]
+    },
+    {
+        "nome": "incorrect_constructor_name2.sol.json",
+        "vulnerabilidades": [
+            "solc-version",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "lucky_doubler.sol.json",
+        "vulnerabilidades": [
+            "controlled-array-length",
+            "controlled-array-length",
+            "weak-prng",
+            "unchecked-send",
+            "unchecked-send",
+            "unchecked-send",
+            "unchecked-send",
+            "events-access",
+            "events-maths",
+            "events-maths",
+            "missing-zero-check",
+            "incorrect-modifier",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "solc-version",
+            "solc-version",
+            "reentrancy-unlimited-gas",
+            "reentrancy-unlimited-gas"
+        ]
+    },
+    {
+        "nome": "reentrancy_simple.sol.json",
+        "vulnerabilidades": [
+            "reentrancy-eth",
+            "deprecated-standards",
+            "solc-version",
+            "solc-version",
+            "low-level-calls"
+        ]
+    }
+]

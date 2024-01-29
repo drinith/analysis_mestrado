@@ -7,7 +7,7 @@ from IPython.display import display
 import openpyxl
 import time
 import re
-from ..smart_tools_analysis.smart_tools_analysis import SmartToolsAnalysis 
+from smart_tools_analysis.smart_tools_analysis import SmartToolsAnalysis
 
 class SlitherAnalysis(SmartToolsAnalysis):
 
@@ -60,17 +60,17 @@ class SlitherAnalysis(SmartToolsAnalysis):
     #             print('Não pegou pragma')
 
     
-    def create_directory(self,_diretorio):
+    # def create_directory(self,_diretorio):
 
-        diretorio = _diretorio
+    #     diretorio = _diretorio
 
-        # Verifica se o diretório não existe
-        if not os.path.exists(diretorio) and _diretorio!='' :
-            # Cria o diretório se não existir
-            os.makedirs(diretorio)
-            print(f'Diretório "{diretorio}" criado com sucesso.')
-        else:
-            print(f'O diretório "{diretorio}" já existe.')
+    #     # Verifica se o diretório não existe
+    #     if not os.path.exists(diretorio) and _diretorio!='' :
+    #         # Cria o diretório se não existir
+    #         os.makedirs(diretorio)
+    #         print(f'Diretório "{diretorio}" criado com sucesso.')
+    #     else:
+    #         print(f'O diretório "{diretorio}" já existe.')
 
     #Buscar os arquivos e rodar o slither
     def run_analysis_diretory(self,diretory_in,diretory_out=''):
@@ -177,49 +177,49 @@ class SlitherAnalysis(SmartToolsAnalysis):
         with open(f'{diretory_out}log.txt', 'w') as log:
             log.write(f' Soliditys {solidity_lidos} \n Erros {solidity_erro}\n Lista erros {lista_erro}')
 
-    def montar_dataframe_json(self,diretory_in,diretory_out):
+    # def montar_dataframe_json(self,diretory_in,diretory_out):
 
-        #Criar os diretórios caso não existam e seja necessário
-        self.create_directory(diretory_in)
-        self.create_directory(diretory_out)
+    #     #Criar os diretórios caso não existam e seja necessário
+    #     self.create_directory(diretory_in)
+    #     self.create_directory(diretory_out)
         
-        json_file = open(f'{diretory_in}data.json')
-        lista_sol = json.load(json_file)
+    #     json_file = open(f'{diretory_in}data.json')
+    #     lista_sol = json.load(json_file)
 
-        contagem_vulnerabilidades = {}
+    #     contagem_vulnerabilidades = {}
 
-        for arquivo in lista_sol:
-            nome_arquivo = arquivo["nome"]
-            vulnerabilidades = arquivo["vulnerabilidades"]
+    #     for arquivo in lista_sol:
+    #         nome_arquivo = arquivo["nome"]
+    #         vulnerabilidades = arquivo["vulnerabilidades"]
 
-            contagem = {}
-            for vulnerabilidade in vulnerabilidades:
-                if vulnerabilidade not in contagem:
-                    contagem[vulnerabilidade] = 1
-                else:
-                    contagem[vulnerabilidade] += 1
+    #         contagem = {}
+    #         for vulnerabilidade in vulnerabilidades:
+    #             if vulnerabilidade not in contagem:
+    #                 contagem[vulnerabilidade] = 1
+    #             else:
+    #                 contagem[vulnerabilidade] += 1
 
-            contagem_vulnerabilidades[nome_arquivo] = contagem
+    #         contagem_vulnerabilidades[nome_arquivo] = contagem
 
-        # Criar um DataFrame do pandas a partir do dicionário
-        df = pd.DataFrame(contagem_vulnerabilidades).fillna(0).astype(int)
+    #     # Criar um DataFrame do pandas a partir do dicionário
+    #     df = pd.DataFrame(contagem_vulnerabilidades).fillna(0).astype(int)
 
-        # Visualizar o DataFrame resultante
-        dt =df.transpose()
-        dt.to_excel(f'{diretory_out}resultado.xlsx')
-        return df.transpose()
+    #     # Visualizar o DataFrame resultante
+    #     dt =df.transpose()
+    #     dt.to_excel(f'{diretory_out}resultado.xlsx')
+    #     return df.transpose()
         
-    def soma_dataframe(self,df,arquivo):
+    # def soma_dataframe(self,df,arquivo):
 
-        # Criar um novo DataFrame com a soma total de cada vulnerabilidade
-        soma_total_vulnerabilidades = df.sum(axis=0).reset_index()
-        soma_total_vulnerabilidades.columns = ['Vulnerabilidade', 'Soma_Total']
+    #     # Criar um novo DataFrame com a soma total de cada vulnerabilidade
+    #     soma_total_vulnerabilidades = df.sum(axis=0).reset_index()
+    #     soma_total_vulnerabilidades.columns = ['Vulnerabilidade', 'Soma_Total']
 
-        # Ordenar o DataFrame pela coluna 'Soma_Total' em ordem decrescente
-        soma_total_vulnerabilidades = soma_total_vulnerabilidades.sort_values(by='Soma_Total', ascending=False)
+    #     # Ordenar o DataFrame pela coluna 'Soma_Total' em ordem decrescente
+    #     soma_total_vulnerabilidades = soma_total_vulnerabilidades.sort_values(by='Soma_Total', ascending=False)
 
-        # Visualizar o DataFrame resultante
-        soma_total_vulnerabilidades.to_excel(f'{arquivo}_soma.xlsx')
+    #     # Visualizar o DataFrame resultante
+    #     soma_total_vulnerabilidades.to_excel(f'{arquivo}_soma.xlsx')
 
         
 
@@ -251,32 +251,30 @@ class SlitherAnalysis(SmartToolsAnalysis):
 
         self.soma_dataframe(df_dasp,f'{arquivo}_dasp')
 
-if '__main__'==__name__:
+# if '__main__'==__name__:
 
-    version='0.8.0'
-    name = 'verified-smart-contracts'
-    source_solidity = f'./repositories/{name}/'
-    destiny_analysis = f'./slither/{version}_{name}/'
+#     version='0.8.0'
+#     name = 'verified-smart-contracts'
+#     source_solidity = f'./repositories/{name}/'
+#     destiny_analysis = f'./slither/{version}_{name}/'
     
 
-    sa = SlitherAnalysis('0.8.23')
-    print(os.getcwd())
+#     sa = SlitherAnalysis('0.8.23')
+#     print(os.getcwd())
 
 
-    print(f'{destiny_analysis}json/')
-    print(f'{destiny_analysis}json_analysis/')
-    print(f'{destiny_analysis}results/')
-    print(f'{destiny_analysis}{version}_slither_{name}')
-   
+#     print(f'{destiny_analysis}json/')
+#     print(f'{destiny_analysis}json_analysis/')
+#     print(f'{destiny_analysis}results/')
+#     print(f'{destiny_analysis}{version}_slither_{name}')
 
 
+#     sa.run_analysis_diretory(diretory_in=source_solidity,diretory_out=destiny_analysis)
 
-    sa.run_analysis_diretory(diretory_in=source_solidity,diretory_out=destiny_analysis)
+#     sa.resume_json(f'{destiny_analysis}json/',f'{destiny_analysis}json_analysis/')
 
-    sa.resume_json(f'{destiny_analysis}json/',f'{destiny_analysis}json_analysis/')
+#     df = sa.montar_dataframe_json(f'{destiny_analysis}json_analysis/',f'{destiny_analysis}results/')
 
-    df = sa.montar_dataframe_json(f'{destiny_analysis}json_analysis/',f'{destiny_analysis}results/')
+#     sa.soma_dataframe(df,f'{destiny_analysis}{version}_slither_{name}')
 
-    sa.soma_dataframe(df,f'{destiny_analysis}{version}_slither_{name}')
-
-    sa.dasp(df,f'{destiny_analysis}{version}_slither_{name}')
+#     sa.dasp(df,f'{destiny_analysis}{version}_slither_{name}')

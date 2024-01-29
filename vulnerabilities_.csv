@@ -1,0 +1,16 @@
+Vulnerability name,access_control,arithmetic,denial_service,reentrancy,unchecked_low_calls,bad_randomness,front_running,time_manipulation,short_addresses,Other,Ignore
+Call data forwarded with delegatecall(),TRUE,,,,,,,,,,
+DELEGATECALL to a user-supplied address,TRUE,,,,,,,,,,
+Dependence on predictable environment variable,,,,,,,,,,TRUE,
+Dependence on predictable variable,,,,,,,,,,TRUE,
+Ether send,TRUE,,,,,,,,,,
+Exception state,,,,,,,,,,TRUE,
+Integer Overflow,,TRUE,,,,,,,,,
+Integer Underflow,,TRUE,,,,,,,,,
+Message call to external contract,,,,TRUE,,,,,,,
+Multiple Calls,,,,,,,,,,,TRUE
+State change after external call,,,,TRUE,,,,,,,
+Transaction order dependence,,,,,,,TRUE,,,,
+Unchecked CALL return value,,,,,TRUE,,,,,,
+Unchecked SUICIDE,TRUE,,,,,,,,,,
+Use of tx.origin,TRUE,,,,,,,,,,
