@@ -7,10 +7,11 @@ if '__main__'==__name__:
     version='0.8.0'
     name = 'smartbugs-curated'
     source_solidity = f'./repositories/{name}/'
-    destiny_analysis = f'./slither/{version}_{name}/'
+    destiny_analysis = f'./mythril/{version}_{name}/'
     
-    analise='s'
+    analise='m'
     if(analise=='s'):
+        
         sa = SlitherAnalysis('0.4.26')
         print(os.getcwd())
 
@@ -35,6 +36,7 @@ if '__main__'==__name__:
 
     ### Mithril
     elif(analise=='m'):
+        
         ma = MythrilAnalysis('0.4.26')
         print(os.getcwd())
 

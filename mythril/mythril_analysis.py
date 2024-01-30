@@ -7,6 +7,8 @@ from IPython.display import display
 import openpyxl
 from smart_tools_analysis.smart_tools_analysis import SmartToolsAnalysis
 
+
+
 class MythrilAnalysis(SmartToolsAnalysis):
     
     
@@ -202,6 +204,8 @@ class MythrilAnalysis(SmartToolsAnalysis):
     #     # Visualizar o DataFrame resultante
     #     soma_total_vulnerabilidades.to_excel('soma.xlsx')  
 
+
+
 if '__main__'==__name__:
 
     # source_solidity = './smartbugs-curated'
@@ -242,7 +246,3 @@ if '__main__'==__name__:
     # ma.soma_dataframe(df,f'{destiny_analysis}{version}_slither_{name}')
 
     # ma.dasp(df,f'{destiny_analysis}{version}_slither_{name}')
-
-    
-
-

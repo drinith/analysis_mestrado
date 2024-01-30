@@ -88,8 +88,7 @@ class SlitherAnalysis(SmartToolsAnalysis):
         error_count = 0
         # Exibir os nomes dos arquivos
         for file in files:
-            
-            
+                        
             pragma = self.verificar_pragma (f'{diretory_in}{file}')
 
             result= subprocess.run(f'slither  {diretory_in}{file} --json {diretory_out}json/{file}.json', capture_output=True, text=True,shell=True)
