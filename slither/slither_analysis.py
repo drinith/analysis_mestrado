@@ -11,7 +11,6 @@ from smart_tools_analysis.smart_tools_analysis import SmartToolsAnalysis
 
 class SlitherAnalysis(SmartToolsAnalysis):
 
-
     def __init__(self, _solc='') -> None:
         super().__init__(_solc)
 
