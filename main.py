@@ -7,12 +7,16 @@ if '__main__'==__name__:
     version='0.8.0'
     name = 'smartbugs-curated'
     source_solidity = f'./repositories/{name}/'
-    destiny_analysis = f'./mythril/{version}_{name}/'
+  
     
-    analise='m'
+    analise='s'
+
     if(analise=='s'):
         
         sa = SlitherAnalysis('0.4.26')
+        destiny_analysis = f'./slither/{version}_{name}/'
+
+
         print(os.getcwd())
 
 
@@ -24,9 +28,9 @@ if '__main__'==__name__:
 
 
         ### Slither 
-        sa.run_analysis_diretory(diretory_in=source_solidity,diretory_out=destiny_analysis)
+        # sa.run_analysis_diretory(diretory_in=source_solidity,diretory_out=destiny_analysis)
 
-        sa.resume_json(f'{destiny_analysis}json/',f'{destiny_analysis}json_analysis/')
+        # sa.resume_json(f'{destiny_analysis}json/',f'{destiny_analysis}json_analysis/')
 
         df = sa.montar_dataframe_json(f'{destiny_analysis}json_analysis/',f'{destiny_analysis}results/')
 
@@ -38,6 +42,7 @@ if '__main__'==__name__:
     elif(analise=='m'):
         
         ma = MythrilAnalysis('0.4.26')
+        destiny_analysis = f'./mythril/{version}_{name}/'
         print(os.getcwd())
 
 

@@ -206,7 +206,7 @@ class MythrilAnalysis(SmartToolsAnalysis):
 
 
 
-if '__main__'==__name__:
+#if '__main__'==__name__:
 
     # source_solidity = './smartbugs-curated'
     # destiny_analysis = './mythril/smartbugs-curated/'

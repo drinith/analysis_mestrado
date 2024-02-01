@@ -1,42 +1,42 @@
 import os
+import pandas as pd 
 
-def listar_arquivos_e_subpastas(diretorio):
+def buscar_arquivos(diretorio=''):
   """
-  Função que lista os nomes das subpastas e dos arquivos dentro de um diretório.
+  Função que busca todos os arquivos em um diretório e suas subpastas.
 
-  Argumentos:
-    diretorio: Caminho para o diretório que deseja listar.
+  Args:
+    diretorio: O diretório onde a busca deve ser iniciada.
 
-  Retorno:
-    Uma lista com os nomes das subpastas e dos arquivos.
+  Returns:
+    Uma lista com os nomes de todos os arquivos encontrados.
   """
 
-  # Lista os arquivos e subpastas no diretório
-  itens = os.listdir(diretorio)
+  arquivos = []
+  for pasta, subpastas, arquivos_na_pasta in os.walk(diretorio):
+    arquivos.extend([os.path.join(pasta, arquivo) for arquivo in arquivos_na_pasta])
+  
 
-  # Cria uma lista para armazenar os nomes
-  nomes = []
+  lista=[]
 
-  # Itera sobre cada item na lista
-  for item in itens:
-    # Verifica se o item é uma subpasta
-    if os.path.isdir(os.path.join(diretorio, item)):
-      # Adiciona o nome da subpasta à lista
-      nomes.append(f"{item} (subpasta)")
-    else:
-      # Adiciona o nome do arquivo à lista
-      nomes.append(item)
+  for arquivo in arquivos:
 
-  # Retorna a lista com os nomes
-  return nomes
+    # Separando a string por partes
+    partes = os.path.split(arquivo)
+
+    # Criando a lista com as informações desejadas
+    lista.append([partes[0].split("/")[-1], partes[1]])
+    
+
+  pd.DataFrame(data=lista,columns=['vulnerabilidade','solidity']).to_excel(f'gabarito_{diretorio.split("/")[-1]}.xlsx')
 
 
-# Caminho do diretório que deseja listar
-diretorio = "../repositories/dataset"
 
-# Lista os nomes das subpastas e dos arquivos
-nomes = listar_arquivos_e_subpastas(diretorio)
+# Exemplo de uso
+diretorio_raiz = "./repositories/dataset"
 
-# Imprime os nomes
-for nome in nomes:
-  print(nome)
+arquivos_encontrados = buscar_arquivos(diretorio_raiz)
+
+print('fim')
+
+#print(f"Arquivos encontrados: {arquivos_encontrados}")
