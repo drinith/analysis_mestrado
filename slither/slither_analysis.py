@@ -227,15 +227,11 @@ class SlitherAnalysis(SmartToolsAnalysis):
         dasp_dic = {'arbitrary-send': 'access_control', 'assembly': 'Ignore', 'calls-loop': 'denial_service', 'constable-states': 'Ignore', 'constant-function': 'Ignore', 'controlled-delegatecall': 'access_control', 'deprecated-standards': 'Ignore', 'erc20-indexed': 'Ignore', 'erc20-interface': 'Ignore', 'external-function': 'Ignore', 'incorrect-equality': 'Other', 'locked-ether': 'Other', 'low-level-calls': 'unchecked_low_calls', 'naming-convention': 'Ignore', 'reentrancy-benign': 'reentrancy', 'reentrancy-eth': 'reentrancy', 'reentrancy-no-eth': 'reentrancy', 'shadowing-abstract': 'Ignore', 'shadowing-builtin': 'Ignore', 'shadowing-local': 'Ignore', 'shadowing-state': 'Ignore', 'solc-version': 'Ignore', 'suicidal': 'access_control', 'timestamp': 'time_manipulation', 'tx-origin': 'access_control', 'uninitialized-local': 'Other', 'uninitialized-state': 'Other', 'uninitialized-storage': 'Other', 'unused-return': 'unchecked_low_calls', 'unused-state': 'Ignore'}
 
         #Criando um dataframe com as colunas do dasp
-        #df_dasp= pd.DataFrame(0, index=range(df.shape[0]),columns=['access_control','arithmetic','denial_service','reentrancy','unchecked_low_calls','bad_randomness','front_running',	'time_manipulation',	'short_addresses',	'Other',	'Ignore'])
-        df_dasp= pd.DataFrame(0, index=range(df.shape[0]),columns=['solidity','access_control','arithmetic','denial_service','reentrancy','unchecked_low_calls','bad_randomness','front_running',	'time_manipulation',	'short_addresses',	'Other',	'Ignore'])
+        df_dasp= pd.DataFrame(0, index=range(df.shape[0]),columns=['access_control','arithmetic','denial_service','reentrancy','unchecked_low_calls','bad_randomness','front_running',	'time_manipulation',	'short_addresses',	'Other',	'Ignore'])
         
         df_dasp.reset_index(inplace=True)
-        df_dasp['solidity']=df.index
         df.reset_index(inplace=True)
-        
-        print(df_dasp)
-        print(df)
+      
 
 
         #Colocando os encontros das vulnerabilidade de acordo com a tradução para o DASP
@@ -250,7 +246,7 @@ class SlitherAnalysis(SmartToolsAnalysis):
         print(df_dasp)
         print('parei')
         df_dasp.to_excel(f'{arquivo}_dasp.xlsx')
-
+       
         self.soma_dataframe(df_dasp,f'{arquivo}_dasp')
 
 # if '__main__'==__name__:

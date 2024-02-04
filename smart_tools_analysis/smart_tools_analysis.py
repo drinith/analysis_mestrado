@@ -3,6 +3,7 @@ import subprocess
 import os
 import json
 import pandas as pd
+from IPython.display import display, HTML
 
 class SmartToolsAnalysis():
     
@@ -50,7 +51,7 @@ class SmartToolsAnalysis():
             else:
                 print('Não pegou pragma')
 
-    def create_directory(self,_diretorio):
+    def criar_diretorio(self,_diretorio):
 
         diretorio = _diretorio
 
@@ -66,8 +67,8 @@ class SmartToolsAnalysis():
     def montar_dataframe_json(self,diretory_in,diretory_out):
 
         #Criar os diretórios caso não existam e seja necessário
-        self.create_directory(diretory_in)
-        self.create_directory(diretory_out)
+        self.criar_diretorio(diretory_in)
+        self.criar_diretorio(diretory_out)
         
         json_file = open(f'{diretory_in}data.json')
         lista_sol = json.load(json_file)
@@ -87,12 +88,15 @@ class SmartToolsAnalysis():
 
             contagem_vulnerabilidades[nome_arquivo] = contagem
 
-        # Criar um DataFrame do pandas a partir do dicionário
+        # Criar um DataFrame do pandas a partir do dicionário , Esse Dataframe é composto pelas vulnerabilidades padrão da ferramenta
+        #Esse dataframe mostra o encontro com as repetições de um vulnerabilidade no solidity    
         df = pd.DataFrame(contagem_vulnerabilidades).fillna(0).astype(int)
 
-        # Visualizar o DataFrame resultante
         dt =df.transpose()
+
+        #Cria uma planilha que ficará dentro do diretório results
         dt.to_excel(f'{diretory_out}resultado.xlsx')
+        
         return df.transpose()
     
  
@@ -100,7 +104,11 @@ class SmartToolsAnalysis():
     def soma_dataframe(self,df,arquivo):
 
         # Criar um novo DataFrame com a soma total de cada vulnerabilidade
+
+        #Pegando o dataframe somando as linhas que vai virar uma série e para tranformar em um "dataframe" foi resetado o index
         soma_total_vulnerabilidades = df.sum(axis=0).reset_index()
+        
+        #Criando os cabeçalhos novos 
         soma_total_vulnerabilidades.columns = ['Vulnerabilidade', 'Soma_Total']
 
         # Ordenar o DataFrame pela coluna 'Soma_Total' em ordem decrescente
@@ -108,4 +116,36 @@ class SmartToolsAnalysis():
 
         # Visualizar o DataFrame resultante
         soma_total_vulnerabilidades.to_excel(f'{arquivo}_soma.xlsx')
+
+    def transforma_dasp(self,dicionario:dict,df:pd.DataFrame, arquivo=''):
+        
+        #discionário Dasp criado relacionado com o slither
+        dasp_dic = dicionario
+
+        #Criando um dataframe com as colunas que serão as vulnerabilidades do dasp
+        df_dasp= pd.DataFrame(0, index=range(df.shape[0]),columns=['access_control','arithmetic','denial_service','reentrancy','unchecked_low_calls','bad_randomness','front_running',	'time_manipulation',	'short_addresses',	'Other',	'Ignore'])
+        
+           
+
+
+        #Colocando os encontros das vulnerabilidade de acordo com a tradução para o DASP
+        for column in df.columns:
+
+            try:
+                df_dasp[dasp_dic[column]]= df_dasp[dasp_dic[column]] + df[column]
+            except Exception as e:
+                print(e)    
+        
+
+        print(df_dasp)
+        print('parei')
+        df_dasp.to_excel(f'{arquivo}_dasp.xlsx')
+       
+        self.soma_dataframe(df_dasp,f'{arquivo}_dasp')
+    def acurar (self, resultado, gabarito):
+        pass
+        #carregar resultado
+        #carregar gabarito
+
+        #comparar e criar uma lista onde cada solidity é classificado com lista vulnerabilidades encontradas , a que deveria ter , VP, VN, FP , FN
 

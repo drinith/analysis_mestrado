@@ -1,3 +1,5 @@
-env
-repositories/
+env*
+repositories*/
 slither/*/json
+mythril/*/json
+build
