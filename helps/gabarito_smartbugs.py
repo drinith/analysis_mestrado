@@ -1,5 +1,6 @@
 import os
 import pandas as pd 
+from IPython.display import display, HTML
 
 def buscar_arquivos(diretorio=''):
   """
@@ -24,19 +25,38 @@ def buscar_arquivos(diretorio=''):
     # Separando a string por partes
     partes = os.path.split(arquivo)
 
-    # Criando a lista com as informações desejadas
-    lista.append([partes[0].split("/")[-1], partes[1]])
     
+    #limpar arquivos que podem vir juntos 
+    if (partes[1].endswith(".sol")):
+      # Criando a lista com as informações desejadas
+      lista.append([partes[0].split("/")[-1], partes[1]])
+      
+    
+  
+  
+  #Pegando a lista dos nomes dos arquivos solidity que serão usados como index do dataframe
+  arquivos_solidity = [item[1] for item in lista]
+  arquivos_solidity.sort()
+  
+  #pd.DataFrame(data=lista,columns=['vulnerabilidade','solidity']).to_excel(f'gabarito_{diretorio.split("/")[-1]}.xlsx')
+    
+  df_dasp= pd.DataFrame(0,index=arquivos_solidity, 
+                        columns=['access_control','arithmetic','denial_service','reentrancy','unchecked_low_calls','bad_randomness',
+                                 'front_running','time_manipulation','short_addresses','Other','Ignore'])
 
-  pd.DataFrame(data=lista,columns=['vulnerabilidade','solidity']).to_excel(f'gabarito_{diretorio.split("/")[-1]}.xlsx')
+  for elemento in lista:
+    df_dasp.loc[elemento[1],elemento[0]]=1
 
+  df_dasp.to_excel(f'gabarito_{diretorio.split("/")[-1]}.xlsx')
+    
+  print('teste')
 
+if __name__=='__main__':
+  # Exemplo de uso
+  diretorio_raiz = "./repositories/dataset"
 
-# Exemplo de uso
-diretorio_raiz = "./repositories/dataset"
+  arquivos_encontrados = buscar_arquivos(diretorio_raiz)
 
-arquivos_encontrados = buscar_arquivos(diretorio_raiz)
+  print('fim')
 
-print('fim')
-
-#print(f"Arquivos encontrados: {arquivos_encontrados}")
+  #print(f"Arquivos encontrados: {arquivos_encontrados}")

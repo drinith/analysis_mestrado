@@ -91,7 +91,7 @@ class SmartToolsAnalysis():
         # Criar um DataFrame do pandas a partir do dicionário , Esse Dataframe é composto pelas vulnerabilidades padrão da ferramenta
         #Esse dataframe mostra o encontro com as repetições de um vulnerabilidade no solidity    
         df = pd.DataFrame(contagem_vulnerabilidades).fillna(0).astype(int)
-
+        display(df)
         dt =df.transpose()
 
         #Cria uma planilha que ficará dentro do diretório results
@@ -123,9 +123,9 @@ class SmartToolsAnalysis():
         dasp_dic = dicionario
 
         #Criando um dataframe com as colunas que serão as vulnerabilidades do dasp
-        df_dasp= pd.DataFrame(0, index=range(df.shape[0]),columns=['access_control','arithmetic','denial_service','reentrancy','unchecked_low_calls','bad_randomness','front_running',	'time_manipulation',	'short_addresses',	'Other',	'Ignore'])
+        df_dasp= pd.DataFrame(0,index=df.index, columns=['access_control','arithmetic','denial_service','reentrancy','unchecked_low_calls','bad_randomness','front_running',	'time_manipulation',	'short_addresses',	'Other',	'Ignore'])
         
-           
+        display(df_dasp)  
 
 
         #Colocando os encontros das vulnerabilidade de acordo com a tradução para o DASP
@@ -140,9 +140,15 @@ class SmartToolsAnalysis():
         print(df_dasp)
         print('parei')
         df_dasp.to_excel(f'{arquivo}_dasp.xlsx')
-       
+
+        #Futuro acho melhor tirar daqui
         self.soma_dataframe(df_dasp,f'{arquivo}_dasp')
-    def acurar (self, resultado, gabarito):
+
+        return  df_dasp 
+
+
+
+    def acurar (self, resultado:pd.DataFrame, gabarito:pd.DataFrame):
         pass
         #carregar resultado
         #carregar gabarito
