@@ -149,9 +149,20 @@ class SmartToolsAnalysis():
 
 
     def acurar (self, resultado:pd.DataFrame, gabarito:pd.DataFrame):
-        pass
+        
+        
         #carregar resultado
         #carregar gabarito
 
+        df_acurado = resultado.copy()
+
+        df_acurado.loc[:,:]=''
         #comparar e criar uma lista onde cada solidity é classificado com lista vulnerabilidades encontradas , a que deveria ter , VP, VN, FP , FN
+        #Fazer de forma manual pro enquanto caminhar pelo dataframe de resultado e ver o gabarito
+
+        for index in resultado.index:
+
+            for coluna in resultado.columns:
+
+                pass
 
