@@ -29,7 +29,7 @@ def buscar_arquivos(diretorio=''):
     #limpar arquivos que podem vir juntos 
     if (partes[1].endswith(".sol")):
       # Criando a lista com as informações desejadas
-      lista.append([partes[0].split("/")[-1], partes[1]])
+      lista.append([partes[0].split("/")[-1], partes[1]+'.json'])
       
     
   

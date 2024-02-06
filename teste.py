@@ -37,7 +37,7 @@ if '__main__'==__name__:
         df = sa.montar_dataframe_json(f'{destiny_analysis}json_analysis/',f'{destiny_analysis}results/')
         
         df_dasp = sa.transforma_dasp(dasp_dic,df,f'{destiny_analysis}{version}_slither_{name}')
-        df_gabarito = pd.read_excel("helps/gabarito_dataset.xlsx")
+        df_gabarito = pd.read_excel("helps/gabarito_dataset.xlsx").fillna(0)
         display(df_gabarito)
         sa.acurar(df_dasp,df_gabarito)
 

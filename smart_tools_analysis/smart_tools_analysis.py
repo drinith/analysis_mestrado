@@ -153,7 +153,10 @@ class SmartToolsAnalysis():
         
         #carregar resultado
         #carregar gabarito
-
+        gabarito.index = gabarito.iloc[:,0]
+        gabarito= gabarito.drop(gabarito.columns[0],axis=1)
+        gabarito= gabarito.drop('Unnamed: 0')
+        print(gabarito)
         df_acurado = resultado.copy()
 
         df_acurado.loc[:,:]=''
@@ -164,5 +167,13 @@ class SmartToolsAnalysis():
 
             for coluna in resultado.columns:
 
-                pass
+                #Teste onde teve presença de vulnerabilidade e o gabarito confirma
+                if(resultado.loc[index,coluna]>=1 and gabarito.loc[index,coluna]>=1):
+                    df_acurado.loc[index,coluna]='VP'
+                if(resultado.loc[index,coluna]==0 and gabarito.loc[index,coluna]>=1):
+                    df_acurado.loc[index,coluna]='FN'
+                if(resultado.loc[index,coluna]>=1 and gabarito.loc[index,coluna]==0):
+                    df_acurado.loc[index,coluna]='FP'
+        
 
+        print(df_acurado)
