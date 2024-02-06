@@ -155,7 +155,7 @@ class SmartToolsAnalysis():
         #carregar gabarito
         gabarito.index = gabarito.iloc[:,0]
         gabarito= gabarito.drop(gabarito.columns[0],axis=1)
-        gabarito= gabarito.drop('Unnamed: 0')
+        
         print(gabarito)
         df_acurado = resultado.copy()
 
@@ -177,3 +177,4 @@ class SmartToolsAnalysis():
         
 
         print(df_acurado)
+        df_acurado.to_excel('acurado.xlsx')
