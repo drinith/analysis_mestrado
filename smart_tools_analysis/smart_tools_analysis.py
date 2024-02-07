@@ -150,31 +150,42 @@ class SmartToolsAnalysis():
 
     def acurar (self, resultado:pd.DataFrame, gabarito:pd.DataFrame):
         
-        
         #carregar resultado
         #carregar gabarito
         gabarito.index = gabarito.iloc[:,0]
         gabarito= gabarito.drop(gabarito.columns[0],axis=1)
         
         print(gabarito)
-        df_acurado = resultado.copy()
+        # df_acurado = resultado.copy()
 
-        df_acurado.loc[:,:]=''
+        # df_acurado.loc[:,:]=''
         #comparar e criar uma lista onde cada solidity é classificado com lista vulnerabilidades encontradas , a que deveria ter , VP, VN, FP , FN
         #Fazer de forma manual pro enquanto caminhar pelo dataframe de resultado e ver o gabarito
 
-        for index in resultado.index:
+        medidas = {}
+        vp = 0
+        fn = 0
+        fp = 0
+        for coluna in resultado.columns:
 
-            for coluna in resultado.columns:
+            for index in resultado.index:
 
-                #Teste onde teve presença de vulnerabilidade e o gabarito confirma
+                #Teste onde teve presença de vulnerabilidade e o gabarito confirma aproveitar aqui e medir precisão e acuracia
                 if(resultado.loc[index,coluna]>=1 and gabarito.loc[index,coluna]>=1):
-                    df_acurado.loc[index,coluna]='VP'
+                    #df_acurado.loc[index,coluna]='VP'
+                    vp+=1
                 if(resultado.loc[index,coluna]==0 and gabarito.loc[index,coluna]>=1):
-                    df_acurado.loc[index,coluna]='FN'
+                    #df_acurado.loc[index,coluna]='FN'
+                    fn+=1
                 if(resultado.loc[index,coluna]>=1 and gabarito.loc[index,coluna]==0):
-                    df_acurado.loc[index,coluna]='FP'
-        
+                    #df_acurado.loc[index,coluna]='FP'
+                    fp+=1
+                #dicionário com vulnerabildiade dasp , verdadeiro positivo, falso negativo , falso positivo , precision , recall
+                medidas[coluna]=[vp,fn,fp,vp/(vp+fp) if vp>0 else 0,vp/(vp+fn) if vp>0 else 0]
 
-        print(df_acurado)
+        
+        print(medidas)
+
+        df_acurado = pd.DataFrame(data=medidas, index=['VP','FN','FP','Precision','Recall'])
+        df_acurado = df_acurado.transpose()
         df_acurado.to_excel('acurado.xlsx')
