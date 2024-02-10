@@ -44,7 +44,8 @@ class MythrilAnalysis(SmartToolsAnalysis):
         # Exibir os nomes dos arquivos
         for file in files:
 
-            pragma = self.verificar_pragma (f'{diretory_in}{file}')
+            #Checar o pragma e setar a versão mais apropriada
+            self.check_pragma(f'{diretory_in}{file}')
         
             result= subprocess.run(f'myth analyze {diretory_in}{file} -o jsonv2 --max-depth 10', capture_output=True, text=True,shell=True)
             

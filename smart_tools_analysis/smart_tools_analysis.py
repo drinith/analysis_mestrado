@@ -23,7 +23,7 @@ class SmartToolsAnalysis():
         print(result)
         return result
 
-    def verificar_pragma(self,file_path):
+    def check_pragma(self,file_path) -> bool:
 
         #Abri o sol
         with open(file_path, 'r') as arquivo:
@@ -47,11 +47,12 @@ class SmartToolsAnalysis():
                     self.solc = self.solc_dic[numero]
                     self.solc_numero = numero
 
-
+                return True
             else:
                 print('Não pegou pragma')
+                return False
 
-    def criar_diretorio(self,_diretorio):
+    def create_directory(self,_diretorio):
 
         diretorio = _diretorio
 
@@ -64,11 +65,11 @@ class SmartToolsAnalysis():
             print(f'O diretório "{diretorio}" já existe.')
 
 
-    def montar_dataframe_json(self,diretory_in,diretory_out):
+    def build_dataframe_from_json(self,diretory_in,diretory_out):
 
         #Criar os diretórios caso não existam e seja necessário
-        self.criar_diretorio(diretory_in)
-        self.criar_diretorio(diretory_out)
+        self.create_directory(diretory_in)
+        self.create_directory(diretory_out)
         
         json_file = open(f'{diretory_in}data.json')
         lista_sol = json.load(json_file)
@@ -101,7 +102,7 @@ class SmartToolsAnalysis():
     
  
 
-    def soma_dataframe(self,df,arquivo):
+    def sum_dataframe(self,df,arquivo):
 
         # Criar um novo DataFrame com a soma total de cada vulnerabilidade
 
@@ -117,7 +118,7 @@ class SmartToolsAnalysis():
         # Visualizar o DataFrame resultante
         soma_total_vulnerabilidades.to_excel(f'{arquivo}_soma.xlsx')
 
-    def transforma_dasp(self,dicionario:dict,df:pd.DataFrame, arquivo=''):
+    def transform_dasp(self,dicionario:dict,df:pd.DataFrame, arquivo=''):
         
         #discionário Dasp criado relacionado com o slither
         dasp_dic = dicionario
@@ -142,13 +143,13 @@ class SmartToolsAnalysis():
         df_dasp.to_excel(f'{arquivo}_dasp.xlsx')
 
         #Futuro acho melhor tirar daqui
-        self.soma_dataframe(df_dasp,f'{arquivo}_dasp')
+        self.sum_dataframe(df_dasp,f'{arquivo}_dasp')
 
         return  df_dasp 
 
 
 
-    def acurar (self, resultado:pd.DataFrame, gabarito:pd.DataFrame):
+    def accuracy (self, resultado:pd.DataFrame, gabarito:pd.DataFrame,diretory_out=''):
         
         #carregar resultado
         #carregar gabarito
@@ -188,4 +189,4 @@ class SmartToolsAnalysis():
 
         df_acurado = pd.DataFrame(data=medidas, index=['VP','FN','FP','Precision','Recall'])
         df_acurado = df_acurado.transpose()
-        df_acurado.to_excel('acurado.xlsx')
+        df_acurado.to_excel(f'{diretory_out}acurado.xlsx')
