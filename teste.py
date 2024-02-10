@@ -43,7 +43,7 @@ if '__main__'==__name__:
 
     ### Mithril
     elif(analise=='m'):
-        mythril_version ='0.23.0'	
+        mythril_version ='0.23.15'	
         dasp_dic = {'Call data forwarded with delegatecall()': 'access_control', 'DELEGATECALL to a user-supplied address': 'access_control', 'Dependence on predictable environment variable': 'Other', 'Dependence on predictable variable': 'Other', 'Ether send': 'access_control', 'Exception state': 'Other', 'Integer Overflow': 'arithmetic', 'Integer Underflow': 'arithmetic', 'Message call to external contract': 'reentrancy', 'Multiple Calls': 'Ignore', 'State change after external call': 'reentrancy', 'Transaction order dependence': 'front_running', 'Unchecked CALL return value': 'unchecked_low_calls', 'Unchecked SUICIDE': 'access_control', 'Use of tx.origin': 'access_control'}
         ma = MythrilAnalysis('0.4.26')
         destiny_analysis = f'./mythril/{mythril_version}_{name}/'
@@ -56,9 +56,9 @@ if '__main__'==__name__:
         print(f'{destiny_analysis}{mythril_version}_slither_{name}')
 
        
-        # ma.run_analysis_diretory(diretory_in=source_solidity,diretory_out=destiny_analysis)
+        ma.run_analysis_diretory(diretory_in=source_solidity,diretory_out=destiny_analysis)
 
-        # ma.resume_json(f'{destiny_analysis}json/',f'{destiny_analysis}json_analysis/')
+        ma.resume_json(f'{destiny_analysis}json/',f'{destiny_analysis}json_analysis/')
 
         df = ma.build_dataframe_from_json(f'{destiny_analysis}json_analysis/',f'{destiny_analysis}results/')
         
