@@ -4,7 +4,7 @@ import csv
 matriz = []
 
 # Abrir o arquivo CSV e ler os dados
-with open('vulnerabilities_.csv', newline='') as csvfile:
+with open('./helps/vulnerabilities_mapping_mythril.csv', newline='') as csvfile:
     # Criar um leitor CSV
     csvreader = csv.reader(csvfile)
     
