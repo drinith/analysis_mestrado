@@ -14,63 +14,7 @@ class SlitherAnalysis(SmartToolsAnalysis):
     def __init__(self, _solc='') -> None:
         super().__init__(_solc)
 
-    # solc =''
-    # solc_dic = {'4':'0.4.26','5':'0.5.17','6':'0.6.12','7':'0.7.6','8':'0.8.23'}
-    # solc_numero ='' 
-
-    # def __init__(self,_solc='') -> None:
-
-    #     self.set_solc(_solc)
-    #     self.solc = _solc
-    #     self.solc_numero = _solc.split('.')[1]
-
-    # def set_solc(self,_solc):
-
-    #     result = subprocess.run(f'solc-select use {_solc}', capture_output=True, text=True,shell=True)
-    #     print(result)
-    #     return result
-
-    # def verificar_pragma(self,file_path):
-
-    #     #Abri o sol
-    #     with open(file_path, 'r') as arquivo:
-            
-    #         conteudo = arquivo.read()
-    #         #monta expressão regular
-    #         expressao_regular = r'pragma solidity\s*\^\s*\d\.(\d)'
-    #         #a retira o valor
-    #         resultado = re.search(expressao_regular, conteudo)
-
-    #         print(resultado)
-
-    #         if resultado:
-    #             versao = resultado.group(1)
-    #             numero = versao
-                
-    #             if(numero==self.solc_numero):
-    #                 print('Mesma versão de solc')
-    #             else:
-    #                 self.set_solc(self.solc_dic[numero])
-    #                 self.solc = self.solc_dic[numero]
-    #                 self.solc_numero = numero
-
-
-    #         else:
-    #             print('Não pegou pragma')
-
-    
-    # def create_directory(self,_diretorio):
-
-    #     diretorio = _diretorio
-
-    #     # Verifica se o diretório não existe
-    #     if not os.path.exists(diretorio) and _diretorio!='' :
-    #         # Cria o diretório se não existir
-    #         os.makedirs(diretorio)
-    #         print(f'Diretório "{diretorio}" criado com sucesso.')
-    #     else:
-    #         print(f'O diretório "{diretorio}" já existe.')
-
+   
     #Buscar os arquivos e rodar o slither
     def run_analysis_diretory(self,diretory_in,diretory_out=''):
         
@@ -176,49 +120,64 @@ class SlitherAnalysis(SmartToolsAnalysis):
         with open(f'{diretory_out}log.txt', 'w') as log:
             log.write(f' Soliditys {solidity_lidos} \n Erros {solidity_erro}\n Lista erros {lista_erro}')
 
-    # def montar_dataframe_json(self,diretory_in,diretory_out):
+    def resume_smartbugs_json(self,diretory_in='',diretory_out=''):
 
-    #     #Criar os diretórios caso não existam e seja necessário
-    #     self.create_directory(diretory_in)
-    #     self.create_directory(diretory_out)
+        #Criar os diretórios caso não existam e seja necessário
+        self.create_directory(diretory_in)
+        self.create_directory(diretory_out)
+
+        #Carregando os nomes da pasta
+        folder_list = os.listdir(diretory_in)
         
-    #     json_file = open(f'{diretory_in}data.json')
-    #     lista_sol = json.load(json_file)
 
-    #     contagem_vulnerabilidades = {}
+        #Lista que vai conter os smart contracts levantados
+        lista_sol = []
+        vulnerabilidades_lista=[]
+        solidity_lidos = 0
+        solidity_erro = 0
+        lista_erro =[]
 
-    #     for arquivo in lista_sol:
-    #         nome_arquivo = arquivo["nome"]
-    #         vulnerabilidades = arquivo["vulnerabilidades"]
+        #Percorrer os arquivos json
+        for arquivo in  folder_list:
+            json_arquivo = open(f'{diretory_in}/{arquivo}/result.json')
+           
+            solidity_lidos+=1
 
-    #         contagem = {}
-    #         for vulnerabilidade in vulnerabilidades:
-    #             if vulnerabilidade not in contagem:
-    #                 contagem[vulnerabilidade] = 1
-    #             else:
-    #                 contagem[vulnerabilidade] += 1
+            try:
+                sol_json = json.load(json_arquivo)
+                print(sol_json)
+            except Exception as e:
+                solidity_erro+=1
+                lista_erro.append(e)
+            
+            
+            #Extraindo os elementos com as vulnerabilidades 
+            try:
+                #vulnerabilidades_lista = sol_json['results']['detectors'][0]['check']
+                vulnerabilidades_lista = sol_json['analysis']
+            except Exception as e:
 
-    #         contagem_vulnerabilidades[nome_arquivo] = contagem
+                print('A exceção foi ',e)
 
-    #     # Criar um DataFrame do pandas a partir do dicionário
-    #     df = pd.DataFrame(contagem_vulnerabilidades).fillna(0).astype(int)
 
-    #     # Visualizar o DataFrame resultante
-    #     dt =df.transpose()
-    #     dt.to_excel(f'{diretory_out}resultado.xlsx')
-    #     return df.transpose()
+            lista_nome_vulnerabilidades =[]
+            #Correndo pelas vulnerabilidades previamente carregadas em uma lista
+            for vulnerabilidade in vulnerabilidades_lista:
+                lista_nome_vulnerabilidades.append(vulnerabilidade['check'])
+
+        #preenchendo a lista com as informações
+            lista_sol.append({'nome':arquivo,'vulnerabilidades':lista_nome_vulnerabilidades})
         
-    # def soma_dataframe(self,df,arquivo):
+        #print(lista_smart_contracts)
+        
 
-    #     # Criar um novo DataFrame com a soma total de cada vulnerabilidade
-    #     soma_total_vulnerabilidades = df.sum(axis=0).reset_index()
-    #     soma_total_vulnerabilidades.columns = ['Vulnerabilidade', 'Soma_Total']
+        with open(f'{diretory_out}/data.json', 'w') as json_file:
+            json.dump(lista_sol,json_file,indent=4)
 
-    #     # Ordenar o DataFrame pela coluna 'Soma_Total' em ordem decrescente
-    #     soma_total_vulnerabilidades = soma_total_vulnerabilidades.sort_values(by='Soma_Total', ascending=False)
+        with open(f'{diretory_out}/log.txt', 'w') as log:
+            log.write(f' Soliditys {solidity_lidos} \n Erros {solidity_erro}\n Lista erros {lista_erro}')
 
-    #     # Visualizar o DataFrame resultante
-    #     soma_total_vulnerabilidades.to_excel(f'{arquivo}_soma.xlsx')
+    
 
         
 
@@ -250,30 +209,3 @@ class SlitherAnalysis(SmartToolsAnalysis):
        
         self.soma_dataframe(df_dasp,f'{arquivo}_dasp')
 
-# if '__main__'==__name__:
-
-#     version='0.8.0'
-#     name = 'verified-smart-contracts'
-#     source_solidity = f'./repositories/{name}/'
-#     destiny_analysis = f'./slither/{version}_{name}/'
-    
-
-#     sa = SlitherAnalysis('0.8.23')
-#     print(os.getcwd())
-
-
-#     print(f'{destiny_analysis}json/')
-#     print(f'{destiny_analysis}json_analysis/')
-#     print(f'{destiny_analysis}results/')
-#     print(f'{destiny_analysis}{version}_slither_{name}')
-
-
-#     sa.run_analysis_diretory(diretory_in=source_solidity,diretory_out=destiny_analysis)
-
-#     sa.resume_json(f'{destiny_analysis}json/',f'{destiny_analysis}json_analysis/')
-
-#     df = sa.montar_dataframe_json(f'{destiny_analysis}json_analysis/',f'{destiny_analysis}results/')
-
-#     sa.soma_dataframe(df,f'{destiny_analysis}{version}_slither_{name}')
-
-#     sa.dasp(df,f'{destiny_analysis}{version}_slither_{name}')

@@ -5,11 +5,9 @@ import pandas as pd
 from IPython.display import display, HTML
 
 if '__main__'==__name__:
-
     
     name = 'smartbugs-curated'
     source_solidity = f'./repositories/{name}/'
-  
     
     analise='m'
 
@@ -21,12 +19,10 @@ if '__main__'==__name__:
 
         print(os.getcwd())
 
-
         print(f'{destiny_analysis}json/')
         print(f'{destiny_analysis}json_analysis/')
         print(f'{destiny_analysis}results/')
         print(f'{destiny_analysis}{slither_version}_slither_{name}')
-
 
 
         ### Slither 
@@ -48,7 +44,6 @@ if '__main__'==__name__:
         ma = MythrilAnalysis('0.4.26')
         destiny_analysis = f'./mythril/{mythril_version}_{name}/'
         print(os.getcwd())
-
 
         print(f'{destiny_analysis}json/')
         print(f'{destiny_analysis}json_analysis/')

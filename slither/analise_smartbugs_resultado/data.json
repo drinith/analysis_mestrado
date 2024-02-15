@@ -1,0 +1,1015 @@
+[
+    {
+        "nome": "FindThisHash",
+        "vulnerabilidades": [
+            "arbitrary-send",
+            "deprecated-standards",
+            "external-function",
+            "solc-version",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "lotto",
+        "vulnerabilidades": [
+            "arbitrary-send",
+            "uninitialized-state",
+            "uninitialized-state",
+            "constable-states",
+            "external-function",
+            "external-function",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "reentrancy_dao",
+        "vulnerabilidades": [
+            "reentrancy-eth",
+            "external-function",
+            "external-function",
+            "solc-version",
+            "low-level-calls"
+        ]
+    },
+    {
+        "nome": "arbitrary_location_write_simple",
+        "vulnerabilidades": [
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "auction",
+        "vulnerabilidades": [
+            "external-function",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "BECToken",
+        "vulnerabilidades": [
+            "constable-states",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "solc-version",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "blackjack",
+        "vulnerabilidades": [
+            "constable-states",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "solc-version",
+            "naming-convention",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "crypto_roulette",
+        "vulnerabilidades": [
+            "arbitrary-send",
+            "uninitialized-storage",
+            "incorrect-equality",
+            "constable-states",
+            "deprecated-standards",
+            "deprecated-standards",
+            "external-function",
+            "external-function",
+            "external-function",
+            "solc-version",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "dos_address",
+        "vulnerabilidades": [
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function"
+        ]
+    },
+    {
+        "nome": "dos_number",
+        "vulnerabilidades": [
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function"
+        ]
+    },
+    {
+        "nome": "dos_simple",
+        "vulnerabilidades": [
+            "external-function"
+        ]
+    },
+    {
+        "nome": "ERC20",
+        "vulnerabilidades": [
+            "constable-states",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "unused-state"
+        ]
+    },
+    {
+        "nome": "etheraffle",
+        "vulnerabilidades": [
+            "calls-loop",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "solc-version",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "etherpot_lotto",
+        "vulnerabilidades": [
+            "arbitrary-send",
+            "deprecated-standards",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "solc-version",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "etherstore",
+        "vulnerabilidades": [
+            "reentrancy-eth",
+            "constable-states",
+            "external-function",
+            "external-function",
+            "solc-version",
+            "low-level-calls",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "ether_lotto",
+        "vulnerabilidades": [
+            "arbitrary-send",
+            "incorrect-equality",
+            "timestamp",
+            "deprecated-standards",
+            "external-function",
+            "solc-version",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "eth_tx_order_dependence_minimal",
+        "vulnerabilidades": [
+            "external-function",
+            "external-function",
+            "solc-version",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "FibonacciBalance",
+        "vulnerabilidades": [
+            "arbitrary-send",
+            "controlled-delegatecall",
+            "controlled-delegatecall",
+            "uninitialized-state",
+            "constable-states",
+            "deprecated-standards",
+            "external-function",
+            "external-function",
+            "solc-version",
+            "low-level-calls",
+            "low-level-calls",
+            "naming-convention",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "governmental_survey",
+        "vulnerabilidades": [
+            "arbitrary-send",
+            "timestamp",
+            "constable-states",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "external-function",
+            "external-function",
+            "external-function",
+            "solc-version",
+            "naming-convention",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "guess_the_random_number",
+        "vulnerabilidades": [
+            "arbitrary-send",
+            "incorrect-equality",
+            "incorrect-equality",
+            "deprecated-standards",
+            "external-function",
+            "external-function",
+            "solc-version",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "incorrect_constructor_name1",
+        "vulnerabilidades": [
+            "external-function",
+            "external-function",
+            "external-function",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "incorrect_constructor_name2",
+        "vulnerabilidades": [
+            "external-function",
+            "external-function",
+            "external-function"
+        ]
+    },
+    {
+        "nome": "incorrect_constructor_name3",
+        "vulnerabilidades": [
+            "external-function",
+            "external-function",
+            "external-function",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "integer_overflow_1",
+        "vulnerabilidades": [
+            "external-function",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "integer_overflow_add",
+        "vulnerabilidades": [
+            "external-function",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "integer_overflow_benign_1",
+        "vulnerabilidades": [
+            "constable-states",
+            "external-function",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "integer_overflow_mapping_sym_1",
+        "vulnerabilidades": [
+            "external-function",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "integer_overflow_minimal",
+        "vulnerabilidades": [
+            "external-function",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "integer_overflow_mul",
+        "vulnerabilidades": [
+            "external-function",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "integer_overflow_multitx_multifunc_feasible",
+        "vulnerabilidades": [
+            "external-function",
+            "external-function",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "integer_overflow_multitx_onefunc_feasible",
+        "vulnerabilidades": [
+            "external-function",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "king_of_the_ether_throne",
+        "vulnerabilidades": [
+            "timestamp",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "solc-version",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "list_dos",
+        "vulnerabilidades": [
+            "timestamp",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "solc-version",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "lottery",
+        "vulnerabilidades": [
+            "incorrect-equality",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "solc-version",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "lucky_doubler",
+        "vulnerabilidades": [
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "solc-version",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "mapping_write",
+        "vulnerabilidades": [
+            "uninitialized-state",
+            "constable-states",
+            "external-function",
+            "external-function",
+            "external-function"
+        ]
+    },
+    {
+        "nome": "modifier_reentrancy",
+        "vulnerabilidades": [
+            "external-function",
+            "external-function",
+            "naming-convention",
+            "unused-state"
+        ]
+    },
+    {
+        "nome": "multiowned_vulnerable",
+        "vulnerabilidades": [
+            "arbitrary-send",
+            "external-function",
+            "external-function",
+            "solc-version",
+            "naming-convention",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "mycontract",
+        "vulnerabilidades": [
+            "arbitrary-send",
+            "tx-origin",
+            "external-function",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "name_registrar",
+        "vulnerabilidades": [
+            "uninitialized-storage",
+            "constable-states",
+            "external-function",
+            "naming-convention",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "odds_and_evens",
+        "vulnerabilidades": [
+            "arbitrary-send",
+            "deprecated-standards",
+            "deprecated-standards",
+            "external-function",
+            "external-function",
+            "solc-version",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "old_blockhash",
+        "vulnerabilidades": [
+            "external-function",
+            "external-function",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "open_address_lottery",
+        "vulnerabilidades": [
+            "uninitialized-storage",
+            "constable-states",
+            "deprecated-standards",
+            "external-function",
+            "external-function",
+            "external-function",
+            "solc-version",
+            "naming-convention",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "overflow_simple_add",
+        "vulnerabilidades": [
+            "external-function",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "overflow_single_tx",
+        "vulnerabilidades": [
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "parity_wallet_bug_1",
+        "vulnerabilidades": []
+    },
+    {
+        "nome": "parity_wallet_bug_2",
+        "vulnerabilidades": [
+            "reentrancy-eth",
+            "uninitialized-local",
+            "uninitialized-local",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "solc-version",
+            "low-level-calls",
+            "low-level-calls",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "unused-state"
+        ]
+    },
+    {
+        "nome": "phishable",
+        "vulnerabilidades": [
+            "arbitrary-send",
+            "tx-origin",
+            "external-function",
+            "external-function",
+            "solc-version",
+            "naming-convention",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "proxy",
+        "vulnerabilidades": [
+            "controlled-delegatecall",
+            "external-function",
+            "low-level-calls",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "random_number_generator",
+        "vulnerabilidades": []
+    },
+    {
+        "nome": "reentrance",
+        "vulnerabilidades": [
+            "reentrancy-eth",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "solc-version",
+            "low-level-calls",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "reentrancy_simple",
+        "vulnerabilidades": [
+            "reentrancy-eth",
+            "deprecated-standards",
+            "external-function",
+            "external-function",
+            "external-function",
+            "solc-version",
+            "low-level-calls"
+        ]
+    },
+    {
+        "nome": "roulette",
+        "vulnerabilidades": [
+            "arbitrary-send",
+            "incorrect-equality",
+            "external-function"
+        ]
+    },
+    {
+        "nome": "rubixi",
+        "vulnerabilidades": [
+            "calls-loop",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "solc-version",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "send_loop",
+        "vulnerabilidades": []
+    },
+    {
+        "nome": "short_address_example",
+        "vulnerabilidades": [
+            "external-function",
+            "external-function",
+            "solc-version",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "simple_dao",
+        "vulnerabilidades": [
+            "reentrancy-eth",
+            "external-function",
+            "external-function",
+            "external-function",
+            "solc-version",
+            "low-level-calls"
+        ]
+    },
+    {
+        "nome": "simple_suicide",
+        "vulnerabilidades": [
+            "suicidal",
+            "external-function",
+            "solc-version"
+        ]
+    },
+    {
+        "nome": "smart_billions",
+        "vulnerabilidades": [
+            "erc20-interface",
+            "erc20-interface",
+            "erc20-interface",
+            "erc20-interface",
+            "incorrect-equality",
+            "incorrect-equality",
+            "incorrect-equality",
+            "incorrect-equality",
+            "incorrect-equality",
+            "shadowing-local",
+            "constable-states",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "deprecated-standards",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "solc-version",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "spank_chain_payment",
+        "vulnerabilidades": [
+            "arbitrary-send",
+            "reentrancy-eth",
+            "reentrancy-eth",
+            "constant-function",
+            "constant-function",
+            "constant-function",
+            "incorrect-equality",
+            "incorrect-equality",
+            "incorrect-equality",
+            "incorrect-equality",
+            "incorrect-equality",
+            "incorrect-equality",
+            "incorrect-equality",
+            "incorrect-equality",
+            "reentrancy-no-eth",
+            "reentrancy-no-eth",
+            "reentrancy-no-eth",
+            "reentrancy-no-eth",
+            "reentrancy-benign",
+            "reentrancy-benign",
+            "reentrancy-benign",
+            "assembly",
+            "assembly",
+            "assembly",
+            "constable-states",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function",
+            "solc-version",
+            "low-level-calls",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "timed_crowdsale",
+        "vulnerabilidades": [
+            "timestamp",
+            "external-function"
+        ]
+    },
+    {
+        "nome": "timelock",
+        "vulnerabilidades": [
+            "external-function",
+            "external-function",
+            "external-function",
+            "solc-version",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "token",
+        "vulnerabilidades": [
+            "external-function",
+            "external-function",
+            "solc-version",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "tokensalechallenge",
+        "vulnerabilidades": [
+            "external-function",
+            "external-function",
+            "external-function",
+            "solc-version",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "unchecked_return_value",
+        "vulnerabilidades": [
+            "external-function",
+            "external-function",
+            "low-level-calls",
+            "low-level-calls"
+        ]
+    },
+    {
+        "nome": "unprotected0",
+        "vulnerabilidades": [
+            "external-function",
+            "solc-version",
+            "naming-convention",
+            "naming-convention"
+        ]
+    },
+    {
+        "nome": "wallet_02_refund_nosub",
+        "vulnerabilidades": [
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function"
+        ]
+    },
+    {
+        "nome": "wallet_03_wrong_constructor",
+        "vulnerabilidades": [
+            "external-function",
+            "external-function",
+            "external-function",
+            "external-function"
+        ]
+    },
+    {
+        "nome": "wallet_04_confused_sign",
+        "vulnerabilidades": [
+            "external-function",
+            "external-function",
+            "external-function"
+        ]
+    }
+]
