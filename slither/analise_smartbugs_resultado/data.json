@@ -1,6 +1,6 @@
 [
     {
-        "nome": "FindThisHash",
+        "nome": "FindThisHash.sol.json",
         "vulnerabilidades": [
             "arbitrary-send",
             "deprecated-standards",
@@ -10,7 +10,7 @@
         ]
     },
     {
-        "nome": "lotto",
+        "nome": "lotto.sol.json",
         "vulnerabilidades": [
             "arbitrary-send",
             "uninitialized-state",
@@ -22,7 +22,7 @@
         ]
     },
     {
-        "nome": "reentrancy_dao",
+        "nome": "reentrancy_dao.sol.json",
         "vulnerabilidades": [
             "reentrancy-eth",
             "external-function",
@@ -32,7 +32,7 @@
         ]
     },
     {
-        "nome": "arbitrary_location_write_simple",
+        "nome": "arbitrary_location_write_simple.sol.json",
         "vulnerabilidades": [
             "external-function",
             "external-function",
@@ -46,14 +46,14 @@
         ]
     },
     {
-        "nome": "auction",
+        "nome": "auction.sol.json",
         "vulnerabilidades": [
             "external-function",
             "solc-version"
         ]
     },
     {
-        "nome": "BECToken",
+        "nome": "BECToken.sol.json",
         "vulnerabilidades": [
             "constable-states",
             "external-function",
@@ -90,7 +90,7 @@
         ]
     },
     {
-        "nome": "blackjack",
+        "nome": "blackjack.sol.json",
         "vulnerabilidades": [
             "constable-states",
             "deprecated-standards",
@@ -121,7 +121,7 @@
         ]
     },
     {
-        "nome": "crypto_roulette",
+        "nome": "crypto_roulette.sol.json",
         "vulnerabilidades": [
             "arbitrary-send",
             "uninitialized-storage",
@@ -137,7 +137,7 @@
         ]
     },
     {
-        "nome": "dos_address",
+        "nome": "dos_address.sol.json",
         "vulnerabilidades": [
             "external-function",
             "external-function",
@@ -146,7 +146,7 @@
         ]
     },
     {
-        "nome": "dos_number",
+        "nome": "dos_number.sol.json",
         "vulnerabilidades": [
             "external-function",
             "external-function",
@@ -156,13 +156,13 @@
         ]
     },
     {
-        "nome": "dos_simple",
+        "nome": "dos_simple.sol.json",
         "vulnerabilidades": [
             "external-function"
         ]
     },
     {
-        "nome": "ERC20",
+        "nome": "ERC20.sol.json",
         "vulnerabilidades": [
             "constable-states",
             "external-function",
@@ -174,7 +174,7 @@
         ]
     },
     {
-        "nome": "etheraffle",
+        "nome": "etheraffle.sol.json",
         "vulnerabilidades": [
             "calls-loop",
             "external-function",
@@ -192,7 +192,7 @@
         ]
     },
     {
-        "nome": "etherpot_lotto",
+        "nome": "etherpot_lotto.sol.json",
         "vulnerabilidades": [
             "arbitrary-send",
             "deprecated-standards",
@@ -211,7 +211,7 @@
         ]
     },
     {
-        "nome": "etherstore",
+        "nome": "etherstore.sol.json",
         "vulnerabilidades": [
             "reentrancy-eth",
             "constable-states",
@@ -223,7 +223,7 @@
         ]
     },
     {
-        "nome": "ether_lotto",
+        "nome": "ether_lotto.sol.json",
         "vulnerabilidades": [
             "arbitrary-send",
             "incorrect-equality",
@@ -235,7 +235,7 @@
         ]
     },
     {
-        "nome": "eth_tx_order_dependence_minimal",
+        "nome": "eth_tx_order_dependence_minimal.sol.json",
         "vulnerabilidades": [
             "external-function",
             "external-function",
@@ -244,7 +244,7 @@
         ]
     },
     {
-        "nome": "FibonacciBalance",
+        "nome": "FibonacciBalance.sol.json",
         "vulnerabilidades": [
             "arbitrary-send",
             "controlled-delegatecall",
@@ -262,7 +262,7 @@
         ]
     },
     {
-        "nome": "governmental_survey",
+        "nome": "governmental_survey.sol.json",
         "vulnerabilidades": [
             "arbitrary-send",
             "timestamp",
@@ -280,7 +280,7 @@
         ]
     },
     {
-        "nome": "guess_the_random_number",
+        "nome": "guess_the_random_number.sol.json",
         "vulnerabilidades": [
             "arbitrary-send",
             "incorrect-equality",
@@ -293,7 +293,7 @@
         ]
     },
     {
-        "nome": "incorrect_constructor_name1",
+        "nome": "incorrect_constructor_name1.sol.json",
         "vulnerabilidades": [
             "external-function",
             "external-function",
@@ -302,7 +302,7 @@
         ]
     },
     {
-        "nome": "incorrect_constructor_name2",
+        "nome": "incorrect_constructor_name2.sol.json",
         "vulnerabilidades": [
             "external-function",
             "external-function",
@@ -310,7 +310,7 @@
         ]
     },
     {
-        "nome": "incorrect_constructor_name3",
+        "nome": "incorrect_constructor_name3.sol.json",
         "vulnerabilidades": [
             "external-function",
             "external-function",
@@ -319,21 +319,21 @@
         ]
     },
     {
-        "nome": "integer_overflow_1",
+        "nome": "integer_overflow_1.sol.json",
         "vulnerabilidades": [
             "external-function",
             "solc-version"
         ]
     },
     {
-        "nome": "integer_overflow_add",
+        "nome": "integer_overflow_add.sol.json",
         "vulnerabilidades": [
             "external-function",
             "solc-version"
         ]
     },
     {
-        "nome": "integer_overflow_benign_1",
+        "nome": "integer_overflow_benign_1.sol.json",
         "vulnerabilidades": [
             "constable-states",
             "external-function",
@@ -341,28 +341,28 @@
         ]
     },
     {
-        "nome": "integer_overflow_mapping_sym_1",
+        "nome": "integer_overflow_mapping_sym_1.sol.json",
         "vulnerabilidades": [
             "external-function",
             "solc-version"
         ]
     },
     {
-        "nome": "integer_overflow_minimal",
+        "nome": "integer_overflow_minimal.sol.json",
         "vulnerabilidades": [
             "external-function",
             "solc-version"
         ]
     },
     {
-        "nome": "integer_overflow_mul",
+        "nome": "integer_overflow_mul.sol.json",
         "vulnerabilidades": [
             "external-function",
             "solc-version"
         ]
     },
     {
-        "nome": "integer_overflow_multitx_multifunc_feasible",
+        "nome": "integer_overflow_multitx_multifunc_feasible.sol.json",
         "vulnerabilidades": [
             "external-function",
             "external-function",
@@ -370,14 +370,14 @@
         ]
     },
     {
-        "nome": "integer_overflow_multitx_onefunc_feasible",
+        "nome": "integer_overflow_multitx_onefunc_feasible.sol.json",
         "vulnerabilidades": [
             "external-function",
             "solc-version"
         ]
     },
     {
-        "nome": "king_of_the_ether_throne",
+        "nome": "king_of_the_ether_throne.sol.json",
         "vulnerabilidades": [
             "timestamp",
             "external-function",
@@ -394,7 +394,7 @@
         ]
     },
     {
-        "nome": "list_dos",
+        "nome": "list_dos.sol.json",
         "vulnerabilidades": [
             "timestamp",
             "external-function",
@@ -409,7 +409,7 @@
         ]
     },
     {
-        "nome": "lottery",
+        "nome": "lottery.sol.json",
         "vulnerabilidades": [
             "incorrect-equality",
             "deprecated-standards",
@@ -426,7 +426,7 @@
         ]
     },
     {
-        "nome": "lucky_doubler",
+        "nome": "lucky_doubler.sol.json",
         "vulnerabilidades": [
             "deprecated-standards",
             "deprecated-standards",
@@ -445,7 +445,7 @@
         ]
     },
     {
-        "nome": "mapping_write",
+        "nome": "mapping_write.sol.json",
         "vulnerabilidades": [
             "uninitialized-state",
             "constable-states",
@@ -455,7 +455,7 @@
         ]
     },
     {
-        "nome": "modifier_reentrancy",
+        "nome": "modifier_reentrancy.sol.json",
         "vulnerabilidades": [
             "external-function",
             "external-function",
@@ -464,7 +464,7 @@
         ]
     },
     {
-        "nome": "multiowned_vulnerable",
+        "nome": "multiowned_vulnerable.sol.json",
         "vulnerabilidades": [
             "arbitrary-send",
             "external-function",
@@ -475,7 +475,7 @@
         ]
     },
     {
-        "nome": "mycontract",
+        "nome": "mycontract.sol.json",
         "vulnerabilidades": [
             "arbitrary-send",
             "tx-origin",
@@ -484,7 +484,7 @@
         ]
     },
     {
-        "nome": "name_registrar",
+        "nome": "name_registrar.sol.json",
         "vulnerabilidades": [
             "uninitialized-storage",
             "constable-states",
@@ -494,7 +494,7 @@
         ]
     },
     {
-        "nome": "odds_and_evens",
+        "nome": "odds_and_evens.sol.json",
         "vulnerabilidades": [
             "arbitrary-send",
             "deprecated-standards",
@@ -506,7 +506,7 @@
         ]
     },
     {
-        "nome": "old_blockhash",
+        "nome": "old_blockhash.sol.json",
         "vulnerabilidades": [
             "external-function",
             "external-function",
@@ -514,7 +514,7 @@
         ]
     },
     {
-        "nome": "open_address_lottery",
+        "nome": "open_address_lottery.sol.json",
         "vulnerabilidades": [
             "uninitialized-storage",
             "constable-states",
@@ -528,14 +528,14 @@
         ]
     },
     {
-        "nome": "overflow_simple_add",
+        "nome": "overflow_simple_add.sol.json",
         "vulnerabilidades": [
             "external-function",
             "naming-convention"
         ]
     },
     {
-        "nome": "overflow_single_tx",
+        "nome": "overflow_single_tx.sol.json",
         "vulnerabilidades": [
             "external-function",
             "external-function",
@@ -547,11 +547,11 @@
         ]
     },
     {
-        "nome": "parity_wallet_bug_1",
+        "nome": "parity_wallet_bug_1.sol.json",
         "vulnerabilidades": []
     },
     {
-        "nome": "parity_wallet_bug_2",
+        "nome": "parity_wallet_bug_2.sol.json",
         "vulnerabilidades": [
             "reentrancy-eth",
             "uninitialized-local",
@@ -608,7 +608,7 @@
         ]
     },
     {
-        "nome": "phishable",
+        "nome": "phishable.sol.json",
         "vulnerabilidades": [
             "arbitrary-send",
             "tx-origin",
@@ -620,7 +620,7 @@
         ]
     },
     {
-        "nome": "proxy",
+        "nome": "proxy.sol.json",
         "vulnerabilidades": [
             "controlled-delegatecall",
             "external-function",
@@ -629,11 +629,11 @@
         ]
     },
     {
-        "nome": "random_number_generator",
+        "nome": "random_number_generator.sol.json",
         "vulnerabilidades": []
     },
     {
-        "nome": "reentrance",
+        "nome": "reentrance.sol.json",
         "vulnerabilidades": [
             "reentrancy-eth",
             "external-function",
@@ -648,7 +648,7 @@
         ]
     },
     {
-        "nome": "reentrancy_simple",
+        "nome": "reentrancy_simple.sol.json",
         "vulnerabilidades": [
             "reentrancy-eth",
             "deprecated-standards",
@@ -660,7 +660,7 @@
         ]
     },
     {
-        "nome": "roulette",
+        "nome": "roulette.sol.json",
         "vulnerabilidades": [
             "arbitrary-send",
             "incorrect-equality",
@@ -668,7 +668,7 @@
         ]
     },
     {
-        "nome": "rubixi",
+        "nome": "rubixi.sol.json",
         "vulnerabilidades": [
             "calls-loop",
             "deprecated-standards",
@@ -702,11 +702,11 @@
         ]
     },
     {
-        "nome": "send_loop",
+        "nome": "send_loop.sol.json",
         "vulnerabilidades": []
     },
     {
-        "nome": "short_address_example",
+        "nome": "short_address_example.sol.json",
         "vulnerabilidades": [
             "external-function",
             "external-function",
@@ -715,7 +715,7 @@
         ]
     },
     {
-        "nome": "simple_dao",
+        "nome": "simple_dao.sol.json",
         "vulnerabilidades": [
             "reentrancy-eth",
             "external-function",
@@ -726,7 +726,7 @@
         ]
     },
     {
-        "nome": "simple_suicide",
+        "nome": "simple_suicide.sol.json",
         "vulnerabilidades": [
             "suicidal",
             "external-function",
@@ -734,7 +734,7 @@
         ]
     },
     {
-        "nome": "smart_billions",
+        "nome": "smart_billions.sol.json",
         "vulnerabilidades": [
             "erc20-interface",
             "erc20-interface",
@@ -804,7 +804,7 @@
         ]
     },
     {
-        "nome": "spank_chain_payment",
+        "nome": "spank_chain_payment.sol.json",
         "vulnerabilidades": [
             "arbitrary-send",
             "reentrancy-eth",
@@ -929,14 +929,14 @@
         ]
     },
     {
-        "nome": "timed_crowdsale",
+        "nome": "timed_crowdsale.sol.json",
         "vulnerabilidades": [
             "timestamp",
             "external-function"
         ]
     },
     {
-        "nome": "timelock",
+        "nome": "timelock.sol.json",
         "vulnerabilidades": [
             "external-function",
             "external-function",
@@ -946,7 +946,7 @@
         ]
     },
     {
-        "nome": "token",
+        "nome": "token.sol.json",
         "vulnerabilidades": [
             "external-function",
             "external-function",
@@ -959,7 +959,7 @@
         ]
     },
     {
-        "nome": "tokensalechallenge",
+        "nome": "tokensalechallenge.sol.json",
         "vulnerabilidades": [
             "external-function",
             "external-function",
@@ -969,7 +969,7 @@
         ]
     },
     {
-        "nome": "unchecked_return_value",
+        "nome": "unchecked_return_value.sol.json",
         "vulnerabilidades": [
             "external-function",
             "external-function",
@@ -978,7 +978,7 @@
         ]
     },
     {
-        "nome": "unprotected0",
+        "nome": "unprotected0.sol.json",
         "vulnerabilidades": [
             "external-function",
             "solc-version",
@@ -987,7 +987,7 @@
         ]
     },
     {
-        "nome": "wallet_02_refund_nosub",
+        "nome": "wallet_02_refund_nosub.sol.json",
         "vulnerabilidades": [
             "external-function",
             "external-function",
@@ -996,7 +996,7 @@
         ]
     },
     {
-        "nome": "wallet_03_wrong_constructor",
+        "nome": "wallet_03_wrong_constructor.sol.json",
         "vulnerabilidades": [
             "external-function",
             "external-function",
@@ -1005,7 +1005,7 @@
         ]
     },
     {
-        "nome": "wallet_04_confused_sign",
+        "nome": "wallet_04_confused_sign.sol.json",
         "vulnerabilidades": [
             "external-function",
             "external-function",

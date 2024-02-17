@@ -1,0 +1,563 @@
+[
+    {
+        "nome": "FindThisHash.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow ",
+            "Ether send"
+        ]
+    },
+    {
+        "nome": "lotto.sol.json",
+        "vulnerabilidades": [
+            "Ether send",
+            "Unchecked CALL return value",
+            "Ether send",
+            "Transaction order dependence",
+            "Unchecked CALL return value"
+        ]
+    },
+    {
+        "nome": "reentrancy_dao.sol.json",
+        "vulnerabilidades": [
+            "Integer Underflow",
+            "Message call to external contract",
+            "State change after external call",
+            "Integer Overflow ",
+            "Integer Overflow "
+        ]
+    },
+    {
+        "nome": "arbitrary_location_write_simple.sol.json",
+        "vulnerabilidades": [
+            "Integer Underflow",
+            "Integer Overflow ",
+            "Integer Overflow ",
+            "Integer Overflow "
+        ]
+    },
+    {
+        "nome": "auction.sol.json",
+        "vulnerabilidades": [
+            "Ether send",
+            "Transaction order dependence"
+        ]
+    },
+    {
+        "nome": "BECToken.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow "
+        ]
+    },
+    {
+        "nome": "blackjack.sol.json",
+        "vulnerabilidades": []
+    },
+    {
+        "nome": "crypto_roulette.sol.json",
+        "vulnerabilidades": [
+            "Exception state",
+            "Integer Overflow ",
+            "Integer Overflow "
+        ]
+    },
+    {
+        "nome": "dos_address.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow ",
+            "Integer Overflow "
+        ]
+    },
+    {
+        "nome": "dos_number.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow ",
+            "Integer Overflow ",
+            "Exception state",
+            "Integer Overflow "
+        ]
+    },
+    {
+        "nome": "dos_simple.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow "
+        ]
+    },
+    {
+        "nome": "ERC20.sol.json",
+        "vulnerabilidades": []
+    },
+    {
+        "nome": "etheraffle.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow ",
+            "Transaction order dependence",
+            "Integer Overflow ",
+            "Dependence on predictable environment variable",
+            "Multiple Calls",
+            "Transaction order dependence",
+            "Multiple Calls",
+            "Transaction order dependence",
+            "Integer Overflow ",
+            "Integer Overflow "
+        ]
+    },
+    {
+        "nome": "etherpot_lotto.sol.json",
+        "vulnerabilidades": [
+            "Unchecked CALL return value",
+            "Integer Overflow ",
+            "Integer Overflow ",
+            "Integer Overflow ",
+            "Exception state",
+            "Integer Overflow ",
+            "Integer Overflow ",
+            "Integer Overflow "
+        ]
+    },
+    {
+        "nome": "etherstore.sol.json",
+        "vulnerabilidades": [
+            "Dependence on predictable environment variable",
+            "Message call to external contract",
+            "State change after external call",
+            "State change after external call",
+            "Integer Overflow "
+        ]
+    },
+    {
+        "nome": "ether_lotto.sol.json",
+        "vulnerabilidades": [
+            "Exception state",
+            "Integer Overflow ",
+            "Dependence on predictable environment variable",
+            "Multiple Calls",
+            "Transaction order dependence"
+        ]
+    },
+    {
+        "nome": "eth_tx_order_dependence_minimal.sol.json",
+        "vulnerabilidades": [
+            "Ether send",
+            "Transaction order dependence",
+            "Ether send",
+            "Transaction order dependence"
+        ]
+    },
+    {
+        "nome": "FibonacciBalance.sol.json",
+        "vulnerabilidades": [
+            "Call data forwarded with delegatecall()",
+            "DELEGATECALL to a user-supplied address",
+            "Integer Overflow ",
+            "Multiple Calls",
+            "Ether send"
+        ]
+    },
+    {
+        "nome": "governmental_survey.sol.json",
+        "vulnerabilidades": [
+            "Dependence on predictable environment variable",
+            "Ether send",
+            "Multiple Calls",
+            "Transaction order dependence",
+            "Unchecked CALL return value",
+            "Dependence on predictable environment variable",
+            "Unchecked CALL return value"
+        ]
+    },
+    {
+        "nome": "guess_the_random_number.sol.json",
+        "vulnerabilidades": []
+    },
+    {
+        "nome": "incorrect_constructor_name1.sol.json",
+        "vulnerabilidades": [
+            "Ether send",
+            "Transaction order dependence"
+        ]
+    },
+    {
+        "nome": "incorrect_constructor_name2.sol.json",
+        "vulnerabilidades": [
+            "Ether send",
+            "Transaction order dependence"
+        ]
+    },
+    {
+        "nome": "incorrect_constructor_name3.sol.json",
+        "vulnerabilidades": [
+            "Ether send",
+            "Transaction order dependence"
+        ]
+    },
+    {
+        "nome": "integer_overflow_1.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow "
+        ]
+    },
+    {
+        "nome": "integer_overflow_add.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow "
+        ]
+    },
+    {
+        "nome": "integer_overflow_benign_1.sol.json",
+        "vulnerabilidades": []
+    },
+    {
+        "nome": "integer_overflow_mapping_sym_1.sol.json",
+        "vulnerabilidades": [
+            "Integer Underflow"
+        ]
+    },
+    {
+        "nome": "integer_overflow_minimal.sol.json",
+        "vulnerabilidades": [
+            "Integer Underflow"
+        ]
+    },
+    {
+        "nome": "integer_overflow_mul.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow "
+        ]
+    },
+    {
+        "nome": "integer_overflow_multitx_multifunc_feasible.sol.json",
+        "vulnerabilidades": [
+            "Integer Underflow"
+        ]
+    },
+    {
+        "nome": "integer_overflow_multitx_onefunc_feasible.sol.json",
+        "vulnerabilidades": [
+            "Integer Underflow"
+        ]
+    },
+    {
+        "nome": "king_of_the_ether_throne.sol.json",
+        "vulnerabilidades": [
+            "Unchecked CALL return value",
+            "Multiple Calls",
+            "Unchecked CALL return value",
+            "Transaction order dependence",
+            "Unchecked CALL return value",
+            "Integer Overflow ",
+            "Integer Overflow ",
+            "Transaction order dependence",
+            "Unchecked CALL return value",
+            "Exception state",
+            "Integer Overflow ",
+            "Integer Overflow ",
+            "Integer Overflow ",
+            "Integer Overflow "
+        ]
+    },
+    {
+        "nome": "list_dos.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow ",
+            "Integer Overflow ",
+            "Integer Overflow ",
+            "Multiple Calls",
+            "Unchecked CALL return value",
+            "Exception state",
+            "Dependence on predictable environment variable",
+            "Ether send",
+            "Multiple Calls",
+            "Transaction order dependence",
+            "Unchecked CALL return value",
+            "Dependence on predictable environment variable",
+            "Transaction order dependence",
+            "Unchecked CALL return value",
+            "Multiple Calls",
+            "Unchecked CALL return value",
+            "Unchecked CALL return value",
+            "Unchecked CALL return value",
+            "Unchecked CALL return value",
+            "Exception state",
+            "Integer Overflow ",
+            "Integer Overflow ",
+            "Exception state",
+            "Integer Overflow ",
+            "Integer Overflow ",
+            "Exception state",
+            "Integer Overflow ",
+            "Integer Overflow "
+        ]
+    },
+    {
+        "nome": "lottery.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow "
+        ]
+    },
+    {
+        "nome": "lucky_doubler.sol.json",
+        "vulnerabilidades": [
+            "Unchecked CALL return value",
+            "Multiple Calls",
+            "Unchecked CALL return value",
+            "Multiple Calls",
+            "Unchecked CALL return value",
+            "Unchecked CALL return value"
+        ]
+    },
+    {
+        "nome": "mapping_write.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow ",
+            "Exception state",
+            "Exception state",
+            "Integer Overflow "
+        ]
+    },
+    {
+        "nome": "modifier_reentrancy.sol.json",
+        "vulnerabilidades": [
+            "Message call to external contract",
+            "Message call to external contract"
+        ]
+    },
+    {
+        "nome": "multiowned_vulnerable.sol.json",
+        "vulnerabilidades": []
+    },
+    {
+        "nome": "mycontract.sol.json",
+        "vulnerabilidades": [
+            "Use of tx.origin"
+        ]
+    },
+    {
+        "nome": "name_registrar.sol.json",
+        "vulnerabilidades": []
+    },
+    {
+        "nome": "odds_and_evens.sol.json",
+        "vulnerabilidades": [
+            "Ether send",
+            "Unchecked CALL return value",
+            "Exception state",
+            "Exception state",
+            "Integer Overflow ",
+            "Transaction order dependence",
+            "Unchecked CALL return value",
+            "Transaction order dependence",
+            "Unchecked CALL return value"
+        ]
+    },
+    {
+        "nome": "old_blockhash.sol.json",
+        "vulnerabilidades": [
+            "Dependence on predictable environment variable",
+            "Dependence on predictable variable",
+            "Integer Overflow "
+        ]
+    },
+    {
+        "nome": "open_address_lottery.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow ",
+            "Integer Underflow",
+            "Integer Underflow",
+            "Integer Overflow "
+        ]
+    },
+    {
+        "nome": "overflow_simple_add.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow "
+        ]
+    },
+    {
+        "nome": "overflow_single_tx.sol.json",
+        "vulnerabilidades": [
+            "Integer Underflow",
+            "Integer Overflow ",
+            "Integer Overflow "
+        ]
+    },
+    {
+        "nome": "parity_wallet_bug_1.sol.json",
+        "vulnerabilidades": []
+    },
+    {
+        "nome": "parity_wallet_bug_2.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow ",
+            "Integer Overflow ",
+            "Integer Overflow ",
+            "Integer Underflow",
+            "Exception state",
+            "Integer Overflow ",
+            "Integer Overflow ",
+            "Integer Overflow ",
+            "Message call to external contract",
+            "Integer Overflow ",
+            "Integer Underflow",
+            "Exception state",
+            "Integer Overflow ",
+            "Integer Overflow ",
+            "Exception state",
+            "Exception state"
+        ]
+    },
+    {
+        "nome": "phishable.sol.json",
+        "vulnerabilidades": [
+            "Use of tx.origin"
+        ]
+    },
+    {
+        "nome": "proxy.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow "
+        ]
+    },
+    {
+        "nome": "random_number_generator.sol.json",
+        "vulnerabilidades": []
+    },
+    {
+        "nome": "reentrance.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow ",
+            "Message call to external contract",
+            "Unchecked CALL return value",
+            "State change after external call"
+        ]
+    },
+    {
+        "nome": "reentrancy_simple.sol.json",
+        "vulnerabilidades": [
+            "Ether send",
+            "Message call to external contract",
+            "State change after external call",
+            "Integer Overflow "
+        ]
+    },
+    {
+        "nome": "roulette.sol.json",
+        "vulnerabilidades": []
+    },
+    {
+        "nome": "rubixi.sol.json",
+        "vulnerabilidades": [
+            "Ether send",
+            "Transaction order dependence",
+            "Unchecked CALL return value",
+            "Exception state",
+            "Ether send",
+            "Transaction order dependence",
+            "Unchecked CALL return value",
+            "Exception state",
+            "Integer Overflow ",
+            "Ether send",
+            "Transaction order dependence",
+            "Unchecked CALL return value",
+            "Multiple Calls",
+            "Unchecked CALL return value"
+        ]
+    },
+    {
+        "nome": "send_loop.sol.json",
+        "vulnerabilidades": []
+    },
+    {
+        "nome": "short_address_example.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow "
+        ]
+    },
+    {
+        "nome": "simple_dao.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow ",
+            "Message call to external contract",
+            "Unchecked CALL return value",
+            "State change after external call"
+        ]
+    },
+    {
+        "nome": "simple_suicide.sol.json",
+        "vulnerabilidades": [
+            "Unchecked SUICIDE"
+        ]
+    },
+    {
+        "nome": "smart_billions.sol.json",
+        "vulnerabilidades": [
+            "Unchecked SUICIDE"
+        ]
+    },
+    {
+        "nome": "spank_chain_payment.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow ",
+            "Integer Overflow "
+        ]
+    },
+    {
+        "nome": "timed_crowdsale.sol.json",
+        "vulnerabilidades": []
+    },
+    {
+        "nome": "timelock.sol.json",
+        "vulnerabilidades": [
+            "Dependence on predictable environment variable",
+            "Integer Overflow ",
+            "Integer Overflow ",
+            "Integer Overflow "
+        ]
+    },
+    {
+        "nome": "token.sol.json",
+        "vulnerabilidades": [
+            "Integer Underflow",
+            "Integer Underflow",
+            "Integer Overflow "
+        ]
+    },
+    {
+        "nome": "tokensalechallenge.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow "
+        ]
+    },
+    {
+        "nome": "unchecked_return_value.sol.json",
+        "vulnerabilidades": [
+            "Message call to external contract",
+            "Message call to external contract",
+            "Unchecked CALL return value"
+        ]
+    },
+    {
+        "nome": "unprotected0.sol.json",
+        "vulnerabilidades": []
+    },
+    {
+        "nome": "wallet_02_refund_nosub.sol.json",
+        "vulnerabilidades": [
+            "Ether send",
+            "Exception state"
+        ]
+    },
+    {
+        "nome": "wallet_03_wrong_constructor.sol.json",
+        "vulnerabilidades": [
+            "Ether send",
+            "Exception state"
+        ]
+    },
+    {
+        "nome": "wallet_04_confused_sign.sol.json",
+        "vulnerabilidades": [
+            "Integer Underflow",
+            "Exception state"
+        ]
+    }
+]

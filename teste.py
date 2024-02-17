@@ -57,7 +57,7 @@ if '__main__'==__name__:
 
         df = ma.build_dataframe_from_json(f'{destiny_analysis}json_analysis/',f'{destiny_analysis}results/')
         
-        df_dasp = ma.transform_dasp(dasp_dic,df,f'{destiny_analysis}{mythril_version}_slither_{name}')
+        df_dasp = ma.transform_dasp(dasp_dic,df,f'{destiny_analysis}{mythril_version}_mythril_{name}')
         df_gabarito = pd.read_excel("helps/gabarito_dataset.xlsx").fillna(0)
         display(df_gabarito)
         ma.accuracy(df_dasp,df_gabarito,destiny_analysis)

@@ -166,7 +166,7 @@ class SlitherAnalysis(SmartToolsAnalysis):
                 lista_nome_vulnerabilidades.append(vulnerabilidade['check'])
 
         #preenchendo a lista com as informações
-            lista_sol.append({'nome':arquivo,'vulnerabilidades':lista_nome_vulnerabilidades})
+            lista_sol.append({'nome':f'{arquivo}.sol.json','vulnerabilidades':lista_nome_vulnerabilidades})
         
         #print(lista_smart_contracts)
         
