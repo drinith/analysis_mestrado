@@ -1,5 +1,6 @@
 ipython==8.20.0
 openpyxl==3.1.2
 pandas==2.2.0
-slither-analyzer==0.8.0
+slither-analyzer==0.10.0
+mythril==0.24.3
 
