@@ -73,7 +73,7 @@ if '__main__'==__name__:
 
         ma.sum_dataframe(df,f'{destiny_analysis}{version}_mythril_{name}')
 
-        df_dasp = ma.transform_dasp(dasp_dic,df,f'{destiny_analysis}{version}_slither_{name}')
+        df_dasp = ma.transform_dasp(dasp_dic,df,f'{destiny_analysis}{version}_mythril_{name}')
         
         df_gabarito = pd.read_excel("helps/gabarito_dataset.xlsx").fillna(0)
         ma.accuracy(df_dasp,df_gabarito,f'{destiny_analysis}')
