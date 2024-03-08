@@ -102,7 +102,7 @@ class SmartToolsAnalysis():
     
  
 
-    def sum_dataframe(self,df,arquivo):
+    def sum_dataframe(self,df,diretory_out):
 
         # Criar um novo DataFrame com a soma total de cada vulnerabilidade
 
@@ -116,9 +116,9 @@ class SmartToolsAnalysis():
         soma_total_vulnerabilidades = soma_total_vulnerabilidades.sort_values(by='Soma_Total', ascending=False)
 
         # Visualizar o DataFrame resultante
-        soma_total_vulnerabilidades.to_excel(f'{arquivo}_soma.xlsx')
+        soma_total_vulnerabilidades.to_excel(f'{diretory_out}_soma.xlsx')
 
-    def transform_dasp(self,dicionario:dict,df:pd.DataFrame, arquivo=''):
+    def transform_dasp(self,dicionario:dict,df:pd.DataFrame, diretory_out=''):
         
         #discionário Dasp criado relacionado com o slither
         dasp_dic = dicionario
@@ -126,7 +126,7 @@ class SmartToolsAnalysis():
         #Criando um dataframe com as colunas que serão as vulnerabilidades do dasp
         df_dasp= pd.DataFrame(0,index=df.index, columns=['access_control','arithmetic','denial_service','reentrancy','unchecked_low_calls','bad_randomness','front_running',	'time_manipulation',	'short_addresses',	'Other',	'Ignore'])
         
-        display(df_dasp)  
+        display(df)  
 
 
         #Colocando os encontros das vulnerabilidade de acordo com a tradução para o DASP
@@ -140,10 +140,10 @@ class SmartToolsAnalysis():
 
         print(df_dasp)
         print('parei')
-        df_dasp.to_excel(f'{arquivo}_dasp.xlsx')
+        df_dasp.to_excel(f'{diretory_out}result_dasp.xlsx')
 
         #Futuro acho melhor tirar daqui
-        self.sum_dataframe(df_dasp,f'{arquivo}_dasp')
+        self.sum_dataframe(df_dasp,f'{diretory_out}result_dasp')
 
         return  df_dasp 
 

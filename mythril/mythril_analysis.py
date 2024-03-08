@@ -192,7 +192,7 @@ class MythrilAnalysis(SmartToolsAnalysis):
         with open(f'{diretory_out}log.txt', 'w') as log:
             log.write(f' Soliditys {solidity_lidos} \n Erros {solidity_erro}\n Lista erros {lista_erro}')
 
-    def dasp (self, df, arquivo):
+    def dasp (self, df, diretory_out):
 
         dasp_dic = {'Call data forwarded with delegatecall()': 'access_control', 'DELEGATECALL to a user-supplied address': 'access_control', 'Dependence on predictable environment variable': 'Other', 'Dependence on predictable variable': 'Other', 'Ether send': 'access_control', 'Exception state': 'Other', 'Integer Overflow': 'arithmetic', 'Integer Underflow': 'arithmetic', 'Message call to external contract': 'reentrancy', 'Multiple Calls': 'Ignore', 'State change after external call': 'reentrancy', 'Transaction order dependence': 'front_running', 'Unchecked CALL return value': 'unchecked_low_calls', 'Unchecked SUICIDE': 'access_control', 'Use of tx.origin': 'access_control'}
 
@@ -216,8 +216,8 @@ class MythrilAnalysis(SmartToolsAnalysis):
 
         print(df_dasp)
         print('parei')
-        df_dasp.to_excel(f'{arquivo}_dasp.xlsx')
+        df_dasp.to_excel(f'{diretory_out}resultado_dasp.xlsx')
 
-        self.soma_dataframe(df_dasp,f'{arquivo}_dasp')
+        self.soma_dataframe(df_dasp,f'{diretory_out}_dasp')
 
  

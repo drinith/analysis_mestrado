@@ -24,7 +24,6 @@ for linha in matriz:
         if(linha[pos+1]=='TRUE'):
             dicionario[linha[0]]=head[pos+1]
 
-
 print(dicionario)
 
 
