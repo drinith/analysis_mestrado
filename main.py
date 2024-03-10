@@ -10,7 +10,7 @@ if '__main__'==__name__:
     source_solidity = f'./repositories/{name}/'
   
     
-    analise='m'
+    analise='s'
 
     if(analise=='s'):
         version='0.10.0'
@@ -37,14 +37,11 @@ if '__main__'==__name__:
 
         sa.sum_dataframe(df,f'{destiny_analysis}{version}_slither_{name}')
 
-        sa.dasp(df,f'{destiny_analysis}{version}_slither_{name}')
-
-        df_dasp = sa.transform_dasp(dasp_dic,df,f'{destiny_analysis}')
-
-       # ma.dasp(df,f'{destiny_analysis}{version}_slither_{name}')
+        df_dasp = sa.transform_dasp(dasp_dic,df,f'{destiny_analysis}{version}_slither_{name}')
         
         df_gabarito = pd.read_excel("helps/gabarito_dataset.xlsx").fillna(0)
-        sa.accuracy(df_dasp,df_gabarito,f'{destiny_analysis}')
+        sa.accuracy2(df_dasp,df_gabarito,f'{destiny_analysis}')
+
 
     ### Mithril
     elif(analise=='m'):
@@ -76,5 +73,5 @@ if '__main__'==__name__:
         df_dasp = ma.transform_dasp(dasp_dic,df,f'{destiny_analysis}{version}_mythril_{name}')
         
         df_gabarito = pd.read_excel("helps/gabarito_dataset.xlsx").fillna(0)
-        ma.accuracy(df_dasp,df_gabarito,f'{destiny_analysis}')
+        ma.accuracy2(df_dasp,df_gabarito,f'{destiny_analysis}')
 

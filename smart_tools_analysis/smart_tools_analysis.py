@@ -116,6 +116,7 @@ class SmartToolsAnalysis():
         soma_total_vulnerabilidades = soma_total_vulnerabilidades.sort_values(by='Soma_Total', ascending=False)
 
         # Visualizar o DataFrame resultante
+
         soma_total_vulnerabilidades.to_excel(f'{diretory_out}_soma.xlsx')
 
     def transform_dasp(self,dicionario:dict,df:pd.DataFrame, diretory_out=''):
@@ -164,11 +165,11 @@ class SmartToolsAnalysis():
         #Fazer de forma manual pro enquanto caminhar pelo dataframe de resultado e ver o gabarito
 
         medidas = {}
-        vp = 0
-        fn = 0
-        fp = 0
+        
         for coluna in resultado.columns:
-
+            vp = 0
+            fn = 0
+            fp = 0
             for index in resultado.index:
 
                 #Teste onde teve presença de vulnerabilidade e o gabarito confirma aproveitar aqui e medir precisão e acuracia
@@ -181,6 +182,50 @@ class SmartToolsAnalysis():
                 if(resultado.loc[index,coluna]>=1 and gabarito.loc[index,coluna]==0):
                     #df_acurado.loc[index,coluna]='FP'
                     fp+=1
+                #dicionário com vulnerabildiade dasp , verdadeiro positivo, falso negativo , falso positivo , precision , recall
+                medidas[coluna]=[vp,fn,fp,vp/(vp+fp) if vp>0 else 0,vp/(vp+fn) if vp>0 else 0]
+
+        
+        print(medidas)
+
+        df_acurado = pd.DataFrame(data=medidas, index=['VP','FN','FP','Precision','Recall'])
+        df_acurado = df_acurado.transpose()
+        df_acurado.to_excel(f'{diretory_out}acurado.xlsx')
+
+    
+
+    def accuracy2 (self, resultado:pd.DataFrame, gabarito:pd.DataFrame,diretory_out=''):
+        
+        #carregar resultado
+        #carregar gabarito
+        gabarito.index = gabarito.iloc[:,0]
+        gabarito= gabarito.drop(gabarito.columns[0],axis=1)
+        
+        print(gabarito)
+        # df_acurado = resultado.copy()
+
+        # df_acurado.loc[:,:]=''
+        #comparar e criar uma lista onde cada solidity é classificado com lista vulnerabilidades encontradas , a que deveria ter , VP, VN, FP , FN
+        #Fazer de forma manual pro enquanto caminhar pelo dataframe de resultado e ver o gabarito
+
+        medidas = {}
+
+        for coluna in resultado.columns:
+            vp = 0
+            fn = 0
+            fp = 0
+            for index in resultado.index:
+
+                #Teste onde teve presença de vulnerabilidade e o gabarito confirma aproveitar aqui e medir precisão e acuracia
+                if(resultado.loc[index,coluna]>=1 and gabarito.loc[index,coluna]>=1):
+                    #df_acurado.loc[index,coluna]='VP'
+                    vp+=resultado.loc[index,coluna]
+                if(resultado.loc[index,coluna]==0 and gabarito.loc[index,coluna]>=1):
+                    #df_acurado.loc[index,coluna]='FN'
+                    fn+=gabarito.loc[index,coluna]
+                if(resultado.loc[index,coluna]>=1 and gabarito.loc[index,coluna]==0):
+                    #df_acurado.loc[index,coluna]='FP'
+                    fp+=resultado.loc[index,coluna]
                 #dicionário com vulnerabildiade dasp , verdadeiro positivo, falso negativo , falso positivo , precision , recall
                 medidas[coluna]=[vp,fn,fp,vp/(vp+fp) if vp>0 else 0,vp/(vp+fn) if vp>0 else 0]
 

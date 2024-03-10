@@ -207,5 +207,5 @@ class SlitherAnalysis(SmartToolsAnalysis):
         print('parei')
         df_dasp.to_excel(f'{arquivo}_dasp.xlsx')
        
-        self.soma_dataframe(df_dasp,f'{arquivo}_dasp')
+        self.sum_dataframe(df_dasp,f'{arquivo}_dasp')
 
