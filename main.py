@@ -10,7 +10,7 @@ if '__main__'==__name__:
     source_solidity = f'./repositories/{name}/'
   
     
-    analise='s'
+    analise='m'
 
     if(analise=='s'):
         version='0.10.0'
@@ -46,7 +46,7 @@ if '__main__'==__name__:
     ### Mithril
     elif(analise=='m'):
         
-        version='0.24.7'        
+        version='teste_0.24.7'        
         ma = MythrilAnalysis('0.4.26')
         destiny_analysis = f'./mythril/{version}_{name}/'
         dasp_dic = {'Write to Arbitrary Storage Location': 'access_control', 'Integer Overflow and Underflow': 'arithmetic', 'Timestamp Dependence': 'time_manipulation', 'Assert Violation': 'Other', 'Reentrancy': 'reentrancy', 'DoS with Failed': 'denial_service', 'Unprotected Ether Withdrawal': 'access_control', 'Delegatecall to Untrusted Callee': 'Other', 'Authorization through tx.origin': 'access_control', 'Unchecked Call Return Value': 'unchecked_low_calls', 'Weak Sources of Randomness from Chain Attributes': 'bad_randomness', 'Unprotected SELFDESTRUCT Instruction': 'access_control', 'Transaction Order Dependence': 'Other'}
@@ -62,7 +62,7 @@ if '__main__'==__name__:
 
 
         ### Slither 
-        # ma.run_analysis_diretory(diretory_in=source_solidity,diretory_out=destiny_analysis)
+        ma.run_analysis_diretory(diretory_in=source_solidity,diretory_out=destiny_analysis)
 
         ma.resume_json(f'{destiny_analysis}json/',f'{destiny_analysis}json_analysis/')
 

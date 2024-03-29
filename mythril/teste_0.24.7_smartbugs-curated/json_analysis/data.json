@@ -1,0 +1,391 @@
+[
+    {
+        "nome": "odds_and_evens.sol.json",
+        "vulnerabilidades": [
+            "Assert Violation",
+            "Unchecked Call Return Value"
+        ]
+    },
+    {
+        "nome": "arbitrary_location_write_simple.sol.json",
+        "vulnerabilidades": [
+            "Write to Arbitrary Storage Location",
+            "Integer Overflow and Underflow",
+            "Integer Overflow and Underflow",
+            "Integer Overflow and Underflow",
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "auction.sol.json",
+        "vulnerabilidades": [
+            "Transaction Order Dependence"
+        ]
+    },
+    {
+        "nome": "crypto_roulette.sol.json",
+        "vulnerabilidades": [
+            "Assert Violation",
+            "Timestamp Dependence"
+        ]
+    },
+    {
+        "nome": "etherstore.sol.json",
+        "vulnerabilidades": [
+            "Reentrancy",
+            "Timestamp Dependence",
+            "Reentrancy",
+            "Reentrancy",
+            "Reentrancy"
+        ]
+    },
+    {
+        "nome": "ether_lotto.sol.json",
+        "vulnerabilidades": [
+            "Assert Violation",
+            "DoS with Failed Call",
+            "Timestamp Dependence",
+            "Transaction Order Dependence"
+        ]
+    },
+    {
+        "nome": "eth_tx_order_dependence_minimal.sol.json",
+        "vulnerabilidades": [
+            "Unprotected Ether Withdrawal",
+            "Transaction Order Dependence"
+        ]
+    },
+    {
+        "nome": "FibonacciBalance.sol.json",
+        "vulnerabilidades": [
+            "Delegatecall to Untrusted Callee",
+            "Delegatecall to Untrusted Callee",
+            "DoS with Failed Call",
+            "Reentrancy",
+            "Reentrancy",
+            "Transaction Order Dependence"
+        ]
+    },
+    {
+        "nome": "governmental_survey.sol.json",
+        "vulnerabilidades": [
+            "Reentrancy",
+            "Requirement Violation",
+            "Requirement Violation",
+            "Requirement Violation"
+        ]
+    },
+    {
+        "nome": "guess_the_random_number.sol.json",
+        "vulnerabilidades": [
+            "Unprotected Ether Withdrawal"
+        ]
+    },
+    {
+        "nome": "incorrect_constructor_name1.sol.json",
+        "vulnerabilidades": [
+            "Transaction Order Dependence"
+        ]
+    },
+    {
+        "nome": "incorrect_constructor_name2.sol.json",
+        "vulnerabilidades": [
+            "Transaction Order Dependence"
+        ]
+    },
+    {
+        "nome": "incorrect_constructor_name3.sol.json",
+        "vulnerabilidades": [
+            "Transaction Order Dependence"
+        ]
+    },
+    {
+        "nome": "integer_overflow_1.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "integer_overflow_add.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "integer_overflow_mapping_sym_1.sol.json",
+        "vulnerabilidades": [
+            "Assert Violation",
+            "Assert Violation",
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "integer_overflow_minimal.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "integer_overflow_mul.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "integer_overflow_multitx_multifunc_feasible.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "integer_overflow_multitx_onefunc_feasible.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "king_of_the_ether_throne.sol.json",
+        "vulnerabilidades": [
+            "Assert Violation",
+            "Unchecked Call Return Value",
+            "Unchecked Call Return Value",
+            "Unchecked Call Return Value"
+        ]
+    },
+    {
+        "nome": "list_dos.sol.json",
+        "vulnerabilidades": [
+            "Assert Violation",
+            "Timestamp Dependence",
+            "Unchecked Call Return Value"
+        ]
+    },
+    {
+        "nome": "lottery.sol.json",
+        "vulnerabilidades": [
+            "Weak Sources of Randomness from Chain Attributes"
+        ]
+    },
+    {
+        "nome": "lotto.sol.json",
+        "vulnerabilidades": [
+            "Transaction Order Dependence",
+            "Transaction Order Dependence",
+            "Unchecked Call Return Value",
+            "Unchecked Call Return Value"
+        ]
+    },
+    {
+        "nome": "lucky_doubler.sol.json",
+        "vulnerabilidades": [
+            "Unchecked Call Return Value"
+        ]
+    },
+    {
+        "nome": "mapping_write.sol.json",
+        "vulnerabilidades": [
+            "Write to Arbitrary Storage Location",
+            "Assert Violation",
+            "Assert Violation",
+            "Transaction Order Dependence"
+        ]
+    },
+    {
+        "nome": "modifier_reentrancy.sol.json",
+        "vulnerabilidades": [
+            "Reentrancy",
+            "Reentrancy",
+            "Reentrancy",
+            "Reentrancy",
+            "Reentrancy"
+        ]
+    },
+    {
+        "nome": "multiowned_vulnerable.sol.json",
+        "vulnerabilidades": [
+            "Unprotected Ether Withdrawal",
+            "Transaction Order Dependence"
+        ]
+    },
+    {
+        "nome": "mycontract.sol.json",
+        "vulnerabilidades": [
+            "Authorization through tx.origin"
+        ]
+    },
+    {
+        "nome": "old_blockhash.sol.json",
+        "vulnerabilidades": [
+            "Unprotected Ether Withdrawal",
+            "Integer Overflow and Underflow",
+            "Weak Sources of Randomness from Chain Attributes",
+            "Weak Sources of Randomness from Chain Attributes"
+        ]
+    },
+    {
+        "nome": "open_address_lottery.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow and Underflow",
+            "Integer Overflow and Underflow",
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "overflow_simple_add.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "overflow_single_tx.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow and Underflow",
+            "Integer Overflow and Underflow",
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "phishable.sol.json",
+        "vulnerabilidades": [
+            "Unprotected Ether Withdrawal",
+            "Transaction Order Dependence",
+            "Authorization through tx.origin"
+        ]
+    },
+    {
+        "nome": "proxy.sol.json",
+        "vulnerabilidades": [
+            "Delegatecall to Untrusted Callee"
+        ]
+    },
+    {
+        "nome": "reentrance.sol.json",
+        "vulnerabilidades": [
+            "Unprotected Ether Withdrawal",
+            "Reentrancy",
+            "Reentrancy",
+            "Reentrancy",
+            "Unchecked Call Return Value"
+        ]
+    },
+    {
+        "nome": "reentrancy_dao.sol.json",
+        "vulnerabilidades": [
+            "Reentrancy",
+            "Reentrancy",
+            "Transaction Order Dependence"
+        ]
+    },
+    {
+        "nome": "reentrancy_simple.sol.json",
+        "vulnerabilidades": [
+            "Reentrancy",
+            "Reentrancy",
+            "Transaction Order Dependence"
+        ]
+    },
+    {
+        "nome": "roulette.sol.json",
+        "vulnerabilidades": [
+            "Unprotected Ether Withdrawal",
+            "Timestamp Dependence",
+            "Timestamp Dependence",
+            "Transaction Order Dependence"
+        ]
+    },
+    {
+        "nome": "rubixi.sol.json",
+        "vulnerabilidades": [
+            "Assert Violation"
+        ]
+    },
+    {
+        "nome": "short_address_example.sol.json",
+        "vulnerabilidades": [
+            "Assert Violation",
+            "Assert Violation"
+        ]
+    },
+    {
+        "nome": "simple_dao.sol.json",
+        "vulnerabilidades": [
+            "Unprotected Ether Withdrawal",
+            "Reentrancy",
+            "Reentrancy",
+            "Reentrancy",
+            "Unchecked Call Return Value"
+        ]
+    },
+    {
+        "nome": "simple_suicide.sol.json",
+        "vulnerabilidades": [
+            "Unprotected SELFDESTRUCT Instruction"
+        ]
+    },
+    {
+        "nome": "smart_billions.sol.json",
+        "vulnerabilidades": [
+            "Assert Violation",
+            "Assert Violation",
+            "Weak Sources of Randomness from Chain Attributes"
+        ]
+    },
+    {
+        "nome": "spank_chain_payment.sol.json",
+        "vulnerabilidades": [
+            "Assert Violation",
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "timelock.sol.json",
+        "vulnerabilidades": [
+            "Timestamp Dependence",
+            "Transaction Order Dependence"
+        ]
+    },
+    {
+        "nome": "token.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow and Underflow",
+            "Integer Overflow and Underflow",
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "tokensalechallenge.sol.json",
+        "vulnerabilidades": [
+            "Integer Overflow and Underflow"
+        ]
+    },
+    {
+        "nome": "unchecked_return_value.sol.json",
+        "vulnerabilidades": [
+            "Reentrancy",
+            "Reentrancy",
+            "Unchecked Call Return Value"
+        ]
+    },
+    {
+        "nome": "wallet_02_refund_nosub.sol.json",
+        "vulnerabilidades": [
+            "Assert Violation",
+            "Transaction Order Dependence"
+        ]
+    },
+    {
+        "nome": "wallet_03_wrong_constructor.sol.json",
+        "vulnerabilidades": [
+            "Assert Violation",
+            "Transaction Order Dependence"
+        ]
+    },
+    {
+        "nome": "wallet_04_confused_sign.sol.json",
+        "vulnerabilidades": [
+            "Unprotected Ether Withdrawal",
+            "Assert Violation",
+            "Integer Overflow and Underflow"
+        ]
+    }
+]
