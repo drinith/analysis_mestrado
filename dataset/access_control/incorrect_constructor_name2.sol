@@ -15,8 +15,7 @@ contract Missing{
         _;
     }
     // <yes> <report> ACCESS_CONTROL
-    function missing()
-        public
+    function missing() public
     {
         owner = msg.sender;
     }
