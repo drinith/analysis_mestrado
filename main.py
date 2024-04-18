@@ -49,8 +49,7 @@ if '__main__'==__name__:
         version='teste_0.24.7'        
         ma = MythrilAnalysis('0.4.26')
         destiny_analysis = f'./mythril/{version}_{name}/'
-        dasp_dic = {'Write to Arbitrary Storage Location': 'access_control', 'Integer Overflow and Underflow': 'arithmetic', 'Timestamp Dependence': 'time_manipulation', 'Assert Violation': 'Other', 'Reentrancy': 'reentrancy', 'DoS with Failed': 'denial_service', 'Unprotected Ether Withdrawal': 'access_control', 'Delegatecall to Untrusted Callee': 'Other', 'Authorization through tx.origin': 'access_control', 'Unchecked Call Return Value': 'unchecked_low_calls', 'Weak Sources of Randomness from Chain Attributes': 'bad_randomness', 'Unprotected SELFDESTRUCT Instruction': 'access_control', 'Transaction Order Dependence': 'Other'}
-
+        dasp_dic = {'Write to Arbitrary Storage Location': 'access_control', 'Integer Overflow and Underflow': 'arithmetic', 'Timestamp Dependence': 'time_manipulation', 'Assert Violation': 'Other', 'Reentrancy': 'reentrancy', 'DoS with Failed Call': 'denial_service', 'Unprotected Ether Withdrawal': 'access_control', 'Delegatecall to Untrusted Callee': 'access_control', 'Authorization through tx.origin': 'access_control', 'Unchecked Call Return Value': 'unchecked_low_calls', 'Weak Sources of Randomness from Chain Attributes': 'bad_randomness', 'Unprotected SELFDESTRUCT Instruction': 'access_control', 'Transaction Order Dependence': 'front_running'}
         print(os.getcwd())
 
 
@@ -62,9 +61,9 @@ if '__main__'==__name__:
 
 
         ### Slither 
-        ma.run_analysis_diretory(diretory_in=source_solidity,diretory_out=destiny_analysis)
+        # ma.run_analysis_diretory(diretory_in=source_solidity,diretory_out=destiny_analysis)
 
-        ma.resume_json(f'{destiny_analysis}json/',f'{destiny_analysis}json_analysis/')
+        # ma.resume_json(f'{destiny_analysis}json/',f'{destiny_analysis}json_analysis/')
 
         df = ma.build_dataframe_from_json(f'{destiny_analysis}json_analysis/',f'{destiny_analysis}results/')
 
