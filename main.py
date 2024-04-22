@@ -60,7 +60,7 @@ if '__main__'==__name__:
 
 
 
-        ### Slither 
+        ### Mythril
         # ma.run_analysis_diretory(diretory_in=source_solidity,diretory_out=destiny_analysis)
 
         # ma.resume_json(f'{destiny_analysis}json/',f'{destiny_analysis}json_analysis/')
