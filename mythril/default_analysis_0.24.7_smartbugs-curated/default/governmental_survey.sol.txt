@@ -1,0 +1,86 @@
+==== requirement violation ====
+SWC ID: 123
+Severity: Medium
+Contract: Attacker
+Function name: attack(address,uint256)
+PC address: 360
+Estimated Gas Usage: 1900 - 36466
+A requirement was violated in a nested call and the call was reverted as a result.
+Make sure valid inputs are provided to the nested call (for instance, via passed arguments).
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: attack(address,uint256), txdata: 0x52fba25c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003fd, decoded_data: ('0x0000000000000000000000000000000000000000', 1021), value: 0x0
+
+==== requirement violation ====
+SWC ID: 123
+Severity: Medium
+Contract: Attacker
+Function name: attack(address,uint256)
+PC address: 470
+Estimated Gas Usage: 1084 - 1460
+A requirement was violated in a nested call and the call was reverted as a result.
+Make sure valid inputs are provided to the nested call (for instance, via passed arguments).
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: attack(address,uint256), txdata: 0x52fba25c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003fe, decoded_data: ('0x0000000000000000000000000000000000000000', 1022), value: 0x0
+
+==== External Call To User-Supplied Address ====
+SWC ID: 107
+Severity: Low
+Contract: Attacker
+Function name: attack(address,uint256)
+PC address: 474
+Estimated Gas Usage: 1828 - 36204
+A call to a user-supplied address is executed.
+An external message call to an address specified by the caller is executed. Note that the callee account might contain arbitrary code and could re-enter any function within this contract. Reentering the contract in an intermediate state may lead to unexpected behaviour. Make sure that no state modifications are executed after this call and/or reentrancy guards are in place.
+--------------------
+In file: ./repositories/smartbugs-curated/governmental_survey.sol:50
+
+Governmental(target).resetInvestment()
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: attack(address,uint256), txdata: 0x52fba25c000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef40, decoded_data: ('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', 28948022309329048855892746252171976963317496166410141009864396001978282409984), value: 0x0
+
+==== requirement violation ====
+SWC ID: 123
+Severity: Medium
+Contract: Attacker
+Function name: attack(address,uint256)
+PC address: 490
+Estimated Gas Usage: 1821 - 36197
+A requirement was violated in a nested call and the call was reverted as a result.
+Make sure valid inputs are provided to the nested call (for instance, via passed arguments).
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: attack(address,uint256), txdata: 0x52fba25c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003fe, decoded_data: ('0x0000000000000000000000000000000000000000', 1022), value: 0x0
+
+

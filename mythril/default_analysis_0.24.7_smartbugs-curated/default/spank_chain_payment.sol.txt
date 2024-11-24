@@ -1,0 +1,67 @@
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: ECTools
+Function name: isSignedBy(bytes32,string,address)
+PC address: 205
+Estimated Gas Usage: 1376 - 7063
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./repositories/smartbugs-curated/spank_chain_payment.sol:91
+
+function isSignedBy(bytes32 _hashedMsg, string _sig, address _addr) public pure returns (bool) {
+         require(_addr != 0x0);
+
+         return _addr == recoverSigner(_hashedMsg, _sig);
+     }
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0xc04020fbdf2, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: isSignedBy(bytes32,string,address), txdata: 0x1052506f0000000000000000000000000000000000000000000000000000000000000001fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc00000000000000000000000001, value: 0x0
+
+==== Exception State ====
+SWC ID: 110
+Severity: Medium
+Contract: ECTools
+Function name: parseInt16Char(string)
+PC address: 2330
+Estimated Gas Usage: 484 - 3259
+An assertion violation was triggered.
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+--------------------
+In file: ./repositories/smartbugs-curated/spank_chain_payment.sol:116
+
+function parseInt16Char(string _char) public pure returns (uint) {
+         bytes memory bresult = bytes(_char);
+         // bool decimals = false;
+         if ((bresult[0] >= 48) && (bresult[0] <= 57)) {
+             return uint(bresult[0]) - 48;
+         } else if ((bresult[0] >= 65) && (bresult[0] <= 70)) {
+             return uint(bresult[0]) - 55;
+         } else if ((bresult[0] >= 97) && (bresult[0] <= 102)) {
+             return uint(bresult[0]) - 87;
+         } else {
+             revert();
+         }
+     }
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x400000003bfb8, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: parseInt16Char(string), txdata: 0x38b025b2, value: 0x0
+
+

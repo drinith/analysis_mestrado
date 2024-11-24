@@ -1,0 +1,103 @@
+==== Dependence on predictable environment variable ====
+SWC ID: 120
+Severity: Low
+Contract: OpenAddressLottery
+Function name: fallback
+PC address: 711
+Estimated Gas Usage: 4653 - 5974
+A control flow decision is made based on The block.number environment variable.
+The block.number environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./repositories/smartbugs-curated/open_address_lottery.sol:63
+
+if(block.number-lastReseed>1000) //reseed if needed
+            reseed(SeedComponents((uint)(block.coinbase), block.difficulty, block.gaslimit, block.timestamp))
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x4012078de060001, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: forceReseed(), txdata: 0x80ca7aec, value: 0x0
+Caller: [ATTACKER], function: unknown, txdata: 0x, decoded_data: , value: 0x16345785d8a0000
+
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: OpenAddressLottery
+Function name: forceReseed()
+PC address: 1183
+Estimated Gas Usage: 34795 - 156726
+The arithmetic operator can underflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./repositories/smartbugs-curated/open_address_lottery.sol:93
+
+block.number - 1
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: forceReseed(), txdata: 0x80ca7aec, value: 0x0
+
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: OpenAddressLottery
+Function name: forceReseed()
+PC address: 1221
+Estimated Gas Usage: 34795 - 156726
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./repositories/smartbugs-curated/open_address_lottery.sol:94
+
+block.difficulty*(uint)(block.coinbase)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: forceReseed(), txdata: 0x80ca7aec, value: 0x0
+
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: OpenAddressLottery
+Function name: forceReseed()
+PC address: 1233
+Estimated Gas Usage: 34795 - 156726
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./repositories/smartbugs-curated/open_address_lottery.sol:95
+
+tx.gasprice * 7
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: forceReseed(), txdata: 0x80ca7aec, value: 0x0
+
+

@@ -1,0 +1,27 @@
+==== Unchecked return value from external call. ====
+SWC ID: 104
+Severity: Medium
+Contract: LuckyDoubler
+Function name: fallback
+PC address: 1276
+Estimated Gas Usage: 906 - 35187
+The return value of a message call is not checked.
+External calls return a boolean value. If the callee halts with an exception, 'false' is returned and execution continues in the caller. The caller should check whether an exception happened and react accordingly to avoid unexpected behavior. For example it is often desirable to wrap external calls in require() so the transaction is reverted if the call fails.
+--------------------
+In file: ./repositories/smartbugs-curated/lucky_doubler.sol:60
+
+msg.sender.send(msg.value)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: changeOwner(address), txdata: 0xa6f9dae1, value: 0x0
+Caller: [ATTACKER], function: unknown, txdata: 0x, decoded_data: , value: 0x0
+
+

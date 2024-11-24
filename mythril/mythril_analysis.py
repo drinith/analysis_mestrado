@@ -71,6 +71,52 @@ class MythrilAnalysis(SmartToolsAnalysis):
             arquivo.write(f'Quantidade de arquivos{len(files)}\nQuantidade de arquivos que rodaram{sol_count}')
       
     #Resumir as informações dos json em um arquivo intermediário menor
+
+
+     #Buscar os arquivos e rodar o mythril com a estrutura default
+    def run_analysis_default(self,diretory_in,diretory_out=''):
+        
+        
+        # Listar arquivos no diretório
+        files = os.listdir( diretory_in)
+
+        # criar diretorio principal
+        self.create_directory(diretory_out)
+        self.create_directory(diretory_out+'default/')
+        self.create_directory(diretory_out+'resultsdefault/')
+        
+        #Contagem de erro
+        error_count = 0
+        # Exibir os nomes dos arquivos
+        for file in files:
+
+            #Checar o pragma e setar a versão mais apropriada
+            self.check_pragma(f'{diretory_in}{file}')
+        
+            result= subprocess.run(f'myth analyze {diretory_in}{file} --max-depth 10', capture_output=True, text=True,shell=True)
+            
+            print(result.stdout)
+            
+            #Salvando o resultado do json
+            with open(f'{diretory_out}default/{file}.txt', 'w') as arquivo:
+                    arquivo.write(result.stdout)
+
+            #Verificando se o comando falhou
+            if ('warnings/errors' in str(result)):
+                error_count +=1
+                with open(f'{diretory_out}resultsdefault/log_error_mythril.txt', 'a') as arquivo:
+                    arquivo.write(f'Qtd erro {error_count} arquivo falha {file}\n')
+                # Você pode adicionar mais linhas conforme necessário
+            with open(f'{diretory_out}resultsdefault/resultado_mythril.txt', 'a') as arquivo:
+                arquivo.write(f'{str(result)}\n')
+        
+        #Quantidade de sols gerados
+        sol_count = os.listdir(diretory_out+'default/')
+
+        with open(f'{diretory_out}resultsdefault/log.txt', 'a') as arquivo:
+            arquivo.write(f'Quantidade de arquivos{len(files)}\nQuantidade de arquivos que rodaram{sol_count}')
+      
+    #Resumir as informações dos json em um arquivo intermediário menor
             
     def resume_smartbugs_json(self,diretory_in='',diretory_out=''):
 

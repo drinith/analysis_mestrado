@@ -1,0 +1,31 @@
+==== Dependence on predictable environment variable ====
+SWC ID: 120
+Severity: Low
+Contract: Lottery
+Function name: makeBet()
+PC address: 329
+Estimated Gas Usage: 22131 - 103403
+A control flow decision is made based on The block.number environment variable.
+The block.number environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+--------------------
+In file: ./repositories/smartbugs-curated/lottery.sol:45
+
+if(won) {
+             if(!msg.sender.send(msg.value)) {
+                 // Return ether to sender
+                 throw;
+             }
+         }
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: makeBet(), txdata: 0x561e91a1, value: 0x0
+
+

@@ -1,0 +1,58 @@
+==== Exception State ====
+SWC ID: 110
+Severity: Medium
+Contract: MyToken
+Function name: constructor
+PC address: 11
+Estimated Gas Usage: 36 - 131
+An assertion violation was triggered.
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+--------------------
+In file: ./repositories/smartbugs-curated/short_address_example.sol:14
+
+function MyToken() {
+         balances[tx.origin] = 10000;
+     }
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x2, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x1
+
+==== Exception State ====
+SWC ID: 110
+Severity: Medium
+Contract: MyToken
+Function name: sendCoin(address,uint256)
+PC address: 77
+Estimated Gas Usage: 82 - 177
+An assertion violation was triggered.
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+--------------------
+In file: ./repositories/smartbugs-curated/short_address_example.sol:18
+
+function sendCoin(address to, uint amount) returns(bool sufficient) {
+         if (balances[msg.sender] < amount) return false;
+         balances[msg.sender] -= amount;
+         balances[to] += amount;
+         Transfer(msg.sender, to, amount);
+         return true;
+     }
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: sendCoin(address,uint256), txdata: 0x90b98a11, value: 0x1
+
+

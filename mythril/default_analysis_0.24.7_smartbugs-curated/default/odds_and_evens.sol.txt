@@ -1,0 +1,52 @@
+==== Unchecked return value from external call. ====
+SWC ID: 104
+Severity: Medium
+Contract: OddsAndEvens
+Function name: getProfit()
+PC address: 428
+Estimated Gas Usage: 2505 - 37116
+The return value of a message call is not checked.
+External calls return a boolean value. If the callee halts with an exception, 'false' is returned and execution continues in the caller. The caller should check whether an exception happened and react accordingly to avoid unexpected behavior. For example it is often desirable to wrap external calls in require() so the transaction is reverted if the call fails.
+--------------------
+In file: ./repositories/smartbugs-curated/odds_and_evens.sol:50
+
+msg.sender.send(this.balance)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x40de1580440640002, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: play(uint256), txdata: 0x6898f82b, value: 0xde0b6b3a7640000
+Caller: [CREATOR], function: getProfit(), txdata: 0x679dffb4, value: 0x0
+
+==== Exception State ====
+SWC ID: 110
+Severity: Medium
+Contract: OddsAndEvens
+Function name: players(uint256)
+PC address: 727
+Estimated Gas Usage: 258 - 353
+An assertion violation was triggered.
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+--------------------
+In file: ./repositories/smartbugs-curated/odds_and_evens.sol:16
+
+Player[2] public players
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: players(uint256), txdata: 0xf71d96cb01, decoded_data: (452312848583266388373324160190187140051835877600158453279131187530910662656,), value: 0x0
+
+

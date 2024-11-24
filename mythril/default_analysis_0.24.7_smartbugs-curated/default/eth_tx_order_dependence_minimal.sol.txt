@@ -1,0 +1,53 @@
+==== Transaction Order Dependence ====
+SWC ID: 114
+Severity: Medium
+Contract: EthTxOrderDependenceMinimal
+Function name: claimReward(uint256)
+PC address: 686
+Estimated Gas Usage: 8566 - 63507
+The value of the call is dependent on balance or storage write
+This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
+--------------------
+In file: ./repositories/smartbugs-curated/eth_tx_order_dependence_minimal.sol:31
+
+msg.sender.transfer(reward)
+
+--------------------
+Initial State:
+
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: claimReward(uint256), txdata: 0xae169a50, value: 0x0
+
+==== Unprotected Ether Withdrawal ====
+SWC ID: 105
+Severity: High
+Contract: EthTxOrderDependenceMinimal
+Function name: claimReward(uint256)
+PC address: 686
+Estimated Gas Usage: 8566 - 63507
+Any sender can withdraw Ether from the contract account.
+Arbitrary senders other than the contract creator can profitably extract Ether from the contract account. Verify the business logic carefully and make sure that appropriate security controls are in place to prevent unexpected loss of funds.
+--------------------
+In file: ./repositories/smartbugs-curated/eth_tx_order_dependence_minimal.sol:31
+
+msg.sender.transfer(reward)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x40000000000000000, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x502008121a04a4020, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: setReward(), txdata: 0x3eb6a67e, value: 0x1
+Caller: [ATTACKER], function: claimReward(uint256), txdata: 0xae169a50, value: 0x0
+
+

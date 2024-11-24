@@ -1,0 +1,77 @@
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: IntegerOverflowSingleTransaction
+Function name: underflowtostate(uint256)
+PC address: 476
+Estimated Gas Usage: 6068 - 26163
+The arithmetic operator can underflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./repositories/smartbugs-curated/overflow_single_tx.sol:30
+
+count -= input
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: underflowtostate(uint256), txdata: 0x4c4f50f301, decoded_data: (452312848583266388373324160190187140051835877600158453279131187530910662656,), value: 0x0
+
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: IntegerOverflowSingleTransaction
+Function name: overflowmultostate(uint256)
+PC address: 494
+Estimated Gas Usage: 6092 - 26187
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./repositories/smartbugs-curated/overflow_single_tx.sol:24
+
+count *= input
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: overflowaddtostate(uint256), txdata: 0xdef92d681d, decoded_data: (13117072608914725262826400645515427061503240450404595145094804438396409217024,), value: 0x0
+Caller: [CREATOR], function: overflowmultostate(uint256), txdata: 0x5c68bc06ca, decoded_data: (91367195413819810451411480358417802290470847275232007562384499881243953856512,), value: 0x0
+
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: IntegerOverflowSingleTransaction
+Function name: overflowaddtostate(uint256)
+PC address: 525
+Estimated Gas Usage: 6134 - 26229
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./repositories/smartbugs-curated/overflow_single_tx.sol:18
+
+count += input
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [SOMEGUY], function: overflowaddtostate(uint256), txdata: 0xdef92d68ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff, decoded_data: (115792089237316195423570985008687907853269984665640564039457584007913129639935,), value: 0x0
+
+

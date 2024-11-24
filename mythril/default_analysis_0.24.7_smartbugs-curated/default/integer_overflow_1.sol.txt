@@ -1,0 +1,27 @@
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: Overflow
+Function name: add(uint256)
+PC address: 127
+Estimated Gas Usage: 6050 - 26426
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: ./repositories/smartbugs-curated/integer_overflow_1.sol:14
+
+sellerBalance += value
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: add(uint256), txdata: 0x1003e2d246, decoded_data: (31661899400828647186132691213313099803628511432011091729539183127163746385920,), value: 0x0
+Caller: [SOMEGUY], function: add(uint256), txdata: 0x1003e2d2c0, decoded_data: (86844066927987146567678238756515930889952488499230423029593188005934847229952,), value: 0x0
+
+

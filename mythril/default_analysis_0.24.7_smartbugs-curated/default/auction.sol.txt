@@ -1,0 +1,27 @@
+==== Transaction Order Dependence ====
+SWC ID: 114
+Severity: Medium
+Contract: DosAuction
+Function name: bid()
+PC address: 236
+Estimated Gas Usage: 15102 - 90373
+The value of the call is dependent on balance or storage write
+This can lead to race conditions. An attacker may be able to run a transaction after our transaction which can change the value of the call
+--------------------
+In file: ./repositories/smartbugs-curated/auction.sol:23
+
+currentFrontrunner.send(currentBid)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x20000000000000000, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [ATTACKER], function: bid(), txdata: 0x1998aeef, value: 0x1
+Caller: [ATTACKER], function: bid(), txdata: 0x1998aeef, value: 0x2
+
+
