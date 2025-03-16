@@ -106,7 +106,7 @@ Este repositório documenta as vulnerabilidades analisadas e comparações feita
 
 👤 **Felipe Mello Fonseca**  
 🎓 Mestrando em Ciência da Computação, CEFET-RJ  
-📧 Email: [seu email]
+📧 Email: felipe.mello@aluno.cefet-rj.br
 
 
 
