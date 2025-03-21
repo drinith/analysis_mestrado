@@ -42,21 +42,24 @@ O Slither erra o local da vulnerabilidade, pois, apesar da vulnerabilidade estar
 A versão anterior do Slither, na análise do trabalho do SmartBugs, encontrou o erro no mesmo lugar, no if.
 A versão anterior do Slither identificou o mesmo erro no mesmo local, no if:
 
+```json
 "check": "timestamp",
 "impact": "Low",
 "confidence": "Medium",
 "description": "EtherLotto.play (/dataset/time_manipulation/ether_lotto.sol#33-57) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- random == 0 (/dataset/time_manipulation/ether_lotto.sol#46-56)\n",
-
+```
 ## Anexo II
 Dentre os smart contracts analisados que apresentam vulnerabilidade em Time Manipulation, estão: ether_lotto.sol, governmental_survey.sol, roulette.sol e timed_crowdsale.sol. Dentro do código do ether_lotto.sol, encontramos a vulnerabilidade apontada na linha 43.
 
+```solidity
 // <yes> <report> TIME_MANIPULATION
 var random = uint(sha3(block.timestamp)) % 2;
-
+```
 Buscando a vulnerabilidade na análise do trabalho do SmartBugs na ferramenta Slither, encontramos:
 
+```json
 "description": "EtherLotto.play (/dataset/time_manipulation/ether_lotto.sol#33-57) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- random == 0 (/dataset/time_manipulation/ether_lotto.sol#46-56)\n",
-
+```
 Este trecho mostra a saída da única vulnerabilidade relacionada ao Time Manipulation. A vulnerabilidade foi detectada pela ferramenta no bloco condicional, como podemos ver a seguir. Assim, podemos notar que não foi exatamente onde o código foi analisado.
 
 ```solidity
@@ -79,10 +82,73 @@ O arquivo governmental_survey.sol possui a vulnerabilidade apontada para a linha
 // <yes> <report> TIME_MANIPULATION
 lastInvestmentTimestamp = block.timestamp;
 ```
+A análise feita pelo SmartBugs usando o Slither tem em seu arquivo de saída a descrição apontada para essa vulnerabilidade:
 
+```json
+"description": "Governmental.resetInvestment (/dataset/time_manipulation/governmental_survey.sol#30-40) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- block.timestamp < lastInvestmentTimestamp + ONE_MINUTE (/dataset/time_manipulation/governmental_survey.sol#31-32)\n",
+```
+Assim, a informação apontada não está no local correto da vulnerabilidade. O local correto é a seguinte parte do código:
 
+```solidity
+if (block.timestamp < lastInvestmentTimestamp + ONE_MINUTE)
+    throw;
+```
+O arquivo roulette.sol possui a vulnerabilidade nas seguintes linhas do seu código:
 
+```solidity
+// <yes> <report> TIME_MANIPULATION
+require(now != pastBlockTime); // only 1 transaction per block
+// <yes> <report> TIME_MANIPULATION
+pastBlockTime = now;
+```
+Contudo, na análise do Slither no trabalho do SmartBugs, não foi detectada a vulnerabilidade de Time Manipulation em nenhum ponto.
 
+No código de timed_crowdsale.sol, temos a vulnerabilidade sendo apontada em:
+
+```solidity
+// <yes> <report> TIME_MANIPULATION
+return block.timestamp >= 1546300800;
+```
+O Slither consegue encontrar a vulnerabilidade no local correto, como apontado na descrição:
+
+```json
+"description": "TimedCrowdsale.isSaleFinished (/dataset/time_manipulation/timed_crowdsale.sol#11-14) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- block.timestamp >= 1546300800 (/dataset/time_manipulation/timed_crowdsale.sol#13)\n",
+```
+Na contagem de vulnerabilidades para Time Manipulation, foi colocado que foram encontradas duas vulnerabilidades pela análise, porém, pela contagem manual demonstrada, foi somente uma.
+
+## Anexo III
+
+O arquivo FibonacciBalance.sol possui duas vulnerabilidades.
+
+```solidity
+// calculate the fibonacci number for the current withdrawal user
+// this sets calculatedFibNumber
+// <yes> <report> ACCESS_CONTROL
+require(fibonacciLibrary.delegatecall(fibSig, withdrawalCounter));
+msg.sender.transfer(calculatedFibNumber * 1 ether);
+```
+```solidity
+// allow users to call fibonacci library functions
+function() public {
+    // <yes> <report> ACCESS_CONTROL
+    require(fibonacciLibrary.delegatecall(msg.data));
+}
+```
+Na saída da análise do artigo do SmartBugs, temos:
+```json
+{
+    "address": 212,
+    "code": "fibonacciLibrary.delegatecall(msg.data)",
+    "debug": "",
+    "description": "Be aware that the called contract gets unrestricted access to this contract's state.",
+    "filename": "/dataset/unchecked_low_level_calls/FibonacciBalance.sol",
+    "function": "fallback",
+    "lineno": 38,
+    "title": "DELEGATECALL to a user-supplied address",
+    "type": "Informational"
+}
+```
+O trecho aponta a vulnerabilidade dentro do require fibonacciLibrary.delegatecall(msg.data). A mesma vulnerabilidade no arquivo. Como a contagem aumenta exatamente em um, acredita-se que isso tenha causado a discrepância.
 
 ## 📬 Contato
 
