@@ -23,7 +23,6 @@ Os resultados obtidos ajudam a entender as vantagens e limitações de cada abor
 
 ## Anexo I
 
-# Anexo I
 
 Neste arquivo, o Slither aponta uma vulnerabilidade existente, mas não acerta especificamente o local. Na análise do Slither, o arquivo `ether_lotto.sol` é analisado pelos especialistas, apontando a vulnerabilidade para:
 
