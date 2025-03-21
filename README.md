@@ -32,7 +32,7 @@ Neste arquivo, o Slither aponta uma vulnerabilidade existente, mas não especifi
 // transaction.
 // <yes> <report> TIME_MANIPULATION
 var random = uint(sha3(block.timestamp)) % 2;
-
+```
 
 
 
