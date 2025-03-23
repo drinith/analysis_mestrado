@@ -32,9 +32,13 @@ Neste arquivo, o Slither aponta uma vulnerabilidade existente, mas não acerta e
 var random = uint(sha3(block.timestamp)) % 2;
 ```
 
-Na análise do Slither 0.24.7, essa linha contém uma vulnerabilidade, mas é classificada no JSON como "check": "weak-prng". Para time_manipulation, a análise aponta para outra linha que não foi a levantada:
+Na versão 0.24.7 do Slither, essa linha é de fato reconhecida como vulnerável, porém, no arquivo JSON gerado, a vulnerabilidade é classificada como "check": "weak-prng", em vez de time_manipulation.
 
+Além disso, na categorização de time_manipulation, a análise automatizada do Slither aponta uma linha diferente daquela destacada pelos especialistas:
+
+```json
 "description": "EtherLotto.play() (repositories/SmartBugs-curated/ether_lotto.sol#33-57) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- random == 0 (repositories/SmartBugs-curated/ether_lotto.sol#46)\n",
+```
 
 O Slither erra o local da vulnerabilidade, pois, apesar da vulnerabilidade estar nos valores contidos no random devido ao uso do timestamp, o problema não está na verificação do if como o Slither apontou. A vulnerabilidade está no fato do sorteio usar o timestamp, o que inicia a vulnerabilidade.
 
