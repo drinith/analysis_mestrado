@@ -151,7 +151,9 @@ Na saída da análise do artigo do SmartBugs, temos:
     "type": "Informational"
 }
 ```
-O trecho aponta a vulnerabilidade dentro do require fibonacciLibrary.delegatecall(msg.data). A mesma vulnerabilidade no arquivo. Como a contagem aumenta exatamente em um, acredita-se que isso tenha causado a discrepância.
+O trecho aponta a vulnerabilidade dentro do require(fibonacciLibrary.delegatecall(msg.data)). A mesma vulnerabilidade já estava presente no arquivo, e como a contagem aumentou exatamente em um, acredita-se que essa mudança tenha sido a causa da variação observada.
+
+Esse ponto é reforçado pela explicação no início da seção de resultados, onde se menciona que, nas detecções automatizadas, houve uma movimentação do arquivo FibonacciBalance.sol da categoria unchecked_low_level_calls. Além disso, reforça-se que essa alteração ocorreu em 23 de novembro de 2022, após a realização do estudo do SmartBugs.
 
 ## 📬 Contato
 
